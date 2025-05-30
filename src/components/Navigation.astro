@@ -1,0 +1,36 @@
+---
+---
+
+<div class="container">
+  <div class="sticky">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <a href="/posts/helloworld">Hello World</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 320px;
+    max-width: 400px;
+    position: relative;
+    height: 100%;
+    background-color: #1d1e21;
+  }
+
+  .container .sticky {
+    position: sticky;
+    top: 0;
+  }
+</style>

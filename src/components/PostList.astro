@@ -1,0 +1,28 @@
+---
+---
+
+<div class="content">
+  {
+    [...Array(10)].map((_, index) => (
+      <div class="card">
+        <h2>Card {index + 1}</h2>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .content {
+		flex-grow: 1;
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	.card {
+		width: 100%;
+		height: 256px;
+		background-color: #1d1e21;
+	}
+</style>
