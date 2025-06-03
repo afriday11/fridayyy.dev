@@ -1,11 +1,21 @@
 ---
+
 ---
 
 <div class="content">
   {
     [...Array(10)].map((_, index) => (
-      <div class="card">
-        <h2>Card {index + 1}</h2>
+      <div class="card shadowfx">
+        <div class="cardContent">
+          {/* date, title, description */}
+          <span class="cardDate">Jan 1, 2025</span>
+          <h1 class="cardTitle">This is a long title to test the layout</h1>
+          <p class="cardDescription">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            quos.
+          </p>
+        </div>
+        <div class="cardThumbnail" />
       </div>
     ))
   }
@@ -13,16 +23,41 @@
 
 <style>
   .content {
-		flex-grow: 1;
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
-	}
+    flex-grow: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 
-	.card {
-		width: 100%;
-		height: 256px;
-		background-color: #1d1e21;
-	}
+  .card {
+    width: 100%;
+    height: 320px;
+    /* min-height: 320px; */
+    background-color: #1d1e21;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .cardThumbnail {
+    /* width: 100%; */
+    flex-grow: 1;
+    height: 100%;
+    background-color: #2d2e31;
+    background-image: url("https://cbsnews1.cbsistatic.com/hub/i/2016/03/23/38e32f54-b910-4612-8852-be9e0fbdbf73/cat-istock.jpg");
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 0.5rem; */
+  }
+
+  .cardContent {
+    min-width: 33%;
+    width: 33%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    padding: 1.5em;
+  }
 </style>

@@ -1,19 +1,66 @@
 ---
+import avatar from "../assets/avatar.jpg";
+import galleryIcon from "../assets/icons/art.svg?raw";
+import devIcon from "../assets/icons/dev.svg?raw";
+import blogIcon from "../assets/icons/blog.svg?raw";
+import resumeIcon from "../assets/icons/resume.svg?raw";
+import aboutIcon from "../assets/icons/about.svg?raw";
+
+// Get current path
+const currentPath = Astro.url.pathname;
 ---
 
 <div class="container">
   <div class="sticky">
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/blog">Blog</a>
-      </li>
-      <li>
-        <a href="/posts/helloworld">Hello World</a>
-      </li>
-    </ul>
+    <div class="content shadowfx">
+      <div class="profile">
+        <div class="avatar" style={`background-image: url(${avatar.src})`}>
+        </div>
+        <span class="name">DAN FESSLER</span>
+      </div>
+      <ul class="nav">
+        <li
+          class={currentPath === "/" ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/'"
+        >
+          <Fragment set:html={galleryIcon} />
+          Art
+        </li>
+        <li
+          class={currentPath === "/dev" ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/dev'"
+        >
+          <Fragment set:html={devIcon} />
+          Dev
+        </li>
+        <li
+          class={currentPath === "/about" ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/about'"
+        >
+          <Fragment set:html={aboutIcon} />
+          About
+        </li>
+        <li
+          class={currentPath === "/resume" ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/resume'"
+        >
+          <Fragment set:html={resumeIcon} />
+          Resume
+        </li>
+        <li
+          class={currentPath === "/blog" ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/blog'"
+        >
+          <Fragment set:html={blogIcon} />
+          Blog
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -26,11 +73,140 @@
     max-width: 400px;
     position: relative;
     height: 100%;
-    background-color: #1d1e21;
+    text-align: center;
+    /* border-radius: 1rem; */
   }
 
   .container .sticky {
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    padding-right: 0;
     position: sticky;
     top: 0;
+    box-sizing: border-box;
+  }
+
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d1e21;
+    border-radius: 1.5rem;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .avatar {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 2px 20px black;
+    /* background-color: #fff; */
+    img {
+      width: 100%;
+    }
+  }
+
+  .avatar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    box-shadow:
+      1px 1px 1px 0 rgb(255, 255, 228) inset,
+      -1px -1px 1px 0 rgba(180, 228, 255, 0.38) inset;
+  }
+
+  .name {
+    font-size: 34px;
+    font-weight: 300;
+    color: #ddd;
+    position: relative;
+    perspective: 100px;
+  }
+
+  .name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000047;
+    filter: blur(20px);
+    transform: scale(1, 0.5);
+    transform-origin: center 85%;
+    z-index: -1;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 60px;
+      padding: 0 48px;
+      box-sizing: border-box;
+
+      a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      &.active {
+        background-color: rgba(0, 0, 0, 0.125);
+
+        a {
+          color: white;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.125);
+        cursor: pointer;
+
+        a {
+          color: white;
+        }
+      }
+    }
+
+    li svg {
+      width: 24px;
+      height: 24px;
+      fill: #666;
+    }
+
+    li.active svg {
+      fill: white;
+    }
   }
 </style>
