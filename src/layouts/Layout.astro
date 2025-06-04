@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation.astro";
 import "../assets/global.scss";
 
 import { ClientRouter } from "astro:transitions";
+const { maxWidth } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ import { ClientRouter } from "astro:transitions";
   </head>
   <body>
     <Navigation />
-    <div class="content">
+    <div class="content" style={`max-width: ${maxWidth ? maxWidth+"px" : "100%"};`}>
       <slot />
     </div>
   </body>
@@ -32,7 +33,9 @@ import { ClientRouter } from "astro:transitions";
     flex-grow: 1;
     position: relative;
     width: 75%;
-    /* padding: 1rem; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .content :global(*) {

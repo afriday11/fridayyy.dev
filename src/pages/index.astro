@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CarouselHeader from "../components/Carousel.jsx";
 
-const matches = import.meta.glob("../pages/posts/*.md", { eager: true });
+const matches = import.meta.glob("./blog/*.md", { eager: true });
 const posts = Object.values(matches).slice(0, 3);
 ---
 
@@ -11,19 +11,21 @@ const posts = Object.values(matches).slice(0, 3);
   <div class="blurb">
     <!-- <h1>Art and Alchemy</h1> -->
     <h1>Artist by Day, Developer by Night</h1>
-    <p>
+    <p style="font-size: 1.2rem;">
       I am a Creative Director and Engineer with over 20 years of experience in
       mobile, social, AI, and UGC platforms. I bring a visual and technical
       perspective to my approach as a creative leader with an emphasis on
       quality and the user experience.
     </p>
   </div>
+  <!-- <div style="flex-grow: 1;"></div> -->
   <div class="latestPosts">
     <h2>Latest Posts</h2>
     <div class="posts">
       {
         posts.map((post: any, i) => (
-          <div class="post shadowfx">
+          <a class="post card-container" href={post.url}>
+            <div class="card shadowfx">
             <div class="post-thumbnail">
               <img
                 src={post.frontmatter.image.url}
@@ -45,6 +47,7 @@ const posts = Object.values(matches).slice(0, 3);
               <p>{post.frontmatter.description}</p>
             </div>
           </div>
+          </a>
         ))
       }
     </div>
@@ -78,6 +81,8 @@ const posts = Object.values(matches).slice(0, 3);
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
     /* padding: 1rem; */
   }
   .post-content {

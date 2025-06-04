@@ -35,8 +35,8 @@ const currentPath = Astro.url.pathname;
           </li>
         </a>
         <a
-          href="/gallery"
-          class={currentPath.includes("/gallery") ? "active" : ""}
+          href="/art"
+          class={currentPath.includes("/art") ? "active" : ""}
         >
           <li>
             <Fragment set:html={galleryIcon} />
@@ -200,6 +200,10 @@ const currentPath = Astro.url.pathname;
         height: 60px;
         padding: 0 2rem;
         box-sizing: border-box;
+      }
+
+      svg {
+        fill: inherit;
       }
 
       &.active {
