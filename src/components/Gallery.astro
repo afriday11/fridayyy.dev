@@ -1,33 +1,39 @@
 ---
 import image1 from "../assets/dan-fessler-hex-render.jpg";
 import image2 from "../assets/dan-fessler-hex-render-2.jpg";
+const matches = import.meta.glob('../pages/gallery/*.md', { eager: true });
+const posts = Object.values(matches);
+
+const { category } = Astro.props;
+
+const filteredPosts = category ? posts.filter((post: any) => post.frontmatter.categories.includes(category)) : posts;
 ---
 
 <div class="subnav">
   <div class="subnav-items">
     <div class="subnav-item active shadowfx">All</div>
-    <div class="subnav-item">Art</div>
-    <div class="subnav-item">Dev</div>
-    <div class="subnav-item">Blog</div>
-    <div class="subnav-item">Resume</div>
+    <div class="subnav-item">3D Modeling</div>
+    <div class="subnav-item">Concept</div>
+    <div class="subnav-item">Pixel</div>
+    <div class="subnav-item">Direction</div>
   </div>
 </div>
 <div class="gallery">
   {
-    [...Array(20)].map((_, index) => (
-      <div class="card-container">
+    filteredPosts.map((post: any) => (
+      <a class="card-container" href={post.url}>
         <div class="card shadowfx">
           <div
             class="card-bg"
-            style={`background-image: url(${[image1.src, image2.src][index % 2]})`}
+            style={`background-image: url(${post.frontmatter.thumbnail})`}
           />
           <div class="sheen" />
           <div class="card-info">
-            <div class="category">category</div>
-            <div class="title">title</div>
+            <div class="category">{post.frontmatter.categories.join(", ")}</div>
+            <div class="title">{post.frontmatter.title}</div>
           </div>
         </div>
-      </div>
+      </a>
     ))
   }
 </div>
@@ -58,14 +64,14 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
       const y = e.clientY - rect.top; // y position within the element
 
       // Calculate rotation values (max 15 degrees)
-      const rotateY = (x / rect.width - 0.5) * 15;
-      const rotateX = (y / rect.height - 0.5) * -15;
+      const rotateY = (x / rect.width - 0.5) * 10;
+      const rotateX = (y / rect.height - 0.5) * -10;
 
       // Calculate sheen position (opposite to mouse)
       const sheenX = (1 - x / rect.width) * 100;
       const sheenY = (1 - y / rect.height) * 100;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.025) translateZ(10px)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
       sheen.style.backgroundPosition = `${100 - sheenX}% ${100 - sheenY}%`;
       // background.style.transform = `translate(${(sheenX / 2 - 25) / 10}%, ${(sheenY / 2 - 25) / 10}%)`;
     });
@@ -74,7 +80,7 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
       card.style.transition = "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
       sheen.style.transition = "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
       card.style.transform =
-        "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+        "perspective(1000px) rotateX(0) rotateY(0)";
       // background.style.transform = "translate(0, 0)";
       sheen.style.opacity = "0";
       setTimeout(() => {
@@ -92,45 +98,47 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
     width: 100%;
     box-sizing: border-box;
     gap: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     position: relative;
   }
 
   .subnav {
     position: sticky;
-    top: 0;
+    top: 1rem;
     left: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 100;
-    background: linear-gradient(to bottom, #151618, #1d1e2100);
+    /* background: linear-gradient(to bottom, #151618, #1d1e2100); */
+    margin-bottom: 1rem;
   }
 
   .subnav-items {
+    text-wrap: nowrap;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     /* gap: 2rem; */
     text-transform: uppercase;
     background-color: #151618c3;
-    margin-top: 1rem;
     backdrop-filter: blur(20px);
     border-radius: 100px;
     padding: 4px;
+    font-size: 0.9rem;
   }
 
   .subnav-item {
     /* font-size: 12px; */
-    color: #aaa;
+    /* color: #aaa; */
     cursor: pointer;
     margin: 0 1rem;
   }
 
   .subnav-item.active {
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 12px 24px;
     border-radius: 100px;
     background-color: #1d1e21;
     width: calc(100% + 4rem);
@@ -157,17 +165,18 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-position: center;
     background-image: inherit;
     transform-origin: center center;
     background-repeat: no-repeat;
     /* background-scale: 2; */
     /* transform: translateZ(-100px); */
     scale: 1;
-    transition: all 0.1s linear;
+    transition: scale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-bg:hover {
-    scale: 1.025;
+    scale: 1.05;
     /* scale: 1.025; */
   }
 
@@ -181,15 +190,31 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
     left: 0;
     width: 100%;
     box-sizing: border-box;
-    height: 64px;
+    /* height: 50%; */
     padding: 1em;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    /* background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); */
+    /* background: rgba(0, 0, 0, 0.5); */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    z-index: 1;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-info::before {
+    content: "";
+    position: absolute;
+    top: -64px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 64px);
+    /* height: 100%; */
+    /* background: red; */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0));
+    z-index: -1;
   }
 
   .card:hover .card-info {
@@ -199,7 +224,7 @@ import image2 from "../assets/dan-fessler-hex-render-2.jpg";
 
   .category {
     font-size: 12px;
-    color: #aaa;
+    color: #ffffff8a;
   }
 
   .title {

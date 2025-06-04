@@ -1,0 +1,119 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  background-color: #151618;
+
+  font-family: "Montserrat", sans-serif;
+  color: #939da3;
+  gap: 1rem;
+  fill: #aaa;
+  letter-spacing: 1px;
+  // overflow-x: hidden;
+}
+
+body {
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff !important;
+}
+
+a {
+  /* clear default link styles */
+  text-decoration: none;
+  color: rgb(73, 165, 207);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* pre,
+table, */
+.shadowfx {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.403);
+  position: relative;
+}
+
+/* pre::after,
+table::after, */
+.shadowfx::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+  box-shadow: 1px 2px 1px 0 rgb(255, 255, 228) inset,
+    1px 2px 20px 0 rgba(255, 255, 228, 0.539) inset,
+    -1px -2px 1px 0 rgba(180, 228, 255, 0.38) inset;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+table {
+  @extend .shadowfx;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  background-color: #1a1d20;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+th {
+  background-color: #2a2d30;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  /* border-bottom: 2px solid #3a3d40; */
+}
+
+td {
+  padding: 0.75rem 1rem;
+  /* border-bottom: 1px solid #2a2d30; */
+  color: #859195;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Add subtle zebra striping */
+tr:nth-child(even) {
+  background-color: #1e2124;
+}
+
+/* Style for markdown table headers */
+thead {
+  background-color: #2a2d30;
+}
+
+/* Ensure proper spacing for markdown tables */
+table p {
+  margin: 0;
+}
+
+/* Add subtle transition for hover effects */
+tr {
+  transition: background-color 0.2s ease;
+}
+
+pre {
+  @extend .shadowfx;
+  padding: 1rem;
+  border-radius: 10px;
+}

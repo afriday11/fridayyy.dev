@@ -5,6 +5,9 @@ import devIcon from "../assets/icons/dev.svg?raw";
 import blogIcon from "../assets/icons/blog.svg?raw";
 import resumeIcon from "../assets/icons/resume.svg?raw";
 import aboutIcon from "../assets/icons/about.svg?raw";
+import SocialLinks from "../components/SocialLinks.astro";
+import WorkIcon from "../assets/icons/work.svg?raw";
+import LocationIcon from "../assets/icons/location.svg?raw";
 
 // Get current path
 const currentPath = Astro.url.pathname;
@@ -17,12 +20,26 @@ const currentPath = Astro.url.pathname;
         <div class="avatar" style={`background-image: url(${avatar.src})`}>
         </div>
         <span class="name">DAN FESSLER</span>
+        <span class="subtitle">Art Director / Developer</span>
+        <br />
+        <div class="work-location">
+          <div><Fragment set:html={WorkIcon} /> Manticore Games</div>
+          <div><Fragment set:html={LocationIcon} /> San Francisco, CA</div>
+        </div>
       </div>
       <ul class="nav">
         <li
           class={currentPath === "/" ? "active" : ""}
           role="link"
           onclick="window.location.href = '/'"
+        >
+          <Fragment set:html={aboutIcon} />
+          About
+        </li>
+        <li
+          class={currentPath.includes("/gallery") ? "active" : ""}
+          role="link"
+          onclick="window.location.href = '/gallery'"
         >
           <Fragment set:html={galleryIcon} />
           Art
@@ -34,14 +51,6 @@ const currentPath = Astro.url.pathname;
         >
           <Fragment set:html={devIcon} />
           Dev
-        </li>
-        <li
-          class={currentPath === "/about" ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/about'"
-        >
-          <Fragment set:html={aboutIcon} />
-          About
         </li>
         <li
           class={currentPath === "/resume" ? "active" : ""}
@@ -60,6 +69,11 @@ const currentPath = Astro.url.pathname;
           Blog
         </li>
       </ul>
+      <div style="flex-grow: 1;"></div>
+      <SocialLinks />
+      <div class="nav-footer">
+        © {new Date().getFullYear()} Dan Fessler
+      </div>
     </div>
   </div>
 </div>
@@ -72,18 +86,16 @@ const currentPath = Astro.url.pathname;
     min-width: 320px;
     max-width: 400px;
     position: relative;
-    height: 100%;
+    height: calc(100vh - 2rem);
     text-align: center;
+    position: sticky;
+    top: 1rem;
     /* border-radius: 1rem; */
   }
 
   .container .sticky {
     width: 100%;
-    height: 100vh;
-    padding: 1rem;
-    padding-right: 0;
-    position: sticky;
-    top: 0;
+    flex-grow: 1;
     box-sizing: border-box;
   }
 
@@ -95,6 +107,8 @@ const currentPath = Astro.url.pathname;
     height: 100%;
     background-color: #1d1e21;
     border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .profile {
@@ -102,6 +116,14 @@ const currentPath = Astro.url.pathname;
     flex-direction: column;
     align-items: center;
     padding: 2em;
+  }
+
+  .work-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.9em;
   }
 
   .avatar {
@@ -172,7 +194,7 @@ const currentPath = Astro.url.pathname;
       justify-content: space-between;
       width: 100%;
       height: 60px;
-      padding: 0 48px;
+      padding: 0 2rem;
       box-sizing: border-box;
 
       a {
@@ -202,11 +224,18 @@ const currentPath = Astro.url.pathname;
     li svg {
       width: 24px;
       height: 24px;
-      fill: #666;
+      fill: inherit;
     }
 
     li.active svg {
       fill: white;
     }
+  }
+
+  .nav-footer {
+    padding: 16px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
   }
 </style>

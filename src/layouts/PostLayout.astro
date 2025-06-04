@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="post-content">
+		<slot />
+	</div>
+</Layout>
+
+<style>
+	.post-content {
+		/* text-align: center; */
+		/* display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center; */
+		margin: 0;
+	}
+	.post-content > :global(*) {
+		max-width: 1024px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		box-sizing: border-box;
+		/* margin: 1.5rem auto; */
+		/* padding: 2rem; */
+	}
+	.post-content > :global(p:has(img)) {
+		max-width: 100%;
+		text-align: center;
+		/* background:rgba(0, 0, 0, 0.1); */
+	}
+</style>

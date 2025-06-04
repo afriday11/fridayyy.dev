@@ -1,6 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
-import '../assets/global.css';
+import '../assets/global.scss';
 ---
 
 <!doctype html>
@@ -26,6 +26,12 @@ import '../assets/global.css';
 	.content {
 		flex-grow: 1;
 		position: relative;
+		/* padding: 1rem; */
+	}
+
+	.content :global(*) {
+		/* width: 100%; */
+		max-width: 100%;
 	}
 
 
