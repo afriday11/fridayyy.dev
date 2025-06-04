@@ -6,10 +6,8 @@ date: "06/03/2025"
 categories: [personal, 3D]
 ---
 
+![Gallery image](/gallery/dan-fessler-hex-render.jpg)
+
 ## this is a test post
 
 here is an image
-
-![Gallery image](/gallery/dan-fessler-hex-render.jpg)
-
-done!

@@ -20,54 +20,47 @@ const currentPath = Astro.url.pathname;
         <div class="avatar" style={`background-image: url(${avatar.src})`}>
         </div>
         <span class="name">DAN FESSLER</span>
-        <span class="subtitle">Art Director / Developer</span>
+        <span class="subtitle">Creative Director / Engineer</span>
         <br />
         <div class="work-location">
-          <div><Fragment set:html={WorkIcon} /> Manticore Games</div>
-          <div><Fragment set:html={LocationIcon} /> San Francisco, CA</div>
+          <div><Fragment set:html={WorkIcon} />Incite Interactive</div>
+          <div><Fragment set:html={LocationIcon} />Pacifica, CA</div>
         </div>
       </div>
       <ul class="nav">
-        <li
-          class={currentPath === "/" ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/'"
-        >
-          <Fragment set:html={aboutIcon} />
-          About
-        </li>
-        <li
+        <a href="/" class={currentPath === "/" ? "active" : ""}>
+          <li>
+            <Fragment set:html={aboutIcon} />
+            About
+          </li>
+        </a>
+        <a
+          href="/gallery"
           class={currentPath.includes("/gallery") ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/gallery'"
         >
-          <Fragment set:html={galleryIcon} />
-          Art
-        </li>
-        <li
-          class={currentPath === "/dev" ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/dev'"
-        >
-          <Fragment set:html={devIcon} />
-          Dev
-        </li>
-        <li
-          class={currentPath === "/resume" ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/resume'"
-        >
-          <Fragment set:html={resumeIcon} />
-          Resume
-        </li>
-        <li
-          class={currentPath === "/blog" ? "active" : ""}
-          role="link"
-          onclick="window.location.href = '/blog'"
-        >
-          <Fragment set:html={blogIcon} />
-          Blog
-        </li>
+          <li>
+            <Fragment set:html={galleryIcon} />
+            Art
+          </li>
+        </a>
+        <a href="/dev" class={currentPath === "/dev" ? "active" : ""}>
+          <li>
+            <Fragment set:html={devIcon} />
+            Dev
+          </li>
+        </a>
+        <a href="/resume" class={currentPath === "/resume" ? "active" : ""}>
+          <li>
+            <Fragment set:html={resumeIcon} />
+            Resume
+          </li>
+        </a>
+        <a href="/blog" class={currentPath === "/blog" ? "active" : ""}>
+          <li>
+            <Fragment set:html={blogIcon} />
+            Blog
+          </li>
+        </a>
       </ul>
       <div style="flex-grow: 1;"></div>
       <SocialLinks />
@@ -116,6 +109,10 @@ const currentPath = Astro.url.pathname;
     flex-direction: column;
     align-items: center;
     padding: 2em;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
   }
 
   .work-location {
@@ -187,27 +184,29 @@ const currentPath = Astro.url.pathname;
     padding: 0;
     margin: 0;
 
-    li {
+    a {
       text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       width: 100%;
-      height: 60px;
-      padding: 0 2rem;
-      box-sizing: border-box;
 
-      a {
-        color: #666;
-        text-decoration: none;
-        transition: color 0.3s ease;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 0 2rem;
+        box-sizing: border-box;
       }
 
       &.active {
         background-color: rgba(0, 0, 0, 0.125);
-
-        a {
-          color: white;
+        color: white;
+        svg {
+          fill: white;
         }
       }
 
@@ -220,22 +219,12 @@ const currentPath = Astro.url.pathname;
         }
       }
     }
-
-    li svg {
-      width: 24px;
-      height: 24px;
-      fill: inherit;
-    }
-
-    li.active svg {
-      fill: white;
-    }
   }
 
   .nav-footer {
     padding: 16px;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
   }
 </style>

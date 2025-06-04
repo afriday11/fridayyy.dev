@@ -1,22 +1,39 @@
 ---
-
+const { posts } = Astro.props;
 ---
 
+<!-- ---
+title: "My First Blog Post"
+pubDate: 2022-07-01
+description: "This is the first post of my new Astro blog."
+author: "Astro Learner"
+image:
+  url: "https://docs.astro.build/assets/rose.webp"
+  alt: "The Astro logo on a dark background with a pink glow."
+tags: ["astro", "blogging", "learning in public"]
+layout: ../../layouts/Layout.astro
+--- -->
 <div class="content">
   {
-    [...Array(10)].map((_, index) => (
-      <div class="card shadowfx">
+    posts.map((post: any) => (
+      <a class="card shadowfx" href={post.url}>
         <div class="cardContent">
           {/* date, title, description */}
-          <span class="cardDate">Jan 1, 2025</span>
-          <h1 class="cardTitle">This is a long title to test the layout</h1>
-          <p class="cardDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </p>
+          <span class="cardDate">
+            {new Date(post.frontmatter.pubDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+          <h1 class="cardTitle">{post.frontmatter.title}</h1>
+          <p class="cardDescription">{post.frontmatter.description}</p>
         </div>
-        <div class="cardThumbnail" />
-      </div>
+        <div
+          class="cardThumbnail"
+          style={`background-image: url(${post.frontmatter.image.url})`}
+        />
+      </a>
     ))
   }
 </div>
@@ -35,10 +52,12 @@
     height: 320px;
     /* min-height: 320px; */
     background-color: #1d1e21;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
   }
 
   .cardThumbnail {

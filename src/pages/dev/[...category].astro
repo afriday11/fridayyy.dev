@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Gallery from "../../components/Gallery.astro";
+
+const matches = import.meta.glob("./*.md", { eager: true });
+const posts = Object.values(matches);
+
+export function getStaticPaths() {
+  return [
+    { params: { category: "websites" } },
+    { params: { category: "tools" } },
+    { params: { category: "open-source" } },
+    { params: { category: "languages" } },
+    { params: { category: "other" } },
+    { params: { category: undefined } },
+  ];
+}
+
+const { category } = Astro.params;
+---
+
+<Layout>
+  <Gallery
+    category={category}
+    posts={posts}
+    categories={["websites", "tools", "open-source", "languages", "other"]}
+    baseUrl="/dev"
+  />
+</Layout>

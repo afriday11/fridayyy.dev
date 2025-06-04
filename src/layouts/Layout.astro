@@ -1,38 +1,42 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import '../assets/global.scss';
+import Navigation from "../components/Navigation.astro";
+import "../assets/global.scss";
+
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&amp;display=swap" rel="stylesheet">
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<Navigation />
-		<div class="content">
-			<slot />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Astro Basics</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <Navigation />
+    <div class="content">
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style>
+  .content {
+    flex-grow: 1;
+    position: relative;
+    width: 75%;
+    /* padding: 1rem; */
+  }
 
-	.content {
-		flex-grow: 1;
-		position: relative;
-		/* padding: 1rem; */
-	}
-
-	.content :global(*) {
-		/* width: 100%; */
-		max-width: 100%;
-	}
-
-
+  .content :global(*) {
+    /* width: 100%; */
+    /* max-width: 100%; */
+  }
 </style>

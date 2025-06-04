@@ -1,8 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PostList from '../components/PostList.astro';
+import Layout from "../layouts/Layout.astro";
+import PostList from "../components/PostList.astro";
+
+const matches = import.meta.glob("./posts/*.md", { eager: true });
+const posts = Object.values(matches);
 ---
 
 <Layout>
-  <PostList />
+  <PostList posts={posts} />
 </Layout>

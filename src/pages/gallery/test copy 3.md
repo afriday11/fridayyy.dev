@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-thumbnail: /gallery/dan-fessler-hex-render.jpg
+thumbnail: /gallery/dan-fessler-hex-render-2.jpg
 title: "My Test Gallery Post"
 date: "06/03/2025"
 categories: [personal, 3D]
@@ -10,6 +10,6 @@ categories: [personal, 3D]
 
 here is an image
 
-![Gallery image](/gallery/dan-fessler-hex-render.jpg)
+![Gallery image](/gallery/dan-fessler-hex-render-2.jpg)
 
 done!
