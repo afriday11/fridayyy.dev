@@ -7,60 +7,85 @@ const posts = Object.values(matches).slice(0, 3);
 ---
 
 <Layout>
-  <CarouselHeader client:load />
-  <div class="blurb">
-    <!-- <h1>Art and Alchemy</h1> -->
-    <h1>Artist by Day, Developer by Night</h1>
-    <p>
-      I am a Creative Director and Engineer with over 20 years of experience in
-      mobile, social, AI, and UGC platforms. I bring a visual and technical
-      perspective to my approach as a creative leader with an emphasis on
-      quality and the user experience.
-    </p>
-  </div>
-  <div class="latestPosts">
-    <h2>Latest Posts</h2>
-    <div class="posts">
-      {
-        posts.map((post: any, i) => (
-          <div class="post shadowfx">
-            <div class="post-thumbnail">
-              <img
-                src={post.frontmatter.image.url}
-                alt={post.frontmatter.image.alt}
-              />
+  <div class="container">
+    <CarouselHeader client:load />
+
+    <div class="blurb shadowfx">
+      <!-- <h1>Art and Alchemy</h1> -->
+      <div>
+        <h1>Artist by Day, Developer by Night</h1>
+        <p>
+          I am a Creative Director and Engineer with over 20 years of experience
+          in mobile, social, AI, and UGC platforms. I bring a visual and
+          technical perspective to my approach as a creative leader with an
+          emphasis on quality and the user experience.
+        </p>
+      </div>
+    </div>
+    <div class="latestPosts">
+      <!-- <h2>Latest Posts</h2> -->
+      <div class="posts">
+        {
+          posts.map((post: any, i) => (
+            <div class="post shadowfx">
+              <div
+                class="post-thumbnail"
+                style={`background-image: url(${post.frontmatter.image.url})`}
+              >
+                {/* <img
+                  src={post.frontmatter.image.url}
+                  alt={post.frontmatter.image.alt}
+                /> */}
+              </div>
+              <div class="post-content">
+                <span class="post-date">
+                  {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    "en-US",
+                    {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }
+                  )}
+                </span>
+                <h3>{post.frontmatter.title}</h3>
+                <p>{post.frontmatter.description}</p>
+              </div>
             </div>
-            <div class="post-content">
-              <span class="post-date">
-                {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                  "en-US",
-                  {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  }
-                )}
-              </span>
-              <h3>{post.frontmatter.title}</h3>
-              <p>{post.frontmatter.description}</p>
-            </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
 </Layout>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    justify-content: stretch;
+  }
   .blurb {
+    background-color: #1d1e21;
     text-align: center;
-    max-width: 800px;
-    margin: 4rem auto;
+    /* max-width: 800px; */
+    /* margin: 4rem auto; */
+    padding: 4rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .latestPosts {
     /* display: flex;
     flex-direction: column; */
     /* gap: 1rem; */
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: stretch;
   }
   .posts {
     display: flex;
@@ -68,6 +93,8 @@ const posts = Object.values(matches).slice(0, 3);
     gap: 1rem;
     width: 100%;
     justify-content: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .post {
     background-color: #1d1e21;
@@ -82,5 +109,16 @@ const posts = Object.values(matches).slice(0, 3);
   }
   .post-content {
     padding: 1rem;
+  }
+
+  .post-thumbnail {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 256px;
+    /* width: 512px; */
+    /* min-height: 128px; */
+    /* width: 100%; */
+    aspect-ratio: 16 / 9;
   }
 </style>
