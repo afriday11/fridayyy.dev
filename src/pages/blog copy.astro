@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const matches = import.meta.glob("./blog/*.md", { eager: true });
+const posts = Object.values(matches);
+---
+
+<Layout maxWidth={1440}>
+  <div class="content">
+    {
+      posts.map((post: any) => (
+        <a class="card shadowfx" href={post.url}>
+          <div class="cardContent">
+            {/* date, title, description */}
+            <span class="cardDate">
+              {new Date(post.frontmatter.pubDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+            <h1 class="cardTitle">{post.frontmatter.title}</h1>
+            <p class="cardDescription">{post.frontmatter.description}</p>
+          </div>
+          <div
+            class="cardThumbnail"
+            style={`background-image: url(${post.frontmatter.image.url})`}
+          />
+        </a>
+      ))
+    }
+  </div>
+</Layout>
+  
+<style>
+  .content {
+    flex-grow: 1;
+    /* padding: 1em; */
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .card {
+    width: 100%;
+    height: 320px;
+    /* min-height: 320px; */
+    background-color: #1d1e21;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    /* max-width: 1440px; */
+    /* margin: 0 auto; */
+  }
+
+  .cardThumbnail {
+    /* width: 100%; */
+    flex-grow: 1;
+    height: 100%;
+    background-color: #2d2e31;
+    background-image: url("https://cbsnews1.cbsistatic.com/hub/i/2016/03/23/38e32f54-b910-4612-8852-be9e0fbdbf73/cat-istock.jpg");
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 0.5rem; */
+  }
+
+  .cardContent {
+    min-width: 33%;
+    width: 33%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    padding: 1.5em;
+  }
+</style>

@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CarouselHeader from "../components/Carousel.jsx";
 
-const matches = import.meta.glob("../pages/posts/*.md", { eager: true });
+const matches = import.meta.glob("./blog/*.md", { eager: true });
 const posts = Object.values(matches).slice(0, 3);
 ---
 
@@ -105,6 +105,8 @@ const posts = Object.values(matches).slice(0, 3);
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
     /* padding: 1rem; */
   }
   .post-content {

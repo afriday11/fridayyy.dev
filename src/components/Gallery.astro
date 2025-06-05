@@ -5,12 +5,10 @@ console.log("posts", posts);
 const filteredPosts = category
   ? posts.filter((post: any) => post.frontmatter.categories.includes(category))
   : posts;
-
-const shuffled = filteredPosts.sort(() => 0.5 - Math.random());
 ---
 
 <head>
-  <title>Gallery</title>
+  <title>Art Portfolio</title>
 </head>
 
 <div class="subnav">
@@ -33,7 +31,7 @@ const shuffled = filteredPosts.sort(() => 0.5 - Math.random());
 </div>
 <div class="gallery">
   {
-    shuffled.map((post: any) => (
+    filteredPosts.map((post: any) => (
       <a class="card-container" href={post.url}>
         <div class="card shadowfx">
           <div
@@ -136,7 +134,7 @@ const shuffled = filteredPosts.sort(() => 0.5 - Math.random());
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     width: 100%;
     box-sizing: border-box;
     gap: 1rem;
