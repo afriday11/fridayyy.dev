@@ -48,6 +48,19 @@ const horizontal = Astro.props.horizontal || false;
       width: 60%;
     }
   }
+  @media (max-width: 648px) {
+    .post.horizontal {
+      flex-direction: column;
+
+      .post-thumbnail {
+        width: 100%;
+      }
+
+      .post-content {
+        width: 100%;
+      }
+    }
+  }
   .post-content {
     padding: 1rem;
     /* height: 400px; */

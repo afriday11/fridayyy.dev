@@ -12,7 +12,8 @@ body {
   fill: #aaa;
   // letter-spacing: 1px;
   line-height: 1.5;
-  // overflow-x: hidden;
+  overflow-x: clip;
+  // overflow-y: hidden !important;
 }
 
 body {
@@ -21,12 +22,14 @@ body {
 
   max-width: 2048px;
   margin: 0 auto;
+  // overflow: hidden;
+  // overflow-y: hidden !important;
 }
 
 @media (max-width: 1024px) {
   body {
     padding: 1rem;
-    padding-top: calc(1rem + 64px);
+    padding-top: calc(64px + 1rem);
   }
 }
 

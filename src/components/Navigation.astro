@@ -8,6 +8,9 @@ import aboutIcon from "../assets/icons/about.svg?raw";
 import SocialLinks from "../components/SocialLinks.astro";
 import WorkIcon from "../assets/icons/work.svg?raw";
 import LocationIcon from "../assets/icons/location.svg?raw";
+import BurgerIcon from "../assets/icons/burger.svg?raw";
+
+const { title } = Astro.props;
 
 // Get current path
 const currentPath = Astro.url.pathname;
@@ -73,9 +76,14 @@ const currentPath = Astro.url.pathname;
     let isMobileNavOpen = false;
     document.querySelector(".menu-button").addEventListener("click", () => {
       isMobileNavOpen = !isMobileNavOpen;
+      document.documentElement.style.overflowY = isMobileNavOpen
+        ? "hidden"
+        : "auto";
       document.querySelector(".mobile-nav-content").style.bottom =
         isMobileNavOpen ? "calc(-100vh + 64px)" : "0";
     });
+
+    // document.querySelector("#nav-page-title").textContent = document.title;
   }
 
   // Initialize on page load
@@ -85,11 +93,13 @@ const currentPath = Astro.url.pathname;
   document.addEventListener("astro:after-swap", initializeMobileNav);
 </script>
 
-<div class="mobile-nav">
+<div class="mobile-nav shadowfx">
   <div class="mobile-nav-header">
-    <div class="menu-button"></div>
-    <span>Dan Fessler</span>
-    <div class="menu-button"></div>
+    <div class="menu-button"><Fragment set:html={BurgerIcon} /></div>
+    <a id="nav-page-title" href="/" style="font-size: 1.5rem; line-height: 1;">
+      DAN FESSLER
+    </a>
+    <div style="width: 2rem;"></div>
   </div>
   <div class="mobile-nav-content">
     <div class="profile">
@@ -138,7 +148,7 @@ const currentPath = Astro.url.pathname;
     <div style="flex-grow: 1;"></div>
     <SocialLinks />
     <div class="nav-footer">
-      © {new Date().getFullYear()} Dan Fessler
+      &copy; {new Date().getFullYear()} Dan Fessler
     </div>
   </div>
 </div>
@@ -169,9 +179,14 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (max-height: 790px) {
-    .mobile-nav-content > .profile > .avatar {
+    .mobile-nav-content > .profile {
       display: none;
     }
+  }
+
+  #nav-page-title {
+    text-decoration: none;
+    color: inherit;
   }
 
   .mobile-nav-content {
@@ -197,8 +212,9 @@ const currentPath = Astro.url.pathname;
   .menu-button {
     width: 2rem;
     height: 2rem;
-    background-color: #fff;
-    border-radius: 50%;
+    cursor: pointer;
+    /* background-color: #fff; */
+    /* border-radius: 50%; */
   }
 
   .container {

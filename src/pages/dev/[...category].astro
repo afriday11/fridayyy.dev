@@ -19,6 +19,12 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 ---
 
+<head>
+  <title>
+    Dan Fessler - Development Portfolio {category ? `: ${category}` : ""}
+  </title>
+</head>
+
 <Layout>
   <Gallery
     category={category}

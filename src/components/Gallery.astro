@@ -50,6 +50,29 @@ const filteredPosts = category
 </div>
 
 <script>
+  // Function to scroll to active category
+  function scrollToActiveCategory() {
+    const subnav = document.querySelector(".subnav");
+    const activeItem = document.querySelector(".subnav-item.active");
+
+    if (subnav && activeItem) {
+      const subnavRect = subnav.getBoundingClientRect();
+      const activeItemRect = activeItem.getBoundingClientRect();
+
+      // Calculate the scroll position needed to center the active item
+      const scrollLeft =
+        activeItemRect.left -
+        subnavRect.left -
+        subnavRect.width / 2 +
+        activeItemRect.width / 2;
+
+      subnav.scrollTo({
+        left: scrollLeft,
+        // behavior: "smooth",
+      });
+    }
+  }
+
   // Function to initialize the card animations
   function initializeCardAnimations() {
     const cardContainers =
@@ -126,9 +149,13 @@ const filteredPosts = category
 
   // Initialize on page load
   initializeCardAnimations();
+  scrollToActiveCategory();
 
   // Re-initialize when Astro's view transitions complete
-  document.addEventListener("astro:after-swap", initializeCardAnimations);
+  document.addEventListener("astro:after-swap", () => {
+    initializeCardAnimations();
+    scrollToActiveCategory();
+  });
 </script>
 
 <style>
@@ -156,6 +183,25 @@ const filteredPosts = category
     a {
       text-decoration: none;
       color: inherit;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .subnav {
+      justify-content: flex-start;
+      top: 0;
+      width: 100;
+      left: -1rem;
+      padding: 1rem;
+      padding-top: 0;
+      margin: 0;
+      position: relative;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
