@@ -1,7 +1,7 @@
 {
-  "name": "Your Site Name",
-  "short_name": "Site",
-  "description": "Your site description",
+  "name": "Dan Fessler",
+  "short_name": "Dan Fessler",
+  "description": "A personal blog and portfolio website",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
