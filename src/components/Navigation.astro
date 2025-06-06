@@ -34,16 +34,13 @@ const currentPath = Astro.url.pathname;
             About
           </li>
         </a>
-        <a
-          href="/art"
-          class={currentPath.includes("/art") ? "active" : ""}
-        >
+        <a href="/art" class={currentPath.includes("/art") ? "active" : ""}>
           <li>
             <Fragment set:html={galleryIcon} />
             Art
           </li>
         </a>
-        <a href="/dev" class={currentPath === "/dev" ? "active" : ""}>
+        <a href="/dev" class={currentPath.includes("/dev") ? "active" : ""}>
           <li>
             <Fragment set:html={devIcon} />
             Dev
@@ -55,7 +52,7 @@ const currentPath = Astro.url.pathname;
             Resume
           </li>
         </a>
-        <a href="/blog" class={currentPath === "/blog" ? "active" : ""}>
+        <a href="/blog" class={currentPath.includes("/blog") ? "active" : ""}>
           <li>
             <Fragment set:html={blogIcon} />
             Blog
@@ -71,7 +68,139 @@ const currentPath = Astro.url.pathname;
   </div>
 </div>
 
+<script>
+  function initializeMobileNav() {
+    let isMobileNavOpen = false;
+    document.querySelector(".menu-button").addEventListener("click", () => {
+      isMobileNavOpen = !isMobileNavOpen;
+      document.querySelector(".mobile-nav-content").style.bottom =
+        isMobileNavOpen ? "calc(-100vh + 64px)" : "0";
+    });
+  }
+
+  // Initialize on page load
+  initializeMobileNav();
+
+  // Re-initialize when Astro's view transitions complete
+  document.addEventListener("astro:after-swap", initializeMobileNav);
+</script>
+
+<div class="mobile-nav">
+  <div class="mobile-nav-header">
+    <div class="menu-button"></div>
+    <span>Dan Fessler</span>
+    <div class="menu-button"></div>
+  </div>
+  <div class="mobile-nav-content">
+    <div class="profile">
+      <div class="avatar" style={`background-image: url(${avatar.src})`}></div>
+      <span class="name">DAN FESSLER</span>
+      <span class="subtitle">Creative Director / Engineer</span>
+      <br />
+      <div class="work-location">
+        <div><Fragment set:html={WorkIcon} />Incite Interactive</div>
+        <div><Fragment set:html={LocationIcon} />Pacifica, CA</div>
+      </div>
+    </div>
+    <div style="flex-grow: 1;"></div>
+    <ul class="nav">
+      <a href="/" class={currentPath === "/" ? "active" : ""}>
+        <li>
+          <Fragment set:html={aboutIcon} />
+          About
+        </li>
+      </a>
+      <a href="/art" class={currentPath.includes("/art") ? "active" : ""}>
+        <li>
+          <Fragment set:html={galleryIcon} />
+          Art
+        </li>
+      </a>
+      <a href="/dev" class={currentPath.includes("/dev") ? "active" : ""}>
+        <li>
+          <Fragment set:html={devIcon} />
+          Dev
+        </li>
+      </a>
+      <a href="/resume" class={currentPath === "/resume" ? "active" : ""}>
+        <li>
+          <Fragment set:html={resumeIcon} />
+          Resume
+        </li>
+      </a>
+      <a href="/blog" class={currentPath.includes("/blog") ? "active" : ""}>
+        <li>
+          <Fragment set:html={blogIcon} />
+          Blog
+        </li>
+      </a>
+    </ul>
+    <div style="flex-grow: 1;"></div>
+    <SocialLinks />
+    <div class="nav-footer">
+      © {new Date().getFullYear()} Dan Fessler
+    </div>
+  </div>
+</div>
+
 <style>
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* height: 100%; */
+    z-index: 1000;
+    flex-direction: column;
+    align-items: stretch;
+    /* justify-content: center; */
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #1d1e21;
+    z-index: 1;
+  }
+
+  @media (max-height: 790px) {
+    .mobile-nav-content > .profile > .avatar {
+      display: none;
+    }
+  }
+
+  .mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    /* transform: scaleY(0); */
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #1d1e21;
+    /* z-index: 1000; */
+  }
+
+  .nav-footer {
+    margin-bottom: calc(100vh - 100svh);
+  }
+
+  .menu-button {
+    width: 2rem;
+    height: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -79,11 +208,25 @@ const currentPath = Astro.url.pathname;
     min-width: 320px;
     max-width: 400px;
     position: relative;
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 3rem);
     text-align: center;
     position: sticky;
-    top: 1rem;
+    top: 1.5rem;
     /* border-radius: 1rem; */
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+    }
+
+    /* .mobile-nav-content {
+      display: flex;
+    } */
   }
 
   .container .sticky {

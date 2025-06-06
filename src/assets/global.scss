@@ -8,19 +8,26 @@ body {
 
   font-family: "Montserrat", sans-serif;
   color: #939da3;
-  gap: 1rem;
+  gap: 1.5rem;
   fill: #aaa;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
   line-height: 1.5;
   // overflow-x: hidden;
 }
 
 body {
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 
   max-width: 2048px;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 1rem;
+    padding-top: calc(1rem + 64px);
+  }
 }
 
 h1,
@@ -126,6 +133,7 @@ pre {
 .carousel-header {
   @extend .shadowfx;
   border-radius: 1rem;
+  // width: 100%;
   // max-height: 50vh;
   // min-height: 320px;
   // height: 320px;

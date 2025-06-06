@@ -13,16 +13,28 @@ const { maxWidth } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="description" content="A personal blog and portfolio website" />
+    <meta name="theme-color" content="#1d1e21" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap"
       rel="stylesheet"
     />
     <title>Astro Basics</title>
-    <ClientRouter />
+    <!-- <ClientRouter /> -->
   </head>
   <body>
     <Navigation />
-    <div class="content" style={`max-width: ${maxWidth ? maxWidth+"px" : "100%"};`}>
+    <div
+      class="content"
+      style={`max-width: ${maxWidth ? maxWidth + "px" : "100%"};`}
+    >
       <slot />
     </div>
   </body>
@@ -32,10 +44,12 @@ const { maxWidth } = Astro.props;
   .content {
     flex-grow: 1;
     position: relative;
-    width: 75%;
+    width: calc(75% - 6rem);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    max-width: 100%;
+    /* padding: 0 1rem; */
   }
 
   .content :global(*) {
@@ -43,3 +57,18 @@ const { maxWidth } = Astro.props;
     /* max-width: 100%; */
   }
 </style>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then((registration) => {
+          console.log("ServiceWorker registration successful");
+        })
+        .catch((err) => {
+          console.log("ServiceWorker registration failed: ", err);
+        });
+    });
+  }
+</script>
