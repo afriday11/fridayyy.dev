@@ -34,43 +34,43 @@ You can download the PSD used to create the following gifs [**HERE**](/blogimage
   <div>
 
 **Pixel-bush, AA-brush, Soft-brush**  
- ![](http://danfessler.com/blogimages/hdindexpaint/brushtypes.gif)
+ ![](/blogimages/hdindexpaint/brushtypes.gif)
 
 **Procedural Dithering**  
- ![](http://danfessler.com/blogimages/hdindexpaint/ditheropacity.gif)
+ ![](/blogimages/hdindexpaint/ditheropacity.gif)
 
 **Dither Sampling**  
- ![](http://danfessler.com/blogimages/hdindexpaint/dithersampling.gif)
+ ![](/blogimages/hdindexpaint/dithersampling.gif)
 
 **Dither Patterns**  
- ![](http://danfessler.com/blogimages/hdindexpaint/ditherpatterns.gif)
+ ![](/blogimages/hdindexpaint/ditherpatterns.gif)
 
 **Smudge**  
- ![](http://danfessler.com/blogimages/hdindexpaint/smudge.gif)
+ ![](/blogimages/hdindexpaint/smudge.gif)
 
 **Gradient**  
-![](http://danfessler.com/blogimages/hdindexpaint/Gradient.gif)
+![](/blogimages/hdindexpaint/Gradient.gif)
 
 </div>
 <div>
 
 **AA transforms**  
- ![](http://danfessler.com/blogimages/hdindexpaint/transforms.gif)
+ ![](/blogimages/hdindexpaint/transforms.gif)
 
 **Alpha-blending**  
- ![](http://danfessler.com/blogimages/hdindexpaint/alphablend.gif)
+ ![](/blogimages/hdindexpaint/alphablend.gif)
 
 **Blend Modes**  
- ![](http://danfessler.com/blogimages/hdindexpaint/blendmodes.gif)
+ ![](/blogimages/hdindexpaint/blendmodes.gif)
 
 **Fixed index Adjustments**  
- ![](http://danfessler.com/blogimages/hdindexpaint/adjust_fixedindexing.gif)
+ ![](/blogimages/hdindexpaint/adjust_fixedindexing.gif)
 
 **Dynamic index Adjustments**  
- ![](http://danfessler.com/blogimages/hdindexpaint/adjustments_indexed.gif)
+ ![](/blogimages/hdindexpaint/adjustments_indexed.gif)
 
 **Dynamic re-indexing**  
- ![](http://danfessler.com/blogimages/hdindexpaint/reindex.gif)
+ ![](/blogimages/hdindexpaint/reindex.gif)
 
   </div>
 </div>
