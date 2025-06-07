@@ -1,7 +1,12 @@
 ---
-const { categories, category, posts, baseUrl } = Astro.props;
+const { category, posts, baseUrl } = Astro.props;
 
 console.log("posts", posts);
+const categories: string[] = posts
+  .map((post: any) => post.frontmatter.categories)
+  .flat();
+const uniqueCategories = [...new Set(categories)];
+
 const filteredPosts = category
   ? posts.filter((post: any) => post.frontmatter.categories.includes(category))
   : posts;
@@ -18,7 +23,7 @@ const filteredPosts = category
       href={baseUrl}>All</a
     >
     {
-      categories.map((thisCategory: string) => (
+      uniqueCategories.map((thisCategory: string) => (
         <a
           class={`subnav-item ${thisCategory === category ? "active shadowfx" : ""}`}
           href={`${baseUrl}/${thisCategory}`}

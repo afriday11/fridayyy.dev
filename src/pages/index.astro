@@ -4,7 +4,16 @@ import CarouselHeader from "../components/Carousel.jsx";
 import Card from "../components/Card.astro";
 
 const matches = import.meta.glob("./blog/*.md", { eager: true });
-const posts = Object.values(matches).slice(0, 2);
+
+// posts sorted by date, take the first 2
+const posts = Object.values(matches)
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.pubDate).getTime() -
+      new Date(a.frontmatter.pubDate).getTime()
+    );
+  })
+  .slice(0, 2);
 ---
 
 <Layout>

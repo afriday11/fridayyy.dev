@@ -2,28 +2,27 @@
 import Layout from "../../layouts/Layout.astro";
 import Gallery from "../../components/Gallery.astro";
 
-const matches = import.meta.glob("./*.md", { eager: true });
-const posts = Object.values(matches);
+const { category } = Astro.params;
+const { posts } = Astro.props;
 
 export function getStaticPaths() {
+  const matches = import.meta.glob("./*.md", { eager: true });
+  const posts = Object.values(matches);
+  const categories = posts.flatMap((post: any) => post.frontmatter.categories);
+  const uniqueCategories = [...new Set(categories)];
+
+  const dynamicPaths = uniqueCategories.map((category) => ({
+    params: { category },
+    props: { posts },
+  }));
+
   return [
-    { params: { category: "3d-modeling" } },
-    { params: { category: "concept" } },
-    { params: { category: "pixel" } },
-    { params: { category: "direction" } },
-    { params: { category: "personal" } },
-    { params: { category: undefined } },
+    ...dynamicPaths,
+    { params: { category: undefined }, props: { posts } },
   ];
 }
-
-const { category } = Astro.params;
 ---
 
 <Layout>
-  <Gallery
-    category={category}
-    posts={posts}
-    categories={["3d-modeling", "concept", "pixel", "direction", "personal"]}
-    baseUrl="/art"
-  />
+  <Gallery category={category} posts={posts} baseUrl="/art" />
 </Layout>

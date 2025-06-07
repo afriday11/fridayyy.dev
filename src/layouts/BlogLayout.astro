@@ -1,10 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Disqus from "../components/Disqus.astro";
+
+const { title, image, tags, author, pubDate, description } =
+  Astro.props.content;
+// const theseProps = Astro.props;
 ---
 
+<title>{title}</title>
+
 <Layout maxWidth={1440}>
+  <!-- <pre>{JSON.stringify(theseProps, null, 2)}</pre> -->
   <div class="post-content">
+    <p><img src={image.url} alt={image.alt} /></p>
+    <h1>{title}</h1>
+    <p>
+      {tags.join(", ")}
+    </p>
+    <p>
+      {
+        new Date(pubDate).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }
+    </p>
     <slot />
+    <Disqus />
   </div>
 </Layout>
 

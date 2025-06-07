@@ -4,15 +4,23 @@ import Card from "../components/Card.astro";
 
 const matches = import.meta.glob("./blog/*.md", { eager: true });
 const posts = Object.values(matches);
+
+// sorted by date
+const sortedPosts = posts.sort((a, b) => {
+  return (
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+  );
+});
 ---
 
 <Layout maxWidth="1024">
   <h2>Latest post</h2>
-  <Card post={posts[0]} horizontal={true} />
+  <Card post={sortedPosts[0]} horizontal={true} />
 
   <h2>All posts</h2>
   <div class="content">
-    {posts.map((post: any, i) => <Card post={post} horizontal={false} />)}
+    {sortedPosts.map((post: any, i) => <Card post={post} horizontal={false} />)}
   </div>
 </Layout>
 

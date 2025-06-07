@@ -13,6 +13,7 @@ body {
   // letter-spacing: 1px;
   line-height: 1.5;
   overflow-x: clip;
+  // font-weight: lighter;
   // overflow-y: hidden !important;
 }
 
@@ -168,12 +169,17 @@ img {
   max-height: max(calc(100vh - 2rem), 640px);
   max-width: 100%;
   vertical-align: bottom;
+  border-radius: 6px;
 }
 
 p:has(img) {
-  @extend .shadowfx;
-  border-radius: 10px;
-  text-align: center;
-  background: black;
+  // border-radius: 10px;
+  // text-align: center;
+  // background: black;
   overflow: hidden;
+}
+
+strong {
+  font-weight: 600;
+  color: #fff;
 }
