@@ -13,15 +13,12 @@ const posts = Object.values(matches)
       new Date(a.frontmatter.pubDate).getTime()
     );
   })
-  .slice(0, 2);
+  .slice(0, 3);
 ---
 
 <Layout>
   <div class="container">
-    <CarouselHeader client:load />
-
-    <div class="blurb">
-      <!-- <h1>Art and Alchemy</h1> -->
+    <!-- <div class="blurb">
       <div>
         <h1>Artist by Day, Developer by Night</h1>
         <p style="font-size: 1.25rem;">
@@ -31,10 +28,13 @@ const posts = Object.values(matches)
           emphasis on quality and the user experience.
         </p>
       </div>
-    </div>
+    </div> -->
+    <CarouselHeader client:load />
+
     <div class="latestPosts">
       <h2>Latest Posts</h2>
       <div class="posts">
+        <!-- <CarouselHeader client:load /> -->
         {posts.map((post: any, i) => <Card post={post} />)}
       </div>
     </div>
