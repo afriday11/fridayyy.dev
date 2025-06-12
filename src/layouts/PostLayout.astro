@@ -8,6 +8,8 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </Layout>
 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <style>
   .post-content {
     /* text-align: center; */
@@ -26,14 +28,18 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
     /* margin-left: auto;
     margin-right: auto; */
+    display: block;
     margin: 2rem auto;
     box-sizing: border-box;
     /* margin: 1.5rem auto; */
     /* padding: 2rem; */
   }
-  .post-content > :global(p:has(img):first-of-type) {
-    max-width: 100%;
-    border-radius: 1rem;
+  .post-content > :global(iframe),
+  .post-content > :global(video),
+  .post-content > :global(p:has(img)) {
+    width: 100%;
+    max-width: 1024px;
+    /* border-radius: 1rem; */
     overflow: hidden;
 
     img {
@@ -42,11 +48,14 @@ import Layout from "../layouts/Layout.astro";
       object-fit: cover;
     }
   }
-  .post-content > :global(p:first-of-type) {
+  .post-content > :global(*:first-child) {
     margin-top: 0;
+    max-width: 100%;
+    border-radius: 1rem;
   }
 
   .post-content > :global(img) {
     border-radius: 0.5rem;
+    
   }
 </style>

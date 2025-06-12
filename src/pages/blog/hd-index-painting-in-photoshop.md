@@ -140,11 +140,11 @@ Play around!
 
 Some artwork from _Chasm_ using this technique:
 
-![Sky](/blogimages/hdindexpaint/sky.png)
-
-![Rock 1](/blogimages/hdindexpaint/rock1.png)
-
-![Rock 2](/blogimages/hdindexpaint/rock2.png)
+<p>
+<img src="/blogimages/hdindexpaint/sky.png" alt="Sky" style="width: 100%; image-rendering: pixelated;" />
+<img src="/blogimages/hdindexpaint/rock1.png" alt="Rock 1" style="width: 100%; image-rendering: pixelated;" />
+<img src="/blogimages/hdindexpaint/rock2.png" alt="Rock 2" style="width: 100%; image-rendering: pixelated;" />
+</p>
 
 ### Take-Aways
 

@@ -6,7 +6,7 @@ date: "06/03/2025"
 categories: [open-source, tools]
 ---
 
-![react-dockable-splash](https://github.com/user-attachments/assets/3465dd6d-5ea8-4249-ae9d-09e498d26797)
+![react-dockable-splash](/gallery/react-dockable.jpg)
 
 > ⚠️ This project is currently in pre-release to get early feedback. API may change.
 
