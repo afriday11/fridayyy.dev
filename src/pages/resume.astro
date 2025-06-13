@@ -1,0 +1,292 @@
+---
+import Layout from "../layouts/PostLayout.astro";
+import resumeData from "../resume.json";
+---
+
+<style>
+  :root {
+    --primary-color: #ffffff;
+    --text-color: #1f2937;
+    --secondary-bg: #1d1e21;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    /* display: none; */
+  }
+
+  .name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    /* border-bottom: 2px solid var(--primary-color); */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-item {
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    position: relative;
+  }
+
+  .experience-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: calc(2rem - 2px);
+    top: 5rem;
+    width: 4px;
+    height: calc(100% - 4rem);
+    background-color: var(--primary-color);
+    opacity: 0.125;
+    border-radius: 1rem;
+  }
+
+  .company-logo-container {
+    width: 4rem;
+    height: 4rem;
+    box-sizing: border-box;
+    object-fit: contain;
+    /* background-color: white; */
+    position: relative;
+    z-index: 1;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .company-content {
+    flex: 1;
+  }
+
+  .company-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .dates {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+
+  .highlights {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1rem;
+  }
+
+  .highlights li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .highlights li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .project-card {
+    background-color: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+    padding-bottom: 4rem;
+    position: relative;
+    font-size: 0.9rem;
+  }
+
+  .project-card > *:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  .project-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .project-description {
+    margin: 0;
+    color: #4b5563;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
+<title>{resumeData.name} | Resume</title>
+<Layout>
+  <header class="header">
+    <h1 class="name">{resumeData.name}</h1>
+    <h4 class="title">{resumeData.title}</h4>
+    <div class="contact-info">
+      <a href={`mailto:${resumeData.email}`} class="contact-item">
+        {resumeData.email}
+      </a>
+      <a href={`tel:${resumeData.phone}`} class="contact-item">
+        {resumeData.phone}
+      </a>
+      <a
+        href={resumeData.website}
+        class="contact-item"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {resumeData.website}
+      </a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">Executive Summary</h2>
+    {resumeData.summary.split("\n").map((line) => <p>{line}</p>)}
+    <h4>Highlights</h4>
+    <ul class="highlights">
+      {resumeData.highlights.map((highlight) => <li>{highlight}</li>)}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+    {
+      resumeData.experience.map((job) => (
+        <div class="experience-item">
+          <div class="company-logo-container shadowfx">
+            <img
+              src={job.logo}
+              alt={`${job.company} logo`}
+              class="company-logo"
+            />
+          </div>
+          <div class="company-content">
+            <h3 class="company-title">{job.title}</h3>
+            <span>{job.company}</span>
+            <p class="dates">{job.dates}</p>
+            {job.description.split("\n").map((line) => (
+              <p>{line}</p>
+            ))}
+            <ul class="highlights">
+              <h4>Highlights</h4>
+              {job.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+            {job.projects && job.projects.length > 0 && (
+              <div class="projects-grid">
+                {job.projects.map((project) => (
+                  <div class="project-card shadowfx">
+                    <h4 class="project-title">{project.name}</h4>
+                    <p class="project-description">{project.description}</p>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project →
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="section">
+    {
+      resumeData.projects && resumeData.projects.length > 0 && (
+        <>
+          <h2 class="section-title">Miscellaneous Projects</h2>
+          <div class="projects-grid">
+            {resumeData.projects.map((project) => (
+              <div class="project-card shadowfx">
+                {/* <img
+              src={project.thumbnail}
+              alt={project.name}
+              class="project-thumbnail"
+            /> */}
+                <h4 class="project-title">{project.name}</h4>
+                <p class="project-description">{project.description}</p>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </section>
+</Layout>

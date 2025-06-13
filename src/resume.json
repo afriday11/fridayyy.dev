@@ -1,0 +1,183 @@
+{
+  "name": "Dan Fessler",
+  "title": "Creative Director for Games",
+  "email": "dan@danfessler.com",
+  "phone": "760.985.4865",
+  "website": "danfessler.com",
+  "summary": "I am a Creative Director and Executive for games with 20 years of industry experience in mobile, social, AI, and UGC platforms. I bring a visual-perspective to my approach as a creative leader with an emphasis on quality and user experience.\nAs a self-taught engineer I have the unique ability to bridge the gap between technical and creative domains to solve critical cross-discipline problems and communicate ideas across departments.\nI am very hands-on and capable of doing all the jobs necessary that I direct, and excel at growing teams from the ground up, and mentoring them to become leaders themselves.",
+  "highlights": [
+    "20 years indistry experience software and game development",
+    "20+ commercial titles shipped",
+    "10+ Years in creative executive leadership roles",
+    "Proficient in frontend development with a focus on Typescript and React"
+  ],
+  "experience": [
+    {
+      "company": "Incite Interactive",
+      "logo": "/incite_logo_thumb.png",
+      "title": "Co-founder / Chief Creative Officer",
+      "dates": "May 2023 - Present",
+      "description": "Co-founded and operate an AI-first games studio on a mission to incite the best stories in games, Funded by a16z's SPEEDRUN. We're busy building the next generation Life Sim with living AI agents built on top of the world's first Agentic Game Engine, InciteWorlds.com.",
+      "highlights": [
+        "Raised pre-seed from a16z's SPEEDRUN, and other top tier investors",
+        "Oversee all creative efforts including Corporate Branding, Marketing, Game Design, Bis-Dev, and First Party Games/Experiences.",
+        "Directly contributed to development efforts including art, engineering, and design.",
+        "Grew and directly manage a team of over 15 artists/designers/engineers"
+      ],
+      "projects": [
+        {
+          "name": "Incite Worlds",
+          "description": "The world's first Agentic UGC platform, InciteWorlds.com.",
+          "url": "https://inciteworlds.com"
+        },
+        {
+          "name": "Auravale",
+          "description": "An agentic life-sim where your worlds shape your story. Built on top of the Incite Worlds platform.",
+          "url": "https://auravale.io"
+        }
+      ]
+    },
+    {
+      "company": "Manticore Games",
+      "logo": "/manticore_games_logo.jpg",
+      "title": "Chief Visual Officer",
+      "dates": "Jan 2017 - May 2023",
+      "description": "As a founding member of the art department, I established and led the visual direction for all games while developing efficient art pipelines and tools. I was responsible for creating in-game, concept, and UI art content while managing both in-house and outsourced art teams.",
+      "highlights": [
+        "Founded and led the art department, defining visual style and standards for all games",
+        "Developed and streamlined art pipelines to maintain consistent quality and fast turn-around",
+        "Created proprietary art and animation tools to improve workflow and future development",
+        "Managed and directed both in-house and outsourced art teams",
+        "Developed automation tools including 3ds Max render scripts and Photoshop scripts",
+        "Created comprehensive in-game, concept, and UI art content"
+      ],
+      "projects": [
+        {
+          "name": "CoreGames.com",
+          "description": "Core is a free-to-play online video game platform with an integrated game creation system, developed by Manticore Games.",
+          "url": "https://coregames.com"
+        },
+        {
+          "name": "Art Directing the Metaverse",
+          "description": "How do you art direct the infinite? This was the problem I faced when we started working on Core.",
+          "url": "https://magazine.artstation.com/2020/05/art-directing-the-multiverse/"
+        }
+      ]
+    },
+    {
+      "company": "Zynga",
+      "logo": "/zynga_logo.jpg",
+      "title": "Art Director",
+      "dates": "Sep 2012 - Dec 2016",
+      "description": "I was bought to Zynga with the acquisition of A Bit Lucky as Art Director on titles including Solstice Arena, Empires and Allies, Mountain Goat Mountain, and Farmville. Later I joined the R&D division which prototyped forward-thinking concepts including VR and experimental social games.",
+      "highlights": [
+        "Shipped 3 titles including Solstice Arena, Empires and Allies, Mountain Goat Mountain, and Farmville",
+        "Worked on R&D projects including VR and experimental social games"
+      ],
+      "projects": [
+        {
+          "name": "Solstice Arena Trailer",
+          "description": "Battle in a fast paced multiplayer battle arena! All fighting. No farming.",
+          "url": "https://www.youtube.com/watch?v=dyhl-kbjsIA"
+        },
+        {
+          "name": "Empires and Allies Trailer",
+          "description": "An all-new modern military strategy game that puts the weapons of modern war at your fingertips in a never-ending battle to conquer the world.",
+          "url": "https://www.youtube.com/watch?v=xp8sWWBayTQ"
+        },
+        {
+          "name": "Mountain Goat Mountain Trailer",
+          "description": "Avoid obstacles and climb as high as you can in this Q*bert-meets-crossy-road style game for mobile and VR.",
+          "url": "https://www.youtube.com/shorts/poa4CqH3Qj0"
+        }
+      ]
+    },
+    {
+      "company": "A Bit Lucky",
+      "logo": "/abitlucky_logo.png",
+      "title": "Lead Artist",
+      "dates": "jan 2010 - Sep 2012",
+      "description": "As a founding member of the art department, I established and led the visual direction for all games while developing efficient art pipelines and tools. I was responsible for creating in-game, concept, and UI art content while managing both in-house and outsourced art teams.",
+      "highlights": [
+        "Defined the visual style and standards for all games",
+        "Streamlined art pipelines and developed automation tools to maintain consistent quality and fast turn-around",
+        "Created proprietary art and animation tools to improve workflow and future development",
+        "Managed and directed both in-house and outsourced art teams"
+      ],
+      "projects": [
+        {
+          "name": "Lucky Train",
+          "description": "Send trains throughout your network of friends and beyond! Players use the fortunes earned from their railroad to build up a thriving county.",
+          "url": "https://www.youtube.com/watch?v=ijcYMQQS1ws"
+        },
+        {
+          "name": "Lucky Space",
+          "description": "Build and run your own bustling space colony, watch it thrive or be destroyed by cosmic disasters!",
+          "url": "https://www.youtube.com/watch?v=X1ntkR_VopY"
+        }
+      ]
+    },
+    {
+      "company": "Glu Mobile",
+      "logo": "/glu_mobile_logo.jpg",
+      "title": "Senior Artist",
+      "dates": "Apr 2008 - Sep 2009",
+      "description": "Created in-game, concept, and UI art content for mobile games, specializing in animation for in-game sprites and porting art assets for various devices and screen resolutions.",
+      "highlights": [
+        "Lead Artist on \"Family Guy: Uncensored\" for mobile and iPhone",
+        "Supporting Artist on \"Space Monkey\" for iPhone",
+        "Specialized in animation for in-game sprites",
+        "Ported all art assets for a wide range of devices and screen resolutions",
+        "Worked closely with IP owners for licensed game content to maintain consistent quality",
+        "Defined visual style of games as Lead"
+      ]
+    },
+    {
+      "company": "Gameloft",
+      "logo": "/gameloft_logo.jpg",
+      "title": "Junior 2D Artist",
+      "dates": "Aug 2007 - Apr 2008",
+      "description": "Created in-game, concept, and UI art content for mobile games, specializing in tiled backgrounds and scenes.",
+      "highlights": [
+        "Specialized in tiled backgrounds/scenes for \"New York Nights 2\"",
+        "Created polished game mock-ups to pitch prospective titles",
+        "Developed in-game, concept, and UI art content"
+      ]
+    },
+    {
+      "company": "Self-Employed",
+      "logo": "/blue_knight_avatar.jpg",
+      "title": "Freelance Artist for Games",
+      "dates": "Jan 2006 - Present",
+      "description": "I began my career as a self-taught Pixel Artist for mobile games and electronic toys before graduating from highschool. I freelanced for various clients and worked with a variety of publishers, including MGA entertainment, Mattel, Black Lantern, and others.",
+      "highlights": [
+        "Chasm - Bitkid Games (2018)",
+        "Data Defense - COG1 Interactive (2009)",
+        "Diego: Dinosaur Rescue - Black Lantern (2008)",
+        "Dora: Snow Princess - Black Lantern (2008)",
+        "Barbie Fairytopia - Aha! Studios (2007)",
+        "Pixel Chix Babysitter - Aha! Studios (2007)",
+        "Cube World Block Bash - Aha! Studios (2007)",
+        "Rescue Pets - Aha! Studios (2006)",
+        "Miuchiz Bratz - Aha! Studios (2006)",
+        "Miuchiz Monsterz - Aha! Studios (2006)",
+        "Miuchiz Pawz - Aha! Studios (2006)"
+      ],
+      "projects": [
+        {
+          "name": "Chasm",
+          "description": "A metroid-vania game in which you play a new recruit undertaking your first mission for the Guildean Kingdom",
+          "url": "https://chasmgame.com"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project 1",
+      "description": "A brief description of the project.",
+      "url": "https://project1.com",
+      "thumbnail": "https://via.placeholder.com/150"
+    }
+  ]
+}

@@ -6,9 +6,12 @@ import Layout from "../layouts/Layout.astro";
   <div class="post-content">
     <slot />
   </div>
+  <script
+    slot="head"
+    async
+    src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"></script>
 </Layout>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <style>
   .post-content {
@@ -38,9 +41,11 @@ import Layout from "../layouts/Layout.astro";
   .post-content > :global(video),
   .post-content > :global(p:has(img)) {
     width: 100%;
-    max-width: 1024px;
-    /* border-radius: 1rem; */
+    max-width: 960px;
+    /* max-height: 90vh; */
+    border-radius: 0.5rem;
     overflow: hidden;
+    text-align: center;
 
     img {
       width: 100%;
@@ -56,6 +61,5 @@ import Layout from "../layouts/Layout.astro";
 
   .post-content > :global(img) {
     border-radius: 0.5rem;
-    
   }
 </style>

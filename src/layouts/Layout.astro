@@ -23,11 +23,13 @@ const { maxWidth } = Astro.props;
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
 
+    <slot name="head" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap"
       rel="stylesheet"
     />
-    <title>Astro Basics</title>
+    <title>Dan Fessler</title>
     <ClientRouter />
   </head>
   <body>

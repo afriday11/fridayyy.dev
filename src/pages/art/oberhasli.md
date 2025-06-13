@@ -31,4 +31,4 @@ Many technical challenges needed to be overcome. We wanted the event to be truly
 
 # Trailer
 
-<iframe width="1440" height="810" style="width:100%; aspect-ratio:16/9" src="https://www.youtube.com/embed/vkQflLL_HT8?si=1yHO0ZlsBJ_zMEgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="aspect-ratio:16/9" src="https://www.youtube.com/embed/vkQflLL_HT8?si=1yHO0ZlsBJ_zMEgx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
