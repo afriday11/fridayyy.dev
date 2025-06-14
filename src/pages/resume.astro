@@ -168,7 +168,7 @@ import resumeData from "../resume.json";
 
   .project-description {
     margin: 0;
-    color: #4b5563;
+    /* color: #4b5563; */
   }
 
   @media (max-width: 768px) {
@@ -180,6 +180,20 @@ import resumeData from "../resume.json";
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
+    }
+  }
+
+  @media print {
+    .project-card {
+      display: none;
+    }
+
+    .company-logo-container {
+      box-shadow: none !important;
+    }
+
+    .projects-section {
+      display: none !important;
     }
   }
 </style>
@@ -264,7 +278,7 @@ import resumeData from "../resume.json";
     }
   </section>
 
-  <section class="section">
+  <section class="section projects-section">
     {
       resumeData.projects && resumeData.projects.length > 0 && (
         <>

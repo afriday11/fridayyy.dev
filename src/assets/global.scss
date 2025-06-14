@@ -183,3 +183,12 @@ strong {
   font-weight: 600;
   color: #fff;
 }
+
+@media print {
+  :root {
+    font-size: 10pt !important;
+    --primary-color: #000000;
+    --text-color: #000000;
+    --secondary-bg: #000000;
+  }
+}

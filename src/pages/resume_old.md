@@ -70,31 +70,75 @@ I got my start in the games industry as a pixel artist in the pre-iphone era of 
 
 ## Projects:
 
-- **[React-Dockable](https://github.com/danfessler/react-dockable)**  
-  A React library to create beautiful dockable tabbed interfaces for tools, editors, and more. Used by InciteWorlds.com
-- **[React-PanelGroup](https://github.com/danfessler/react-panelgroup)**  
-  An Open Source react component for resizable panel layouts, used by Meta. Over 80k downloads on NPM. Also leveraged by React Dockable
-- **[Index Painter](https://index-painter-2.netlify.app/)**  
-  A pixel art editor written in React/Typescript which natively implements [HD Index Painting](http://danfessler.com/blog/hd-index-painting-in-photoshop) and uses webgl for graphics accelerated drawing
-- **[ctx game engine](https://github.com/DanFessler/ctx-game)**  
-   A web-first game engine with a unity-like editor and component system with a canvas2D renderer. Leverages React-Dockable for its UI
-- **[Pixel Socket](pixel-socket.onrender.com)**  
-  A multiplayer pixel art canvas using Socket.io and canvas2D
-- **[Huddle Voice Chat](https://x.com/DanFessler/status/1571025513644457984/video/1)**  
-  A virtual office voice-chat application which uses the concept of proximity-based "huddles" to connect users.
-- **[Routinify](https://x.com/DanFessler/status/1079628876756611073/photo/1)**  
-  A productivity app to encourage and maintain personal routines without scheduling
-- **[Core Visual Programming](https://coreflow.netlify.app/)**  
-  A prototype developed for Core Games to allow for visual scripting in editor. At runtime, the graph compiles to LUA using Core's API. Written in React
-- **[Incite Visual Programming](https://x.com/DanFessler/status/1781069066717028644/video/1)**  
-  A prototype developed for Incite Worlds to allow for visual scripting of Agentic scenarios using LLM-powered "language gates"
-- **[Parsnip](https://github.com/DanFessler/parsnip)**  
-  A simple yet powerful parser generator for JavaScript allowing you to write custom domain specific languages using an object-based grammar schema. Used for my own custom DSL projects.
-- **[BASIN](https://github.com/DanFessler/basin)**  
-  A lightweight AST (abstract syntax tree) interpreter & runtime built in javascript.
-- **[Basic.js](https://github.com/DanFessler/basic.js)**  
-  a BASIC interpreter written in JavaScript, using the BASIN runtime.
-- **[iValueSavings](https://ivaluesavings.com)**  
-  A savings club and newsletter with referral marketing
-- **[MilkManPlus](https://milkmanplus.com)**  
-  A service portal for a local Milkman business
+"projects": [
+{
+"name": "React-Dockable",
+"description": "A React library to create beautiful dockable tabbed interfaces for tools, editors, and more. Used by InciteWorlds.com",
+"url": "https://github.com/danfessler/react-dockable"
+},
+{
+"name": "React-PanelGroup",
+"description": "An Open Source react component for resizable panel layouts, used by Meta. Over 80k downloads on NPM. Also leveraged by React Dockable",
+"url": "https://github.com/danfessler/react-panelgroup"
+},
+{
+"name": "Index Painter",
+"description": "A pixel art editor written in React/Typescript which natively implements HD Index Painting and uses webgl for graphics accelerated drawing",
+"url": "https://index-painter-2.netlify.app/"
+},
+{
+"name": "ctx game engine",
+"description": "A web-first game engine with a unity-like editor and component system with a canvas2D renderer. Leverages React-Dockable for its UI",
+"url": "https://github.com/DanFessler/ctx-game"
+},
+{
+"name": "Pixel Socket",
+"description": "A multiplayer pixel art canvas using Socket.io and canvas2D",
+"url": "pixel-socket.onrender.com"
+},
+{
+"name": "Huddle Voice Chat",
+"description": "A virtual office voice-chat application which uses the concept of proximity-based \"huddles\" to connect users.",
+"url": "https://x.com/DanFessler/status/1571025513644457984/video/1"
+},
+{
+"name": "Routinify",
+"description": "A productivity app to encourage and maintain personal routines without scheduling",
+"url": "https://x.com/DanFessler/status/1079628876756611073/photo/1"
+},
+{
+"name": "Core Visual Programming",
+"description": "A prototype developed for Core Games to allow for visual scripting in editor. At runtime, the graph compiles to LUA using Core's API. Written in React",
+"url": "https://coreflow.netlify.app/"
+},
+{
+"name": "Incite Visual Programming",
+"description": "A prototype developed for Incite Worlds to allow for visual scripting of Agentic scenarios using LLM-powered \"language gates\"",
+"url": "https://x.com/DanFessler/status/1781069066717028644/video/1"
+},
+{
+"name": "Parsnip",
+"description": "A simple yet powerful parser generator for JavaScript allowing you to write custom domain specific languages using an object-based grammar schema. Used for my own custom DSL projects.",
+"url": "https://github.com/DanFessler/parsnip"
+},
+{
+"name": "BASIN",
+"description": "A lightweight AST (abstract syntax tree) interpreter & runtime built in javascript.",
+"url": "https://github.com/DanFessler/basin"
+},
+{
+"name": "Basic.js",
+"description": "a BASIC interpreter written in JavaScript, using the BASIN runtime.",
+"url": "https://github.com/DanFessler/basic.js"
+},
+{
+"name": "iValueSavings",
+"description": "A savings club and newsletter with referral marketing",
+"url": "https://ivaluesavings.com"
+},
+{
+"name": "MilkManPlus",
+"description": "A service portal for a local Milkman business",
+"url": "https://milkmanplus.com"
+}
+]
