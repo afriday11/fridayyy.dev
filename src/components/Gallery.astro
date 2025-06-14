@@ -278,15 +278,17 @@ const filteredPosts = category
     background-position: center;
     background-image: inherit;
     transform-origin: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     /* background-scale: 2; */
     /* transform: translateZ(-100px); */
-    scale: 1;
-    transition: scale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    scale: 1.05;
+    filter: blur(0px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-bg:hover {
-    scale: 1.05;
+    scale: 1;
+    filter: blur(4px);
     /* scale: 1.025; */
   }
 
@@ -326,7 +328,7 @@ const filteredPosts = category
     /* background: red; */
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 25%,
       rgba(0, 0, 0, 0)
     );
     /* backdrop-filter: blur(4px); */
