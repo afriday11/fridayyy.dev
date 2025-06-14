@@ -171,9 +171,13 @@ import resumeData from "../resume.json";
     /* color: #4b5563; */
   }
 
-  @media (max-width: 768px) {
-    body {
-      padding: 1rem;
+  @media (max-width: 600px) {
+    .experience-item {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-item:not(:last-child)::after {
+      display: none;
     }
 
     .contact-info {
@@ -256,6 +260,7 @@ import resumeData from "../resume.json";
               ))}
             </ul>
             {job.projects && job.projects.length > 0 && (
+              <h4>Projects</h4>
               <div class="projects-grid">
                 {job.projects.map((project) => (
                   <div class="project-card shadowfx">

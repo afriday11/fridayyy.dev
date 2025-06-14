@@ -2,21 +2,25 @@
 import Layout from "../../layouts/Layout.astro";
 import Gallery from "../../components/Gallery.astro";
 
-const matches = import.meta.glob("./*.md", { eager: true });
-const posts = Object.values(matches);
+const { category } = Astro.params;
+const { posts } = Astro.props;
 
 export function getStaticPaths() {
+  const matches = import.meta.glob("./*.md", { eager: true });
+  const posts = Object.values(matches);
+  const categories = posts.flatMap((post: any) => post.frontmatter.categories);
+  const uniqueCategories = [...new Set(categories)];
+
+  const dynamicPaths = uniqueCategories.map((category) => ({
+    params: { category },
+    props: { posts },
+  }));
+
   return [
-    { params: { category: "websites" } },
-    { params: { category: "tools" } },
-    { params: { category: "open-source" } },
-    { params: { category: "languages" } },
-    { params: { category: "other" } },
-    { params: { category: undefined } },
+    ...dynamicPaths,
+    { params: { category: undefined }, props: { posts } },
   ];
 }
-
-const { category } = Astro.params;
 ---
 
 <head>
@@ -31,5 +35,6 @@ const { category } = Astro.params;
     posts={posts}
     categories={["websites", "tools", "open-source", "languages", "other"]}
     baseUrl="/dev"
+    persistText={true}
   />
 </Layout>

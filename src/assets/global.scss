@@ -114,7 +114,12 @@ tr:nth-child(even) {
 }
 
 /* Style for markdown table headers */
+table {
+  display: table !important;
+}
+
 thead {
+  width: 100%;
   background-color: #2a2d30;
 }
 

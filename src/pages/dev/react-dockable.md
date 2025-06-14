@@ -1,9 +1,10 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/react-dockable.jpg
-title: "React-Dockable, a library to create beautiful dockable tabbed interfaces"
+title: "React-Dockable"
+description: "a library to create beautiful dockable tabbed interfaces"
 date: "06/03/2025"
-categories: [open-source, tools]
+categories: [open-source, tools, react]
 ---
 
 ![react-dockable-splash](/gallery/react-dockable.jpg)

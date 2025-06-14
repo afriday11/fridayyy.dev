@@ -33,6 +33,7 @@ const horizontal = Astro.props.horizontal || false;
     /* height: 320px; */
     border-radius: 0.75rem;
     display: flex;
+    gap: 0.5rem;
     flex-direction: column;
     /* justify-content: space-between; */
     overflow: hidden;
@@ -51,12 +52,15 @@ const horizontal = Astro.props.horizontal || false;
       /* max-height: 300px; */
     }
   }
-  @media (max-width: 648px) {
+  @media (max-width: 1280px) {
     .post.horizontal {
       flex-direction: column;
+      max-height: unset;
 
       .post-thumbnail {
         width: 100%;
+        height: unset;
+        aspect-ratio: 16 / 9;
       }
 
       .post-content {
@@ -71,6 +75,7 @@ const horizontal = Astro.props.horizontal || false;
   }
   .post-content {
     padding: 1rem;
+    box-sizing: border-box;
     /* height: 400px; */
     /* width: 40%; */
     position: relative;
