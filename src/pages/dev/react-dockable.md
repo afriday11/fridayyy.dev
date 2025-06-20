@@ -22,7 +22,7 @@ React-Dockable is a React library to create beautiful dockable tabbed interfaces
 
 Writing tools is hard, and half the battle is constantly redesigning your UI to accommodate for new features. This is why many companies implement robust dockable UI systems in tools like Unity, Unreal, and Photoshop, which ensures every new feature has a home and puts the user in control of their workflow.
 
-React-Dockable was originally created for my own projects and tools such as [Index Painter](/dev/index-painter) and [CTX Game Engine](https://github.com/DanFessler/ctx-game), but after having many requests from friends and collegues I re-wrote and open-sourced to proejct for others to use as well. It was also used by our agentic UGC platform, [Incite Worlds](https://InciteWorlds.com).
+React-Dockable was originally created for my own projects and tools such as [Index Painter](/dev/index-painter) and [CTX Game Engine](https://github.com/DanFessler/ctx-game), but after many requests from friends and collegues I open-sourced the proejct for others to use as well. It was also used by our agentic UGC platform, [Incite Worlds](https://InciteWorlds.com).
 
 ## Key features
 
