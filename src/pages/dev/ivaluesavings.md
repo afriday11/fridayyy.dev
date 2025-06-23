@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/ivaluesavings_thumb.jpg
 title: "iValueSavings.com"
 description: "A full-stack savings newsletter with built-in referral marketing"
-categories: [websites, wip]
+categories: [full-stack]
 ---
 
 ![Basic.js Hero](/gallery/ivaluesavings_banner.jpg)
@@ -22,10 +22,6 @@ iValueSavings.com is a modern, production-ready web application that I designed 
 - **Backend**: Node.js with Express.js REST API
 - **Database**: PostgreSQL with efficient query optimization and connection pooling
 - **Styling**: Emotion (CSS-in-JS) for dynamic theming and animations
-- **Deployment**:
-
-  - Frontend hosted on **Netlify**, configured for SPA routing
-  - Environment-specific backend setup with secure API endpoints
 
 ## Subscription & Payment System
 
@@ -65,7 +61,6 @@ Built for viral growth:
 - **PWA (Progressive Web App)** support with installability
 - Clean modal-based flows for login and subscriptions
 - Real-time validation with helpful error feedback
-- Smooth transitions and thoughtful animations
 - Materials like referral coupons are **print-optimized**
 
 ## External Integrations

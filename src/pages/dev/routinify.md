@@ -4,4 +4,5 @@ thumbnail: /gallery/routinify_thumb.jpg
 title: "Routinify"
 description: "Productivity app to maintain personal routines without scheduling"
 categories: [apps, react]
+hidden: true
 ---

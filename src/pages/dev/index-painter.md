@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/index_painter_thumb.jpg
 title: "Index Painter"
 description: "Pixel art editor implementing HD Index Painting in React"
-categories: [tools, apps, react, wip]
+categories: [tools, apps, react, full-stack]
 ---
 
 ![Index Painter Screenshot](/gallery/indexpainter_screenshot.png)

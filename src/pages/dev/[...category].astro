@@ -8,17 +8,20 @@ const { posts } = Astro.props;
 export function getStaticPaths() {
   const matches = import.meta.glob("./*.md", { eager: true });
   const posts = Object.values(matches);
-  const categories = posts.flatMap((post: any) => post.frontmatter.categories);
+  const filteredPosts = posts.filter((post: any) => !post.frontmatter.hidden);
+  const categories = filteredPosts.flatMap((post: any) => post.frontmatter.categories);
   const uniqueCategories = [...new Set(categories)];
+
+  // filter out posts with hidden:true frontmatter
 
   const dynamicPaths = uniqueCategories.map((category) => ({
     params: { category },
-    props: { posts },
+    props: { posts: filteredPosts },
   }));
 
   return [
     ...dynamicPaths,
-    { params: { category: undefined }, props: { posts } },
+    { params: { category: undefined }, props: { posts: filteredPosts } },
   ];
 }
 ---

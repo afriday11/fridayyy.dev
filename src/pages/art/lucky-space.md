@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/luckyspace_thumbnail.jpg
 title: "Lucky Space"
-categories: [3D, Direction, wip]
+categories: [3D, direction, wip]
 ---
 
 # topics

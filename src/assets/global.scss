@@ -139,6 +139,11 @@ pre {
   border-radius: 10px;
 }
 
+code {
+  font-weight: 600;
+  color: #d3d3d3;
+}
+
 .carousel-header {
   @extend .shadowfx;
   border-radius: 1rem;

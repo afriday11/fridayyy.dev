@@ -5,7 +5,7 @@ title: "React-Dockable"
 description: "a library to create beautiful dockable tabbed interfaces"
 date: "06/03/2025"
 categories: [open-source, tools, react]
-# url: https://github.com/DanFessler/react-dockable
+url: https://github.com/DanFessler/react-dockable
 priority: 100
 ---
 

@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/chasm_thumbnail.jpg
 title: "Chasm"
-categories: [Pixel, Direction, wip]
+categories: [pixel, direction, wip]
 ---
 
 # topics
