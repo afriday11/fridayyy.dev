@@ -11,9 +11,9 @@ categories: [open-source, language-design]
 
 # Basic.js
 
-Basic.js is an modernized implementation of the BASIC programming language for JavaScript. It is comprised of three major parts: the lexer, the parser, and the [BASIN runtime](https://github.com/DanFessler/basin) which itself is its own project used in several of my domain-specific languages.
+Basic.js is a modernized implementation of the BASIC programming language for JavaScript. It is comprised of three major parts: the lexer, the parser, and the [BASIN runtime](https://github.com/DanFessler/basin) which is its own separate project used in several of my domain-specific languages.
 
-Github Repo: https://github.com/DanFessler/basic.js
+GitHub Repo: https://github.com/DanFessler/basic.js
 
 ## Motivation
 
@@ -21,12 +21,11 @@ My first programming language was BASIC which I taught myself through a software
 Interplay called **Learn to Program Basic** in 1998. My nostalgia for BASIC and interest in
 interpreters led me to make my own implementation.
 
-Originally it was intended to be a faithful implementation of Interplay's version, however
-as the project progressed it turned into my own modern flavor. Notable differeces include:
+Originally it was intended to be a faithful implementation of Interplay's version, however,
+as the project progressed, it turned into my own modern flavor. Notable differences include:
 
 - Assignment via "`:`" Operator
 - Functions (with hoisting)
-- Implicit function calls
 - Language Plugins
 
 ## Example program
@@ -47,7 +46,7 @@ next
 
 ## Usage
 
-Install directly from the github repo:
+Install directly from the GitHub repo:
 
 ```
 npm i https://github.com/DanFessler/basic.js
@@ -67,29 +66,26 @@ basic.run(`print "Hello World!"`);
 
 ## Lexer
 
-I wrote a custom Lexer for Basic.js which was very simple, only ~150 lines. At a high level it follows these steps:
+I wrote a custom Lexer for Basic.js which was very simple, only ~150 lines. At a high level, it follows these steps:
 
-1. reads through the program character by character
-1. Checks if it matches a rule defined as a regex pattern
-1. keeps adding characters to current token lexeme until it no longer matches a rule, or reaches the end of the program
+1. Reads through the program character by character, adding to the current token lexeme until it no longer matches a rule or reaches the end of the program
 1. Determines the type for the token based on matching its lexeme to a list of keywords, operators, or literals.
-1. then push the token to the result list.
-1. if the type wasn't determined, then throw a Syntax Error
+1. If there was no matching rule or the type wasn't determined, throw a Syntax Error
 
 ## Parser
 
-Rather using a parser generator or orther grammar-based solution, the parser was also written from scratch for Basic.js. This was an educational project afterall.
+Rather than using a parser generator or other context-free grammar solution, the parser was also written from scratch for Basic.js. This was an educational project after all.
 
 At its core it's a Recursive Descent Parser, with some notable differences:
 
 - **Two-Tier Parsing**  
   Statements are parsed via Keyword Parsers which are defined in a lookup table making them more modular and easy to extend the language. If no keyword parser is found, then it will try to parse it as an expression
 - **Precedence-Based Expressions**  
-  Instead of using recursive decent for expressions, I opted for precedence climbing algorithm which is simpler to reason about
+  Instead of using recursive descent for expressions, I opted for precedence climbing algorithm which is simpler to reason about
 
 ## Plugins
 
-Plugins to extend the language with additional libraries can be imported with `BASIC.import()` which are then accessible to Basic.js through regular function calls. A plugin is provided as a lookup table of named functions.
+Plugins to extend the language with additional libraries can be imported with `basic.import()` which are then accessible to Basic.js through regular function calls. A plugin is provided as a lookup table of named functions.
 
 Below is an example plugin which adds canvas drawing and mouse input functions. This particular example is instantiated from a class as it needs to track internal state.
 

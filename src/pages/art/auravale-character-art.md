@@ -5,10 +5,6 @@ title: "Auravale Character Art"
 categories: [3D, personal, wip]
 ---
 
-# todo
-
-- skin shader
-
 ![Auravale Campfire](/splash/auravale.jpg)
 
 # Auravale Character Art
