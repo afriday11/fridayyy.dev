@@ -4,7 +4,7 @@ thumbnail: /gallery/ctx_engine_thumb.png
 title: "CTX Game Engine"
 description: "Web-first Unity-like game engine with canvas 2D renderer"
 categories: [open-source, tools, react, full-stack]
-url: https://github.com/DanFessler/ctx-game
+# url: https://github.com/DanFessler/ctx-game
 # hidden: true
 ---
 
