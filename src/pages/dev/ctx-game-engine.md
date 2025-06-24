@@ -12,9 +12,9 @@ categories: [open-source, tools, react, full-stack]
 
 # CTX Game Engine
 
-A unity-like game engine for the browser with a native Canvas2D rendering API
+A Unity-like game engine for the browser with a native Canvas2D rendering API
 
-- Github Repo:  
+- GitHub Repo:  
   https://github.com/DanFessler/ctx-game
 
 - Live Demo (probably a bit out of date):  
@@ -22,24 +22,24 @@ A unity-like game engine for the browser with a native Canvas2D rendering API
 
 ## Motivation
 
-JavaScript is the ultimate prototyping language. It's forgiving, malleable and has good developer ergonomics.
-In contrast Unity is bloated and slow to use in comparison, yet has far superior tooling for making more complex graphical games.
+JavaScript is the ultimate prototyping language. It's forgiving, malleable, and has good developer ergonomics.
+In contrast, Unity is bloated and slow to use in comparison, yet has far superior tooling for making more complex graphical games.
 
-I wanted to merge the best of both and bring the editor experience of Unity to the web, while still maintaining a simple web-first approach to rendering using the native canvas2D API.
+I wanted to merge the best of both and bring the editor experience of Unity to the web, while still maintaining a simple web-first approach to rendering using the native Canvas2D API.
 
 ## Key Features
 
-- **Canvas2d Rendering**  
+- **Canvas2D Rendering**  
   leverages the browser's native Canvas2D rendering API.
 
 - **Camera System**  
-  First-class camera system with automatic Hierarchical Transforms via the scene graph
+  First-class camera system with automatic hierarchical transforms via the scene graph
 
 - **Behavior Component System**  
   Unity-like component system for composable game object behaviors
 
 - **Automatic Inspectors**  
-  Automatically inspect and serialize behavior fields with type-safe reflection using javascript Decorators
+  Automatically inspect and serialize behavior fields with type-safe reflection using JavaScript decorators
 
 - **Custom Inspectors**  
   Supports custom inspectors via React components returned by a behavior
@@ -81,7 +81,7 @@ Key Methods:
 - **Update(deltaTime)**  
   Called on every tick in Play mode. Used for core game logic
 
-- **UpdateEditor(deltaTIme):**  
+- **UpdateEditor(deltaTime):**  
   Called on every tick in Edit mode. Used for edit-time logic such as gizmo behaviors.
 
 - **draw(ctx, renderPass)**  
@@ -89,7 +89,7 @@ Key Methods:
 
 ### Inspectors
 
-Since javascript doesn't have true reflection, decorators are used to tag a property as serializable which will be saved in the scene file and become automatically editible in the inspector. The `@inspect` decorator also takes an object which contains metadata such as the type, min or max ranges, etc.
+Since JavaScript doesn't have true reflection, decorators are used to tag a property as serializable which will be saved in the scene file and become automatically editable in the inspector. The `@inspect` decorator also takes an object which contains metadata such as the type, min or max ranges, etc.
 
 Below is an example behavior which draws a rectangle to the screen with a given position, size, and color inspectable fields:
 
@@ -114,7 +114,7 @@ class Rectangle extends Behavior {
 }
 ```
 
-Seralizable field metadata is then stored into a global map where each constructor key contains a map of property/value pairs. If the type was not specified in the metadata, the `reflect-metadata` polyfill is used to infer it.
+Serializable field metadata is then stored into a global map where each constructor key contains a map of property/value pairs. If the type was not specified in the metadata, the `reflect-metadata` polyfill is used to infer it.
 
 We then export a `getSerializableFields` function which allows for easy lookup of serializable fields for a given behavior.
 
@@ -130,7 +130,6 @@ export function inspect(meta: FieldMeta = {}): PropertyDecorator {
       fieldMetadata.set(ctor, new Map());
     }
 
-    //
     const fields = fieldMetadata.get(ctor)!;
 
     // Try to infer type if none provided
@@ -202,7 +201,7 @@ CTX implements a multi-layered rendering system that supports both game and edit
   The engine uses `ctx.save()` and `ctx.restore()` as it walks the scene hierarchy to automatically transform the drawing context into the local space of the current gameObject.
 
 - **Behavior-based rendering**  
-  Each Behavior implements a draw method allowing for immediate-mode drawing that is beginner friendly using the browser-native canvas2d api. No need for meshes, shaders, texture maps, or other complicated 3D rendering concepts.
+  Each Behavior implements a draw method allowing for immediate-mode drawing that is beginner-friendly using the browser-native Canvas2D API. No need for meshes, shaders, texture maps, or other complicated 3D rendering concepts.
 
 - **RenderPass filtering**  
   The draw method provides a "RenderPass" argument which allows for custom render pipelines or conditional drawing for different modes such as editor-mode vs play-mode
@@ -242,7 +241,7 @@ app.listen(3001, () =>
 );
 ```
 
-On the client, an abstraction layer is levereaged to make interfacing with the RPC endpoint type-safe and "transparent" which uses Proxies to allow for a native-feeling API with direct function calling in the browser:
+On the client, an abstraction layer is leveraged to make interfacing with the RPC endpoint type-safe and "transparent." This uses Proxies to allow for a native-feeling API with direct function calling in the browser:
 
 ```ts
 import type { NativeApi } from "../../server/server.ts";
@@ -277,9 +276,9 @@ native.saveFile(
 
 ## Observer Pattern Reactivity
 
-Usually reactivity in a React application is achieved through immutable state which is passed down through the top of the component tree. While this technically could be done, it's not particularly friendly to game engine design concepts. Game objects are inherently "live" instantiated objects from custom base classes.
+Usually reactivity in a React application is achieved through immutable state which is passed down through the top of the component tree. While this approach could technically work, it's not well-suited to game engine design patterns. Game objects are inherently "live" objects with custom base classes.
 
-One could, in theory, manually serialize and deserialize the scene on every change, but that'd be clunky and non-performant - especially if you want to inspect state _while in play mode_. Instead I use an Observer pattern to listen for extenal state changes to trigger a re-render.
+One could, in theory, manually serialize and deserialize the scene on every change, but that'd be clunky and non-performant - especially if you want to inspect state _while in play mode_. Instead I use an Observer pattern to listen for external state changes to trigger a re-render.
 
 The GameObject base class implements `subscribe` and `updateSubscribers`. Any time updateSubscribers is called, any subscriber's callback will be triggered. For the default inspector, this is done automatically for you. If you implement a custom inspector, you must manually call it.
 
@@ -371,7 +370,7 @@ serialize() {
     properties: getSerializableFields(this).reduce((acc, [key]) => {
       acc[key as string] = this[key as keyof this];
       return acc;
-    }, {} as Record<string, Behavior>),
+    }, {} as Record<string, unknown>),
   };
 }
 ```
