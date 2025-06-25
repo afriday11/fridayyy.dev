@@ -27,26 +27,6 @@ In contrast, Unity is bloated and slow to use in comparison, yet has far superio
 
 I wanted to merge the best of both and bring the editor experience of Unity to the web, while still maintaining a simple web-first approach to rendering using the native Canvas2D API.
 
-## Key Features
-
-- **Canvas2D Rendering**  
-  leverages the browser's native Canvas2D rendering API.
-
-- **Camera System**  
-  First-class camera system with automatic hierarchical transforms via the scene graph
-
-- **Behavior Component System**  
-  Unity-like component system for composable game object behaviors
-
-- **Automatic Inspectors**  
-  Automatically inspect and serialize behavior fields with type-safe reflection using JavaScript decorators
-
-- **Custom Inspectors**  
-  Supports custom inspectors via React components returned by a behavior
-
-- **Customizable Interface**  
-  dockable windowing GUI via [React-Dockable](https://github.com/danfessler/react-dockable)
-
 ## Clone to own
 
 Rather than distributing the engine as a standalone executable, CTX was designed to be cloned and customized for each project—giving you direct access to engine internals and a smooth developer experience through Vite.
@@ -69,6 +49,16 @@ The project is scaffolded with Vite and is cleanly separated into four major par
 - **game:**  
   This is where the game-specific scene definitions, behaviors, and game assets live, which are automatically imported by the editor
 
+## Editor
+
+Scenes are composable with a simple drag and drop interface. The editor is written in React and uses [React-Dockable](https://github.com/danfessler/react-dockable) for dockable tabbed window management which allows for user-customizable workspaces.
+
+Currently there are four main views: **Scene Hierarchy**, **Object Inspector**, **Game Assets**, and the **Scene View**. Objects can be created, renamed, and customized through the inspector. Gizmos also allow you to manipulate object transforms directly.
+
+<video preload="metadata" autoplay loop muted controls>
+  <source src="/gallery/ctx_editor_demovid2.mp4" type="video/mp4">
+</video>
+
 ## Behavior System
 
 `GameObjects` are nodes with a collection of attached `Behavior` components. Each `Behavior` is responsible for its own update and draw logic. Every `GameObject` is required to have a `Transform` behavior as the engine relies on this to render the scene.
@@ -76,7 +66,7 @@ The project is scaffolded with Vite and is cleanly separated into four major par
 Key Methods:
 
 - **Start()**  
-  Used for any initialization logic
+  Used for any initialization logic.
 
 - **Update(deltaTime)**  
   Called on every tick in Play mode. Used for core game logic
@@ -192,93 +182,29 @@ This method can also be overridden for custom inspectors as well for more comple
 
 ### Rendering
 
-CTX implements a multi-layered rendering system that supports both game and editor modes. The system is built around HTML5 Canvas with several novel architectural patterns that make it particularly interesting.
+CTX implements immediate-mode rendering which, as the name suggests, leverages the HTML5 Canvas 2D API. No need for meshes, shaders, texture maps, or other complicated 3D rendering concepts, just draw what you want.
+
+Some key rendering features:
 
 - **PPU scaling**  
   A project-wide unit scaling to allow for base units untied from pixels, like tiles, or meters
 
-- **Local-space Transforms**  
-  The engine uses `ctx.save()` and `ctx.restore()` as it walks the scene hierarchy to automatically transform the drawing context into the local space of the current gameObject.
+- **Local-space Drawing**  
+  The engine has a first-class camera system and walks the scene hierarchy to automatically transform the drawing context from local object-space to screenspace.
 
 - **Behavior-based rendering**  
-  Each Behavior implements a draw method allowing for immediate-mode drawing that is beginner-friendly using the browser-native Canvas2D API. No need for meshes, shaders, texture maps, or other complicated 3D rendering concepts.
+  Each Behavior implements a draw method allowing for immediate-mode drawing that is beginner-friendly using the browser-native Canvas2D API.
 
 - **RenderPass filtering**  
   The draw method provides a "RenderPass" argument which allows for custom render pipelines or conditional drawing for different modes such as editor-mode vs play-mode
-
-## Transparent Native RPC Bridge
-
-Native functions are lightly-wrapped in a lookup table, only changing signatures where necessary for serialization across the network. The type of this object is then exported so the client can consume it and maintain type-safety.
-
-```ts
-const api = {
-  saveFile: async (path: string, data: string) => fs.writeFileSync(path, data),
-  readFile: async (path: string) => fs.readFileSync(path, "utf-8"),
-  ...
-};
-
-export type NativeApi = typeof api;
-```
-
-The server then exposes an HTTP RPC-style endpoint to call these functions.
-
-```ts
-app.post("/call", async (req, res) => {
-  const { method, args }: { method: keyof NativeApi; args: unknown[] } =
-    req.body;
-  try {
-    const result = await (api[method] as (...args: unknown[]) => unknown)(
-      ...args
-    );
-    res.json({ result });
-  } catch (err) {
-    res.status(500).json({ error: (err as Error).message });
-  }
-});
-
-app.listen(3001, () =>
-  console.log("Native API server running on http://localhost:3001")
-);
-```
-
-On the client, an abstraction layer is leveraged to make interfacing with the RPC endpoint type-safe and "transparent." This uses Proxies to allow for a native-feeling API with direct function calling in the browser:
-
-```ts
-import type { NativeApi } from "../../server/server.ts";
-
-const native = new Proxy({} as NativeApi, {
-  get:
-    (_, method: string) =>
-    (...args: unknown[]) =>
-      fetch("http://localhost:3001/call", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ method, args }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((res) => {
-          if (res.error) throw new Error(res.error);
-          return res.result;
-        }),
-});
-
-export default native;
-```
-
-```ts
-native.saveFile(
-  "src/game/scenes/default.json",
-  JSON.stringify(serialized, null, 2)
-);
-```
 
 ## Observer Pattern Reactivity
 
 Usually reactivity in a React application is achieved through immutable state which is passed down through the top of the component tree. While this approach could technically work, it's not well-suited to game engine design patterns. Game objects are inherently "live" objects with custom base classes.
 
 One could, in theory, manually serialize and deserialize the scene on every change, but that'd be clunky and non-performant - especially if you want to inspect state _while in play mode_. Instead I use an Observer pattern to listen for external state changes to trigger a re-render.
+
+![reactivity diagram](/gallery/ctxengine_diagram.png)
 
 The GameObject base class implements `subscribe` and `updateSubscribers`. Any time updateSubscribers is called, any subscriber's callback will be triggered. For the default inspector, this is done automatically for you. If you implement a custom inspector, you must manually call it.
 
@@ -373,4 +299,72 @@ serialize() {
     }, {} as Record<string, unknown>),
   };
 }
+```
+
+## Transparent Native RPC Bridge
+
+For saving and loading the scene a server is needed to expose native functionality like file I/O to the browswer. Native functions are lightly-wrapped in a lookup table, only changing signatures where necessary for serialization across the network. The type of this object is then exported so the client can consume it and maintain type-safety.
+
+```ts
+const api = {
+  saveFile: async (path: string, data: string) => fs.writeFileSync(path, data),
+  readFile: async (path: string) => fs.readFileSync(path, "utf-8"),
+  ...
+};
+
+export type NativeApi = typeof api;
+```
+
+The server then exposes an HTTP RPC-style endpoint to call these functions.
+
+```ts
+app.post("/call", async (req, res) => {
+  const { method, args }: { method: keyof NativeApi; args: unknown[] } =
+    req.body;
+  try {
+    const result = await (api[method] as (...args: unknown[]) => unknown)(
+      ...args
+    );
+    res.json({ result });
+  } catch (err) {
+    res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+app.listen(3001, () =>
+  console.log("Native API server running on http://localhost:3001")
+);
+```
+
+On the client, an abstraction layer is leveraged to make interfacing with the RPC endpoint type-safe and "transparent." This uses Proxies to allow for a native-feeling API with direct function calling in the browser:
+
+```ts
+import type { NativeApi } from "../../server/server.ts";
+
+const native = new Proxy({} as NativeApi, {
+  get:
+    (_, method: string) =>
+    (...args: unknown[]) =>
+      fetch("http://localhost:3001/call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ method, args }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          if (res.error) throw new Error(res.error);
+          return res.result;
+        }),
+});
+
+export default native;
+```
+
+```ts
+native.saveFile(
+  "src/game/scenes/default.json",
+  JSON.stringify(serialized, null, 2)
+);
 ```
