@@ -5,9 +5,6 @@ title: "Solstice Arena"
 categories: [3D, concept, direction, wip]
 ---
 
-# topics
+# Article Coming Soon
 
-- art direction
-- concept art
-- VR port
-- awards
+[go back](/art)

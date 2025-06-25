@@ -5,9 +5,6 @@ title: "Spunk and Moxie"
 categories: [2D, concept, wip]
 ---
 
-# topics
+# Article Coming Soon
 
-- art direction
-- concept art
-- VR port
-- awards
+[go back](/art)

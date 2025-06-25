@@ -3,6 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/oberhasli_thumbnail.jpg
 title: "Oberhasli Concert"
 categories: [direction, 3D]
+priority: 90
 ---
 
 <iframe width="1440" height="810" style="width:100%; aspect-ratio:16/9" src="https://www.youtube.com/embed/CgtjXMQS5II?si=AHh-Dhd0VjMCgIkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

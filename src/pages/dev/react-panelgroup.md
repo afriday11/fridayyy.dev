@@ -5,4 +5,5 @@ title: "React-PanelGroup"
 description: "React component for resizable panel layouts"
 categories: [open-source, react]
 url: https://github.com/DanFessler/react-panelgroup
+priority: 70
 ---

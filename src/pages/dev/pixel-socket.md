@@ -4,6 +4,7 @@ thumbnail: /gallery/pixelsocket_thumbnail.png
 title: "Pixel Socket"
 description: "Multi-player pixel art application over WebSockets"
 categories: [open-source, full-stack, apps]
+priority: 50
 ---
 
 # Pixel Socket

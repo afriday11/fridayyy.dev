@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/inciteflow_thumb.png
 title: "Incite Visual Scripting"
 description: "Visual Scripting language used for Incite Worlds agentic UGC platform"
-categories: [language-design, react, prototypes]
+categories: [interpreters, react, prototypes]
 ---
 
 ![Screenshot of the Incite Worlds UGC platform](/gallery/incite_scripting_screenshot.jpg)

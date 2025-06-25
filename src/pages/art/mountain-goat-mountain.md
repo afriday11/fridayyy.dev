@@ -5,9 +5,13 @@ title: "Mountain Goat Mountain"
 categories: [3D, direction, concept, wip]
 ---
 
-# topics
+# Article Coming Soon
+
+[go back](/art)
+
+<!-- # topics
 
 - art direction
 - concept art
 - VR port
-- awards
+- awards -->

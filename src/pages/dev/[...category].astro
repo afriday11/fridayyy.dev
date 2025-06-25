@@ -12,8 +12,6 @@ export function getStaticPaths() {
   const categories = filteredPosts.flatMap((post: any) => post.frontmatter.categories);
   const uniqueCategories = [...new Set(categories)];
 
-  // filter out posts with hidden:true frontmatter
-
   const dynamicPaths = uniqueCategories.map((category) => ({
     params: { category },
     props: { posts: filteredPosts },

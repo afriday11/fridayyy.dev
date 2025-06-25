@@ -5,9 +5,6 @@ title: "Lucky Space"
 categories: [3D, direction, wip]
 ---
 
-# topics
+# Article Coming Soon
 
-- art direction
-- concept art
-- VR port
-- awards
+[go back](/art)

@@ -5,9 +5,6 @@ title: "Chasm"
 categories: [pixel, direction, wip]
 ---
 
-# topics
+# Article Coming Soon
 
-- art direction
-- concept art
-- VR port
-- awards
+[go back](/art)

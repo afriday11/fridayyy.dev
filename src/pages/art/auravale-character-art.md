@@ -2,7 +2,8 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/auravale_campfire_thumbnail.jpg
 title: "Auravale Character Art"
-categories: [3D, personal, wip]
+categories: [3D, personal]
+priority: 100
 ---
 
 ![Auravale Campfire](/splash/auravale.jpg)

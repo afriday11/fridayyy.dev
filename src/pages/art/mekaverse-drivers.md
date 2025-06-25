@@ -3,6 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/mekadriver_thumbnail_3.jpg
 title: "Mekaverse Drivers"
 categories: [direction, 3D, concept]
+priority: 80
 ---
 
 ![Gallery image](/gallery/mekadriver_illustration.webp)

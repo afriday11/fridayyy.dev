@@ -13,7 +13,7 @@ const filteredPosts = category
 
 // sort by fromatter priority (if it exists)
 const sortedPosts = filteredPosts.sort((a: any, b: any) => {
-  return b.frontmatter.priority - a.frontmatter.priority;
+  return (b.frontmatter.priority || 0) - (a.frontmatter.priority || 0);
 });
 ---
 
@@ -44,7 +44,6 @@ const sortedPosts = filteredPosts.sort((a: any, b: any) => {
     sortedPosts.map((post: any) => (
       <a class="card-container" href={post.frontmatter.url || post.url}>
         <div class="card shadowfx">
-
           <div
             class="card-bg"
             style={`background-image: url(${post.frontmatter.thumbnail})`}
@@ -189,7 +188,8 @@ const sortedPosts = filteredPosts.sort((a: any, b: any) => {
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(20%, 300px), 1fr));
+    /* max-width: calc(300px * 4); */
     width: 100%;
     box-sizing: border-box;
     gap: 1rem;
@@ -283,7 +283,7 @@ const sortedPosts = filteredPosts.sort((a: any, b: any) => {
     overflow: hidden;
     border-radius: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    max-width: 480px;
+    /* max-width: 480px; */
   }
 
   .card-icon {
