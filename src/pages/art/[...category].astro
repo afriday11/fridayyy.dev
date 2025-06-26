@@ -23,6 +23,8 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout>
+<Layout
+  title={"Dan Fessler | " + (category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Art Portfolio` : "Art Portfolio")}
+>
   <Gallery category={category} posts={posts} baseUrl="/art" />
 </Layout>

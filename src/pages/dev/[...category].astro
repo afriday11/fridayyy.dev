@@ -24,13 +24,9 @@ export function getStaticPaths() {
 }
 ---
 
-<head>
-  <title>
-    Dan Fessler - Development Portfolio {category ? `: ${category}` : ""}
-  </title>
-</head>
-
-<Layout>
+<Layout
+  title={"Dan Fessler | " + (category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Dev Portfolio` : "Dev Portfolio")}
+>
   <Gallery
     category={category}
     posts={posts}

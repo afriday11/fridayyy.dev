@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/pixelsocket_thumbnail.png
 title: "Pixel Socket"
 description: "Multi-player pixel art application over WebSockets"
-categories: [open-source, full-stack, apps]
+categories: [full-stack, react, tools]
 priority: 50
 ---
 
