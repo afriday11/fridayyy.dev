@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/react-dockable.jpg
+header: /gallery/react-dockable-splash.jpg
 title: "React-Dockable"
 description: "a library to create beautiful dockable tabbed interfaces"
 date: "06/03/2025"

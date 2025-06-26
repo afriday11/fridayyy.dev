@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/PostLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import resumeData from "../resume.json";
 ---
 
@@ -203,7 +203,7 @@ import resumeData from "../resume.json";
 </style>
 
 <title>{resumeData.name} | Resume</title>
-<Layout>
+<Layout maxWidth={800}>
   <header class="header">
     <h1 class="name">{resumeData.name}</h1>
     <h4 class="title">{resumeData.title}</h4>

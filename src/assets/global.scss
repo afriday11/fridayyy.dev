@@ -139,8 +139,10 @@ pre {
   border-radius: 10px;
 }
 
-code {
-  font-weight: 600;
+code:not(pre code) {
+  @extend .shadowfx;
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
   color: #d3d3d3;
 }
 

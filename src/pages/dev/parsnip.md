@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/parsnip_thumbnail.png
+header: /gallery/parsnip_banner.jpg
 title: "Parsnip"
 description: "Simple yet powerful parser library for creating domain specific languages"
 categories: [interpreters, open-source]

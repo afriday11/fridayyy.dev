@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/basicjs_logo.jpg
+header: /gallery/basicjs_header.jpg
 title: "Basic.js"
 description: "a BASIC interpreter written in JavaScript, using the BASIN runtime"
 categories: [open-source, interpreters]

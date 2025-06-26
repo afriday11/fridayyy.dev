@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/coreflow_thumb2.png
+header: /gallery/coreflow_banner.jpg
 title: "Core Visual Scripting"
 description: "Prototype for visual scripting on the Core Games platform"
 categories: [prototypes, interpreters, react]

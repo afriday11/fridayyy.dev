@@ -1,8 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// Get the frontmatter from the markdown file
+const { frontmatter } = Astro.props;
+
+// Extract SEO data from frontmatter
+const {
+  title,
+  description,
+  thumbnail,
+  header,
+  publishedTime,
+  modifiedTime,
+  author
+} = frontmatter;
+
+// Set the type to "article" for blog posts
+const type = "article";
 ---
 
-<Layout maxWidth={1440}>
+<Layout 
+  maxWidth={1440}
+  title={title}
+  description={description}
+  image={header || thumbnail || undefined}
+  type={type}
+  publishedTime={publishedTime || undefined}
+  modifiedTime={modifiedTime || undefined}
+  author={author || undefined}
+>
   <div class="post-content">
     <slot />
   </div>
@@ -49,7 +75,7 @@ import Layout from "../layouts/Layout.astro";
 
     img {
       width: 100%;
-      min-height: 240px;
+      /* min-height: 240px; */
       object-fit: cover;
     }
   }

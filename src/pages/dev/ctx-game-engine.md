@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/ctx_engine_thumb.png
+header: /gallery/ctx_engine_screenshot.png
 title: "CTX Game Engine"
 description: "Web-first Unity-like game engine with canvas 2D renderer"
 categories: [open-source, tools, react, full-stack]

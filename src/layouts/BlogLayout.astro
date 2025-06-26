@@ -4,12 +4,24 @@ import Disqus from "../components/Disqus.astro";
 
 const { title, image, tags, author, pubDate, description } =
   Astro.props.content;
-// const theseProps = Astro.props;
+
+// pubDate: 2014-04-12
+// needs to convert to ISO 8601 format
+const pubDateISO = new Date(pubDate).toISOString();
 ---
 
 <title>{title}</title>
 
-<Layout maxWidth={1440}>
+<Layout 
+  maxWidth={1440}
+  title={title}
+  description={description}
+  image={image.url}
+  type="article"
+  publishedTime={pubDateISO}
+  modifiedTime={pubDateISO}
+  author={author}
+>
   <!-- <pre>{JSON.stringify(theseProps, null, 2)}</pre> -->
   <div class="post-content">
     <p><img src={image.url} alt={image.alt} /></p>

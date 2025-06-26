@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/basin_logo.jpg
+header: /gallery/basin_banner.jpg
 title: "BASIN"
 description: "a lightweight AST interpreter for domain specific languages"
 categories: [open-source, interpreters]
