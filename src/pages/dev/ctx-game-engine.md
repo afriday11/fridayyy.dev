@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
-thumbnail: /gallery/ctx_engine_thumb.png
-header: /gallery/ctx_engine_screenshot.png
+thumbnail: /gallery/ctx_engine_thumb.jpg
+header: /gallery/ctx_engine_header.png
 title: "CTX Game Engine"
 description: "Web-first Unity-like game engine with canvas 2D renderer"
 categories: [open-source, tools, react, full-stack]
@@ -10,7 +10,7 @@ priority: 90
 # hidden: true
 ---
 
-![CTX Game Engine Screenshot](/gallery/ctx_engine_screenshot.png)
+![CTX Game Engine header](/gallery/ctx_engine_header.png)
 
 # CTX Game Engine
 
