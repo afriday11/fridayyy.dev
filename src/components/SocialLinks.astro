@@ -38,7 +38,7 @@
     </svg>
   </a>
   <!-- mailto -->
-  <a href="mailto:dan@danfessler.com">
+  <a href="" id="email-link">
     <svg x="0px" y="0px" viewBox="0 0 550.795 550.795">
       <g>
         <g>
@@ -72,6 +72,9 @@
       </g>
     </svg>
   </a>
+  <script>
+    (document.getElementById("email-link") as HTMLAnchorElement)!.href = "mailto:" + "dan" + "@" + "fessler" + "." + "com";
+  </script>
 </div>
 
 <style>

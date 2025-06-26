@@ -208,14 +208,18 @@ import resumeData from "../resume.json";
     <h1 class="name">{resumeData.name}</h1>
     <h4 class="title">{resumeData.title}</h4>
     <div class="contact-info">
-      <a href={`mailto:${resumeData.email}`} class="contact-item">
-        {resumeData.email}
-      </a>
+      <a href="" class="contact-item" id="email-link-resume"></a>
+      <script>
+        const email = "dan" + "@" + "fessler" + "." + "com";
+        const element = document.getElementById("email-link-resume") as HTMLAnchorElement;
+        element.href = "mailto:" + email;
+        element.textContent = email;
+      </script>
       <a href={`tel:${resumeData.phone}`} class="contact-item">
         {resumeData.phone}
       </a>
       <a
-        href={resumeData.website}
+        href={"http://" + resumeData.website}
         class="contact-item"
         target="_blank"
         rel="noopener noreferrer"
