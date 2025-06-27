@@ -11,6 +11,10 @@ categories: [personal, concept, 2D]
 
 A fun personal project where I was exploring rendering styles in isometric perspective. The idea was a game where you would explore an egyptian pyramid and collect ancient artifacts to decorate your room with.
 
+## Assets
+
+![Gallery image](/gallery/antiquities_assets.jpg)
+
 ## 2.5D Experimentation
 
 I also did a test to see if I could pull of 2.5D rotations with this style by projection-mapping the texture to a crude mesh. This technique would later be used on my work on Auravale at Incite Interactive.
