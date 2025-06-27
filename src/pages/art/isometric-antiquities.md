@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/antiquities_thumb.jpg
 title: "Isometric Antiquities"
-categories: [personal, 3D]
+categories: [personal, concept, 2D]
 ---
 
 ![Gallery image](/gallery/antiquities.jpg)

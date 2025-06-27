@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/25dcar_thumb.jpg
 title: "2.5D Car Tutorial"
-categories: [3D, personal]
+categories: [3D, 2D, personal]
 ---
 
 <iframe style="aspect-ratio:16/9" src="https://www.youtube.com/embed/4z8x8M3qcwM?si=dRx-J2uufeH-WSH-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

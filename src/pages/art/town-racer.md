@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/racing_town.jpg
 title: "Town Racer"
-categories: [personal, 3D]
+categories: [personal, concept, 2D]
 ---
 
 ![Gallery image](/gallery/shop_buildings.png)
