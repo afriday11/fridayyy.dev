@@ -5,7 +5,7 @@ title: "Lucky Space"
 categories: [3D, direction]
 ---
 
-![Lucky Space Banner](/gallery/luckyspace_banner.png)
+![Lucky Space Banner](/gallery/luckyspace_header.jpg)
 
 # Lucky Space
 
@@ -37,7 +37,11 @@ Unlike our previous game, Lucky Train, which was entirely pixel art, Lucky Space
 
 This was achieved primarily in parts: a very simple texturing leveraging flat colors and bold linework, and a 3ds Max material setup which would add 1-pixel outlines to the final render.
 
-![Advanced Screenshot](/gallery/luckyspace_pixelart.jpg)
+![textmap example](/gallery/luckyspace_pixelart.jpg)
+
+the material handled not only the outlines but also a custom shading model to give better control over colors and lighting
+
+![3ds max material graph](/gallery/rovermaterials.png)
 
 The style allowed the models to be very simple and fast to produce, while still yielding great results. Most people at the time just assumed it was pixel art like our last title.
 
@@ -47,7 +51,7 @@ Every building in Lucky Space pulses a vibrant glow to indicate it's producing r
 
 To achieve this we developed a special blend mode which would allow the lights to glow to a hot white, while maintaining their vibrant saturation.
 
-![Advanced Screenshot](/gallery/luckyspace_glow.png)
+![progressive glow test](/gallery/luckyspace_glow.png)
 
 ### Animation
 
@@ -57,7 +61,7 @@ While the game was made in Flash, we didn't leverage the Flash animation tools. 
 
 To save on memory, I developed a simple animation tool that let us sequence the frames with a live animation preview. This allowed us to greatly reduce the necessary rendered frames as we could reuse frames, add delays, reverse the animation, etc.
 
-![Advanced Screenshot](/gallery/luckyspace_animtool.png)
+![animation tool](/gallery/luckyspace_animtool.png)
 
 ## Dropship
 
@@ -71,7 +75,7 @@ When you begin the game, an animation is played as your dropship lands on the ne
 
 Actions like exploration and building in the game were done with the Rover, which was essentially a physical manifestation of the game's Cursor in a sense. The rover was conceptualized by Mark Paulik, then modeled, textured, rigged, animated and rendered by me.
 
-![Rover Clay Render](/gallery/luckyspace_rover.jpg)
+![Rover 3D model](/gallery/luckyspace_rover.jpg)
 
 ## Damage States
 
