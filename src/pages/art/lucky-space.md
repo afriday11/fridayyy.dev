@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/PostLayout.astro
-thumbnail: /gallery/luckyspace_thumbnail.jpg
+thumbnail: /gallery/luckyspace/luckyspace_thumbnail.jpg
 title: "Lucky Space"
 categories: [3D, direction]
 ---
 
-![Lucky Space Banner](/gallery/luckyspace_header.jpg)
+![Lucky Space Banner](/gallery/luckyspace/luckyspace_header.jpg)
 
 # Lucky Space
 
@@ -23,11 +23,11 @@ https://lucky-space.netlify.app/
 
 Below is a screenshot of the early game. Players are greeted with a mostly unexplored terrain where you begin to build your mining colony.
 
-![Beginning Screenshot](/gallery/luckyspace0.png)
+![Beginning Screenshot](/gallery/luckyspace/luckyspace0.png)
 
 As you grow your colony, your map expands to be a beautiful mess of glowing machinery and conduits.
 
-![Advanced Screenshot](/gallery/luckyspace1.png)
+![Advanced Screenshot](/gallery/luckyspace/luckyspace1.png)
 
 ## Rendering
 
@@ -37,11 +37,11 @@ Unlike our previous game, Lucky Train, which was entirely pixel art, Lucky Space
 
 This was achieved primarily in parts: a very simple texturing leveraging flat colors and bold linework, and a 3ds Max material setup which would add 1-pixel outlines to the final render.
 
-![textmap example](/gallery/luckyspace_pixelart.jpg)
+![textmap example](/gallery/luckyspace/luckyspace_pixelart.jpg)
 
 the material handled not only the outlines but also a custom shading model to give better control over colors and lighting
 
-![3ds max material graph](/gallery/rovermaterials.png)
+![3ds max material graph](/gallery/luckyspace/rovermaterials.png)
 
 The style allowed the models to be very simple and fast to produce, while still yielding great results. Most people at the time just assumed it was pixel art like our last title.
 
@@ -51,34 +51,34 @@ Every building in Lucky Space pulses a vibrant glow to indicate it's producing r
 
 To achieve this we developed a special blend mode which would allow the lights to glow to a hot white, while maintaining their vibrant saturation.
 
-![progressive glow test](/gallery/luckyspace_glow.png)
+![progressive glow test](/gallery/luckyspace/luckyspace_glow.png)
 
 ### Animation
 
 While the game was made in Flash, we didn't leverage the Flash animation tools. Instead we did traditional flipbook animations from our rendered 3D images. Sometimes these sheets got quite large.
 
-![sprite sheet](/gallery/dualcrystiumlaser_2x2_lvl3.png)
+![sprite sheet](/gallery/luckyspace/dualcrystiumlaser_2x2_lvl3.png)
 
 To save on memory, I developed a simple animation tool that let us sequence the frames with a live animation preview. This allowed us to greatly reduce the necessary rendered frames as we could reuse frames, add delays, reverse the animation, etc.
 
-![animation tool](/gallery/luckyspace_animtool.png)
+![animation tool](/gallery/luckyspace/luckyspace_animtool.png)
 
 ## Dropship
 
 When you begin the game, an animation is played as your dropship lands on the new planet. This animation was a collaborative effort. Concept by Mark Paulik, Modeling/Rendering/3D animation by myself, and VFX by Beth Rosaschi.
 
-<video preload="metadata" controls loop>
-  <source src="/gallery/luckyspace_landing3.mp4" type="video/mp4">
+<video preload="metadata" controls>
+  <source src="/gallery/luckyspace/luckyspace_landing4.mp4" type="video/mp4">
 </video>
 
 ## Rover
 
 Actions like exploration and building in the game were done with the Rover, which was essentially a physical manifestation of the game's Cursor in a sense. The rover was conceptualized by Mark Paulik, then modeled, textured, rigged, animated and rendered by me.
 
-![Rover 3D model](/gallery/luckyspace_rover.jpg)
+![Rover 3D model](/gallery/luckyspace/luckyspace_rover.jpg)
 
 ## Damage States
 
 Various hazards in the game, like falling meteors, could damage buildings in your colony. During pre-production we tested several methods for producing damaged states for our buildings. We ended up going pure post-process as that was the easiest to outsource.
 
-![building damage states](/gallery/destructiontests_compare.png)
+![building damage states](/gallery/luckyspace/destructiontests_compare.png)
