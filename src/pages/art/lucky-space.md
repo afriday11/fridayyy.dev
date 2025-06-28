@@ -13,12 +13,6 @@ Lucky Space was A Bit Lucky's second facebook social-game. In the game you creat
 
 As the lead artist on the project, I defined the look and feel of the game, developed our asset pipeline, developed shaders and art tools, contributed 3D Modeling, animation, UI design, and HTML prototyping.
 
-## Asset Viewer
-
-I put together a viewer tool that allows you to browse many of Lucky Space's building assets and animations. It also properly renders glows in the same way we did it in-game.
-
-https://lucky-space.netlify.app/
-
 ## Screenshots
 
 Below is a screenshot of the early game. Players are greeted with a mostly unexplored terrain where you begin to build your mining colony.
@@ -82,3 +76,10 @@ Actions like exploration and building in the game were done with the Rover, whic
 Various hazards in the game, like falling meteors, could damage buildings in your colony. During pre-production we tested several methods for producing damaged states for our buildings. We ended up going pure post-process as that was the easiest to outsource.
 
 ![building damage states](/gallery/luckyspace/destructiontests_compare.png)
+
+## Asset Viewer
+
+I put together a viewer tool that allows you to browse many of Lucky Space's building assets and animations. It also properly renders glows in the same way we did it in-game.
+
+<iframe id="theFrame" src="https://lucky-space.netlify.app/" style="width:100%; height: 800px;" frameborder="0">
+</iframe>

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/skid_mock_thumb.gif
-title: "Town Racer"
+title: "Skid the Squirrel Mockup"
 categories: [personal, pixel, 2D]
 ---
 

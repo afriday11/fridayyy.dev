@@ -7,6 +7,12 @@ categories: [2D, concept]
 
 ![](/gallery/spunkandmoxie_banner.jpg)
 
+# Spunk and Moxie
+
+Spunk and Moxie was a one-button platformer for PC and iOS that I co-developed with some friends. I did all the artwork in the game including environment art, character animations, UI, VFX, and marketing illustrations.
+
+Below are various images and assets from the project
+
 ![](/gallery/spunkandmoxie_1.png)
 
 ![](/gallery/spunkandmoxie_2.png)

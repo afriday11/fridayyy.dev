@@ -71,8 +71,8 @@ I worked as an artist on Chasm, a procedurally generated Metroidvania game. I pr
 
 ![](/gallery/chasm/samples_chasm_87.gif)
 
-![](/gallery/chasm/samples_chasm_51.gif)
+![](/gallery/chasm/samples_chasm_51.png)
 
-![](/gallery/chasm/samples_chasm_53.gif)
+![](/gallery/chasm/samples_chasm_53.png)
 
-![](/gallery/chasm/samples_chasm_85.gif)
+![](/gallery/chasm/samples_chasm_85.png)
