@@ -81,5 +81,5 @@ Various hazards in the game, like falling meteors, could damage buildings in you
 
 I put together a viewer tool that allows you to browse many of Lucky Space's building assets and animations. It also properly renders glows in the same way we did it in-game.
 
-<iframe id="theFrame" src="https://lucky-space.netlify.app/" style="width:100%; height: 800px;" frameborder="0">
+<iframe id="theFrame" src="https://lucky-space.netlify.app/" style="width:640px; max-width:100%; height: 640px; background-color:transparent; overflow:hidden;" frameborder="0" allowtransparency = "true"  scrolling="no" >
 </iframe>

@@ -5,11 +5,21 @@ title: "Chasm"
 categories: [pixel, 2D]
 ---
 
+![](/gallery/chasm/samples_chasm_31.gif)
+
 # Chasm
 
-I worked as an artist on Chasm, a procedurally generated Metroidvania game. I primarily did enviornment art, but also did character art, concept, VFX, and more.
+I worked as an artist on Chasm, a procedurally generated Metroidvania game for consoles and PC.
+I primarily did enviornment art, but also did character art, concept, VFX, and more.
 
-[go back](/art)
+**Official Website:**  
+www.chasmgame.com
+
+## Work Samples
+
+Samples of my work can be seen below.
+
+Note: Some include elements from other pixel artists including [Glauber Kotaki](https://glauberkotaki.com/), and [Tony Redmer](https://www.slympixel.com/).
 
 ![](/gallery/chasm/samples_chasm_03.gif)
 
@@ -32,8 +42,6 @@ I worked as an artist on Chasm, a procedurally generated Metroidvania game. I pr
 ![](/gallery/chasm/samples_chasm_27.gif)
 
 ![](/gallery/chasm/samples_chasm_29.gif)
-
-![](/gallery/chasm/samples_chasm_31.gif)
 
 ![](/gallery/chasm/samples_chasm_37.gif)
 
