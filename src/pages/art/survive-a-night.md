@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/vampire_thumbnail.jpg
+header: /splash/vampire_screen_3.jpg
 title: "Survive a Night With a Vampire"
 categories: [direction, 3D, 2D, concept]
 priority: 100

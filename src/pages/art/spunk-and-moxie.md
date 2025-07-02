@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/spunkandmoxie_thumbnail.jpg
+header: /gallery/spunkandmoxie_banner.jpg
 title: "Spunk and Moxie"
 categories: [2D, concept]
 ---

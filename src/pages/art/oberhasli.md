@@ -1,12 +1,13 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/oberhasli_thumbnail.jpg
+header: /gallery/oberhasli_screenshot.jpg
 title: "Oberhasli Concert"
 categories: [direction, 3D]
 priority: 90
 ---
 
-![Story Board Iteration](/gallery/oberhasli_screenshot.jpg)
+![Oberhasli screenshot](/gallery/oberhasli_screenshot.jpg)
 
 # Oberhasli
 

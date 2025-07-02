@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/luckyspace/luckyspace_thumbnail.jpg
+header: /gallery/luckyspace/luckyspace_header.jpg
 title: "Lucky Space"
 categories: [3D, direction]
 ---

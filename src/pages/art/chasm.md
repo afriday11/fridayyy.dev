@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/chasm_thumbnail.jpg
+header: /gallery/chasm/samples_chasm_31.gif
 title: "Chasm"
 categories: [pixel, 2D]
 ---
