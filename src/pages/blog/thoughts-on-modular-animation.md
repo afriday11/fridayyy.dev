@@ -12,7 +12,7 @@ layout: ../../layouts/BlogLayout.astro
 
 Recently there's been a surge in interest for what I call **"modular animation tools"** in 2D game development. That is, tools that enable you to animate sprites composed of many pieces by transforming, rotating, and translating those pieces on a timeline; also known as puppet or bone animation.
 
-With games like _Rayman Origins_ and _Dragon's Crown_ popularizing the technique, and successful Kickstarters such as [Spriter](http://www.brashmonkey.com/) and [Spine](http://esotericsoftware.com/), game developers are scrambling to get their hands on tools that enable them to accomplish similar results. I thought I'd take some time to write about the history of these tools and my experiences with them.
+With games like _Rayman Origins_ and _Dragon's Crown_ popularizing the technique, and successful Kickstarters such as [Spriter](https://www.brashmonkey.com/) and [Spine](https://esotericsoftware.com/), game developers are scrambling to get their hands on tools that enable them to accomplish similar results. I thought I'd take some time to write about the history of these tools and my experiences with them.
 
 <div style="text-align:center;">
   <iframe width="100%" height="360" src="https://www.youtube.com/embed/rklAx3YoI80" frameborder="0" allowfullscreen></iframe>
@@ -38,7 +38,7 @@ But more important than cost or memory savings, in my opinion, is the **creative
 
 But with proper tools, it decouples the creative from the technical—artists can create within constraints without being blocked by engineering. You just author it how you want it. That’s the real beauty. I’ve seen incredible things done with these tools that would never have been possible through traditional collaboration alone.
 
-![Muramasa vs Street Fighter](http://danfessler.com/blogimages/muramasa_vs_streetfighter.png)  
+![Muramasa vs Street Fighter](https://danfessler.com/blogimages/muramasa_vs_streetfighter.png)  
 _Modular sprite sheet from Muramasa vs. flipbook sprite sheet from Street Fighter_
 
 There are other inherent benefits too: hitbox authoring per frame, sprite swapping (e.g., different heads, clothes, weapons), scripting events, and more. This is the primary area where modern versions of these tools innovate—introducing bones, mesh deformation, and other advanced features.
@@ -47,7 +47,7 @@ It was at Glu Mobile that I met Michael Parent of _Spriter_. We talked at length
 
 Flash was the closest thing, but it lived in a walled garden. It was great for web games, but clunky and not made for general-purpose game development. Unfortunately, Michael moved to France and I got busy with work. He continued the project without me, and I later became an investor (though not part of the Kickstarter).
 
-![Sprite tool prototype](http://danfessler.com/projects/animedit/images/mock_modanim.png)  
+![Sprite tool prototype](https://danfessler.com/projects/animedit/images/mock_modanim.png)  
 _Early prototype of a sprite tool_
 
 While frame-by-frame animation can _always_ be more visually appealing because it's purely freeform, its practicality in game development is a different story. It requires exponentially more time, memory, RAM, and effort.

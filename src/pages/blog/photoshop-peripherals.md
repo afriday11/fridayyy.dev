@@ -22,7 +22,7 @@ You’d think there would be a huge market for **general-purpose programmable US
 
 If any of you out there are thinking, _“That’s a great idea for a business!”_—**PLEASE DO IT.** For the love of Pete, please do.
 
-I finally found one: [**Griffin’s PowerMate**](http://www.griffintechnology.com/products/powermate) USB knob. It’s not exactly what I was looking for, but it _was_ programmable, and it would work for what I needed. I ordered two, and they just arrived in the mail today :)
+I finally found one: [**Griffin’s PowerMate**](https://www.griffintechnology.com/products/powermate) USB knob. It’s not exactly what I was looking for, but it _was_ programmable, and it would work for what I needed. I ordered two, and they just arrived in the mail today :)
 
 Setting it up was a breeze. Their software was surprisingly easy to use. Each knob has **six different functions** you can assign to it:
 
@@ -39,7 +39,7 @@ On the first knob, I mapped **brush size** to the rotation (`[` and `]` shortcut
 
 Lastly, I wanted the second knob to control **brush opacity**, but Photoshop doesn’t have direct shortcut keys for that. The number keys (`0`–`9`) at the top of the keyboard set opacity (e.g., `4` = 40%, `5` = 50%), but the PowerMate software doesn’t support mapping a rotation to a **set of discrete keypresses**. I needed a third-party solution.
 
-I came across [**AutoHotKey**](http://www.autohotkey.com/), which turned out to be exactly what I needed. AutoHotKey lets you script macro events. So the plan was to use it to detect knob rotations as keypresses and then output the appropriate opacity value to Photoshop.
+I came across [**AutoHotKey**](https://www.autohotkey.com/), which turned out to be exactly what I needed. AutoHotKey lets you script macro events. So the plan was to use it to detect knob rotations as keypresses and then output the appropriate opacity value to Photoshop.
 
 It took a while, but it worked like a charm. I had to write my own script since none existed. If anyone’s interested, let me know and I’ll post it up.
 

@@ -28,8 +28,8 @@ So let's talk about the various methods of creating pixel art. They can be summe
 
 ## Manual
 
-![Isocity House](http://www.pixeljoint.com/files/icons/full/cityhouse001.gif)  
-_"Isocity House" by Kenneth Fejer_ — [Source](http://www.pixeljoint.com/pixelart/32336.htm)
+![Isocity House](https://www.pixeljoint.com/files/icons/full/cityhouse001.gif)  
+_"Isocity House" by Kenneth Fejer_ — [Source](https://www.pixeljoint.com/pixelart/32336.htm)
 
 This is the most common method for indie developers these days. Anyone who grew up with MS Paint on their computer has had a taste for this due to the program's inherent limitations.
 
@@ -37,8 +37,8 @@ Simply put, in this method each color is placed by hand. I say "color" and not "
 
 ## Color Reduction / Cleanup
 
-![Grishkin](http://i.imgur.com/4Rvh8uU.gif)  
-_"Grishkin" by Cure_ — [Source](http://www.pixeljoint.com/pixelart/78883.htm)
+![Grishkin](https://i.imgur.com/4Rvh8uU.gif)  
+_"Grishkin" by Cure_ — [Source](https://www.pixeljoint.com/pixelart/78883.htm)
 
 This method involves painting with dirty tools to solidify the overall composition fast, then color reducing (or "indexing") the image to a more manageable palette.
 
@@ -46,8 +46,8 @@ When you do this, the image will look like a mess in terms of pixel art standard
 
 ## Index Painting
 
-![Atomic Ride](http://danfessler.com/blogimages/acryl-atomic_ride.png)  
-_"Atomic Ride" by Acryl_ — [Source](http://gfxzone.planet-d.net/theme/8_bit/06/acryl-atomic_ride.html)
+![Atomic Ride](https://danfessler.com/blogimages/acryl-atomic_ride.png)  
+_"Atomic Ride" by Acryl_ — [Source](https://gfxzone.planet-d.net/theme/8_bit/06/acryl-atomic_ride.html)
 
 The most elusive of the methods is Index Painting. The term "index" refers to an image mode where a pixel's color value does not carry any RGB hue information, but instead is an index to a color palette.
 
