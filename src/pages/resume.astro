@@ -185,11 +185,30 @@ import resumeData from "../resume.json";
       align-items: center;
       gap: 0.5rem;
     }
+
   }
 
   @media print {
     .project-card {
-      display: none;
+      padding: 0;
+      margin-left: 1rem;
+      min-height: 0;
+      height: auto;
+      /* display: none; */
+      box-shadow: none !important;
+      /* border: 1px solid rgb(190, 190, 190); */
+
+      a {
+        display: none;
+      }
+    }
+
+    
+    .experience-item:not(:last-child)::after {
+      /* background-color: red !important; */
+      /* border: 2px solid black; */
+      box-shadow: 0 0 2px 2px rgb(189, 189, 189) inset !important;
+      opacity: 1;
     }
 
     .company-logo-container {
@@ -197,7 +216,14 @@ import resumeData from "../resume.json";
     }
 
     .projects-section {
-      display: none !important;
+      /* display: none !important; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projects-grid {
+      padding: 0;
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -209,7 +235,7 @@ import resumeData from "../resume.json";
     <h4 class="title">{resumeData.title}</h4>
     <div class="contact-info">
       <a href="" class="contact-item" id="email-link-resume"></a>
-      <script>
+      <script is:inline>
         const email = "dan" + "@" + "fessler" + "." + "com";
         const element = document.getElementById("email-link-resume") as HTMLAnchorElement;
         element.href = "mailto:" + email;

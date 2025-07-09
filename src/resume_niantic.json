@@ -1,0 +1,236 @@
+{
+  "name": "Dan Fessler",
+  "title": "Product & Design Executive",
+  "email": "dan@danfessler.com",
+  "phone": "760.985.4865",
+  "website": "danfessler.com",
+  "summary": "I\u2019m a product-focused executive with 20 years of experience building platforms, tools, and games across AI, UGC, and immersive technologies. I bring a unique blend of product strategy, design leadership, and hands-on technical execution. I've led cross-functional teams through the full product lifecycle\u2014from vision and prototyping to scaling and launch\u2014while remaining deeply engaged in both customer experience and system design.\n\nI specialize in turning complex, emerging technologies into empowering tools for creators and enterprises. Whether developing new interaction models, designing developer platforms, or leading org-wide creative departments, my focus is always on building usable, scalable, and innovative product ecosystems.",
+  "highlights": [
+    "20 years experience software development (primarily games)",
+    "10+ Years in creative executive leadership roles",
+    "Proficient in HTML/CSS, Javascript, Typescript, and React (10 years)",
+    "Full-stack experience with Node, Express, Socket.IO, Firebase, MongoDB, and PostgreSQL",
+    "Shipped Games, Tools, Web Services, and OSS"
+  ],
+  "experience": [
+    {
+      "company": "Incite Interactive",
+      "logo": "/incite_logo_thumb.png",
+      "title": "Co-founder / Chief Creative Officer",
+      "dates": "2023 - present",
+      "description": "I co-founded Incite interactive with a mission to incite the best stories in games with AI, and launched the world's first Agentic UGC platform, Incite Worlds. Leveraging our technology, Incite is building the next generation life sim, called Auravale.",
+      "highlights": [
+        "Led product strategy and execution across platform, tooling, and game development",
+        "Oversaw cross-functional teams spanning design, engineering, and product",
+        "Drove roadmap and UX for developer-facing UGC creation and simulation tools",
+        "Funded by A16z's Speedrun Accelerator",
+        "Develeoped and open-sourced a React UI library for dockable tabbed window management (React/Typescript)",
+        "Designed and developed a novel AI-native visual programming language for Incite Worlds (React)",
+        "Designed and developed Incite's corporate website (Svelte)",
+        "Design and development on InciteWorlds.com UGC platform (React/Remix)",
+        "Directed and developed the Character costmetics and animation pipeline for Auravale.io (Unity/C#)",
+        "Wrote custom shaders and materials for Auravale.io (HLSL/Shadergraph)"
+      ],
+      "projects": [
+        {
+          "name": "Incite Worlds",
+          "description": "The world's first Agentic UGC platform",
+          "url": "https://inciteworlds.com"
+        },
+        {
+          "name": "Auravale",
+          "description": "The next generation life sim built on Incite Worlds",
+          "url": "https://auravale.io"
+        }
+      ]
+    },
+    {
+      "company": "Manticore Games",
+      "logo": "/manticore_games_logo.jpg",
+      "title": "Chief Visual Officer",
+      "dates": "2017 - 2023",
+      "description": "I joined Manticore as employee #1 with a mission to build the next generation UGC platform, called Core. As Chief Visual Officer, I reported directly to the CEO overseeing all visual creative departments, directly managing a team of over 30 artists, designers, and contractors",
+      "highlights": [
+        "Led full production on strategic initiatives and internal product experiences",
+        "Managed over 30 cross-functional staff across UI/UX, Web, Tools, Marketing, and Art",
+        "Collaborated with engineering leadership on platform vision and implementation",
+        "Designed and developed Manticore's corporate website (React/SSG)",
+        "Designed and developed a web-based interactive world map (Canvas2D/JS)",
+        "Developed a visual programming language that compiles to Lua for Core (React/JS)",
+        "Wrote custom shaders and materials for the Core UGC platform, including a novel \"smart\" triplanar material system, and 3D 9-slice materials (HLSL/Blueprint)",
+        "Directed all creative visual departments including UI/UX, Web, Tools, Marketing, Brand Partnerships, First Party experiences, and Character Cosmetics"
+      ],
+      "projects": [
+        {
+          "name": "Core",
+          "description": "The next generation UGC platform",
+          "url": "https://coregames.com"
+        }
+      ]
+    },
+    {
+      "company": "Zynga",
+      "logo": "/zynga_logo.jpg",
+      "title": "Art Director",
+      "dates": "2012 - 2016",
+      "description": "I was bought to Zynga with the acquisition of A Bit Lucky as Art Director on titles including Solstice Arena, Empires and Allies, Mountain Goat Mountain, and Farmville. Later I joined the R&D division which prototyped forward-thinking concepts including VR and experimental social games.",
+      "highlights": [
+        "Wrote vehicle physics for Rocketleague-inspired VR Game (Unity/C#)",
+        "Designed and Prototyped the UI/UX for Picture This social game (Unity/C#)",
+        "Wrote Solsice Arena's Character asset pipeline tools (HTML/PHP)",
+        "Wrote Shaders and Materials for various titles including, Solstice Arena, Mountain Goat Mountain, Picture This, and VR Ball (HLSL/ShaderGraph)"
+      ],
+      "projects": [
+        {
+          "name": "Solstice Arena",
+          "description": "A multiplayer battle arena game",
+          "url": "https://www.youtube.com/watch?v=dyhl-kbjsIA"
+        },
+        {
+          "name": "Empires and Allies",
+          "description": "A modern military strategy game",
+          "url": "https://www.youtube.com/watch?v=xp8sWWBayTQ"
+        },
+        {
+          "name": "Mountain Goat Mountain",
+          "description": "A Q*bert-meets-crossy-road style game for mobile and VR",
+          "url": "https://www.youtube.com/shorts/poa4CqH3Qj0"
+        }
+      ]
+    },
+    {
+      "company": "A Bit Lucky",
+      "logo": "/abitlucky_logo.png",
+      "title": "Lead Artist",
+      "dates": "2010 - 2012",
+      "description": "A Bit Lucky was founded in 2010 to make high quality social games on Facebook. I was hired as the founding member of the art department, but quickly grew my responsibilities to management and direction roles.",
+      "highlights": [
+        "Developed animation tools for Lucky Train and Lucky Space (HTML/JS/PHP)",
+        "Designed and developed store-front UI for Lucky Space (HTML/JS)",
+        "Wrote 3ds Max render scripts and Photoshop scripts for internal Art Pipelines",
+        "Streamlined the art pipeline to maintain consistent quality and fast turn-around",
+        "Managed, directed, and tasked in-house and outsourced art teams"
+      ],
+      "projects": [
+        {
+          "name": "Lucky Train",
+          "description": "A social game where players build and manage their own railroad network",
+          "url": "https://www.youtube.com/watch?v=ijcYMQQS1ws"
+        },
+        {
+          "name": "Lucky Space",
+          "description": "A space colony management social game",
+          "url": "https://www.youtube.com/watch?v=X1ntkR_VopY"
+        }
+      ]
+    },
+    {
+      "company": "Glu Mobile",
+      "logo": "/glu_mobile_logo.jpg",
+      "title": "Senior Artist",
+      "dates": "2008 - 2009",
+      "description": "Senior Artist on Family Guy Uncensored and other mobile titles",
+      "highlights": [
+        "Lead Artist on \"Family Guy: Uncensored\" for mobile and iPhone",
+        "Specialized in animation for in-game sprites",
+        "Ported art assets for various devices and screen resolutions"
+      ]
+    },
+    {
+      "company": "Gameloft",
+      "logo": "/gameloft_logo.jpg",
+      "title": "Junior 2D Artist",
+      "dates": "2007 - 2008",
+      "description": "Pixel artist on New York Nights and other mobile titles",
+      "highlights": [
+        "Specialized in tiled backgrounds/scenes for \"New York Nights 2\"",
+        "Created polished game mock-ups to pitch prospective titles",
+        "Developed in-game, concept, and UI art content"
+      ]
+    },
+    {
+      "company": "Self-Employed",
+      "logo": "/blue_knight_avatar.jpg",
+      "title": "Freelance Artist",
+      "dates": "2005 - 2006",
+      "description": "Contract artwork for MGA/Mattel on various electronic toys",
+      "highlights": [
+        "Created pixel art for various electronic toys and games",
+        "Worked with major toy manufacturers including MGA and Mattel",
+        "Developed art assets for multiple platforms and devices"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "React-Dockable",
+      "description": "A React library to create beautiful dockable tabbed interfaces for tools, editors, and more. Used by InciteWorlds.com",
+      "url": "https://github.com/danfessler/react-dockable"
+    },
+    {
+      "name": "React-PanelGroup",
+      "description": "An Open Source react component for resizable panel layouts, used by Meta. Over 80k downloads on NPM. Also leveraged by React Dockable",
+      "url": "https://github.com/danfessler/react-panelgroup"
+    },
+    {
+      "name": "Index Painter",
+      "description": "A pixel art editor written in React/Typescript which natively implements HD Index Painting and uses webgl for graphics accelerated drawing",
+      "url": "https://index-painter-2.netlify.app/"
+    },
+    {
+      "name": "ctx game engine",
+      "description": "A web-first game engine with a unity-like editor and component system with a canvas2D renderer. Leverages React-Dockable for its UI",
+      "url": "https://github.com/DanFessler/ctx-game"
+    },
+    {
+      "name": "Pixel Socket",
+      "description": "A multiplayer pixel art canvas using Socket.io and canvas2D",
+      "url": "pixel-socket.onrender.com"
+    },
+    {
+      "name": "Huddle Voice Chat",
+      "description": "A virtual office voice-chat application which uses the concept of proximity-based \"huddles\" to connect users.",
+      "url": "https://x.com/DanFessler/status/1571025513644457984/video/1"
+    },
+    {
+      "name": "Routinify",
+      "description": "A productivity app to encourage and maintain personal routines without scheduling",
+      "url": "https://x.com/DanFessler/status/1079628876756611073/photo/1"
+    },
+    {
+      "name": "Core Visual Programming",
+      "description": "A prototype developed for Core Games to allow for visual scripting in editor. At runtime, the graph compiles to LUA using Core's API. Written in React",
+      "url": "https://coreflow.netlify.app/"
+    },
+    {
+      "name": "Incite Visual Programming",
+      "description": "A prototype developed for Incite Worlds to allow for visual scripting of Agentic scenarios using LLM-powered \"language gates\"",
+      "url": "https://x.com/DanFessler/status/1781069066717028644/video/1"
+    },
+    {
+      "name": "Parsnip",
+      "description": "A simple yet powerful parser generator for JavaScript allowing you to write custom domain specific languages using an object-based grammar schema. Used for my own custom DSL projects.",
+      "url": "https://github.com/DanFessler/parsnip"
+    },
+    {
+      "name": "BASIN",
+      "description": "A lightweight AST (abstract syntax tree) interpreter & runtime built in javascript.",
+      "url": "https://github.com/DanFessler/basin"
+    },
+    {
+      "name": "Basic.js",
+      "description": "a BASIC interpreter written in JavaScript, using the BASIN runtime.",
+      "url": "https://github.com/DanFessler/basic.js"
+    },
+    {
+      "name": "iValueSavings",
+      "description": "A savings club and newsletter with referral marketing",
+      "url": "https://ivaluesavings.com"
+    },
+    {
+      "name": "MilkManPlus",
+      "description": "A service portal for a local Milkman business",
+      "url": "https://milkmanplus.com"
+    }
+  ]
+}
