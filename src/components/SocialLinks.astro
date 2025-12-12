@@ -60,7 +60,6 @@ const emailParts = {
     data-email-b={emailParts.b}
     data-email-c={emailParts.c}
     class="email-link"
-    id="email-link"
   >
     <svg x="0px" y="0px" viewBox="0 0 550.795 550.795">
       <g>
@@ -102,14 +101,18 @@ const emailParts = {
   // Wait for DOM to be ready since is:inline scripts execute during parsing
   (function () {
     function initEmail() {
-      const link = document.getElementById("email-link");
-      if (link) {
-        const reverse = (str) => str.split("").reverse().join("");
+      const links = document.querySelectorAll(
+        "a.email-link[data-email-a][data-email-b][data-email-c]"
+      );
+      if (!links.length) return;
+
+      const reverse = (str) => str.split("").reverse().join("");
+      links.forEach((link) => {
         const a = reverse(link.getAttribute("data-email-a") || "");
         const b = reverse(link.getAttribute("data-email-b") || "");
         const c = reverse(link.getAttribute("data-email-c") || "");
         link.href = "mailto:" + a + "@" + b + "." + c;
-      }
+      });
     }
 
     // Astro view-transitions can swap pages without a full reload, so re-run after swaps too.
