@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Gallery from "../../components/Gallery.astro";
+import Gallery from "../../react/components/Gallery";
 
 const { category } = Astro.params;
 const { posts } = Astro.props;
@@ -24,7 +24,10 @@ export function getStaticPaths() {
 ---
 
 <Layout
-  title={"Dan Fessler | " + (category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Art Portfolio` : "Art Portfolio")}
+  title={"Dan Fessler | " +
+    (category
+      ? `${category.charAt(0).toUpperCase() + category.slice(1)} Art Portfolio`
+      : "Art Portfolio")}
 >
-  <Gallery category={category} posts={posts} baseUrl="/art" />
+  <Gallery client:load category={category} posts={posts} baseUrl="/art" />
 </Layout>

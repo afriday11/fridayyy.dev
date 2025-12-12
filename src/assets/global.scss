@@ -54,7 +54,8 @@ a svg {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  filter: brightness(1.15);
 }
 
 /* pre,
@@ -207,4 +208,11 @@ strong {
     --text-color: #000000;
     --secondary-bg: #000000;
   }
+}
+
+.disqus-thread {
+  @extend .shadowfx;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #1a1d20;
 }

@@ -1,0 +1,255 @@
+:global(:root) {
+  --primary-color: #ffffff;
+  --text-color: #1f2937;
+  --secondary-bg: #1d1e21;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.variantNav {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(29, 30, 33, 0.6);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0 auto 1.25rem auto;
+}
+
+.variantLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  transition:
+    background-color 160ms,
+    color 160ms;
+}
+
+.variantLink:last-child {
+  border-right: none;
+}
+
+.variantLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.variantLinkActive {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.contactInfo {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.experienceItem {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  position: relative;
+}
+
+.experienceItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(2rem - 2px);
+  top: 5rem;
+  width: 4px;
+  height: calc(100% - 4rem);
+  background-color: var(--primary-color);
+  opacity: 0.125;
+  border-radius: 1rem;
+}
+
+.companyLogoContainer {
+  width: 4rem;
+  height: 4rem;
+  box-sizing: border-box;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.companyContent {
+  flex: 1;
+}
+
+.companyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dates {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.highlights {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+.highlights li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.highlights li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.projectCard {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+  padding-bottom: 4rem;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.projectCard > *:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.5rem;
+}
+
+.projectTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.projectDescription {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .experienceItem {
+    grid-template-columns: 1fr;
+  }
+
+  .experienceItem:not(:last-child)::after {
+    display: none;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media print {
+  :global(:root) {
+    --primary-color: #000000;
+    --text-color: #000000;
+  }
+
+  :global(*) {
+    color: #000000 !important;
+  }
+
+  .variantNav {
+    display: none !important;
+  }
+
+  .projectCard {
+    padding: 0;
+    margin-left: 1rem;
+    min-height: 0;
+    height: auto;
+    box-shadow: none !important;
+  }
+
+  .projectCard a {
+    display: none;
+  }
+
+  .experienceItem:not(:last-child)::after {
+    box-shadow: 0 0 2px 2px rgb(189, 189, 189) inset !important;
+    opacity: 1;
+  }
+
+  .companyLogoContainer {
+    box-shadow: none !important;
+  }
+
+  .projectsSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projectsGrid {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+

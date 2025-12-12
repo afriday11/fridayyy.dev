@@ -1,0 +1,19 @@
+.navSocial {
+  padding-top: 24px;
+  fill: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.navSocial svg {
+  height: 21px;
+  width: auto;
+  padding: 0 0.5rem;
+}
+
+.navSocial svg:hover {
+  fill: white;
+  cursor: pointer;
+}
+
+

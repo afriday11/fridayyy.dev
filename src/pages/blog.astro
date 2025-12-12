@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import PostCard from "../react/components/PostCard";
 
-const matches = import.meta.glob("./blog/*.md", { eager: true });
-const posts = Object.values(matches);
+const matches = import.meta.glob("./blog/*.{md,mdx}", { eager: true });
+const posts = Object.values(matches)
+  .filter((post: any) => !post.frontmatter.hidden);
 
 // sorted by date
 const sortedPosts = posts.sort((a, b) => {
@@ -20,7 +21,7 @@ const sortedPosts = posts.sort((a, b) => {
 
   <h2>All posts</h2> -->
   <div class="content">
-    {sortedPosts.map((post: any, i) => <Card post={post} horizontal={true} />)}
+    {sortedPosts.map((post: any, i) => <PostCard post={post} horizontal={true} />)}
   </div>
 </Layout>
 

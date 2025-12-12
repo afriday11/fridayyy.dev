@@ -1,9 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const RMCarousel = Carousel.default ? Carousel.default : Carousel;
+const RMCarousel = (Carousel as any).default ? (Carousel as any).default : Carousel;
 
-function CarouselHeader() {
+export default function CarouselHeader() {
   return (
     <RMCarousel
       additionalTransfrom={0}
@@ -115,4 +115,4 @@ function CarouselHeader() {
   );
 }
 
-export default CarouselHeader;
+
