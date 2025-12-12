@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/basicjs_logo.jpg
 header: /gallery/basicjs_header.jpg

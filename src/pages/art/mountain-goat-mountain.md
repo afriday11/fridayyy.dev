@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-18
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/mgm_thumb3.jpg
 header: /gallery/mgm_banner.jpg

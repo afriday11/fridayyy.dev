@@ -53,6 +53,14 @@ export const GET: APIRoute = async (context) => {
       // Get the raw markdown content and convert to HTML
       let content = "";
       let pubDate = new Date(); // Default to current date
+      
+      // First, try to get date from frontmatter
+      if (post.frontmatter.pubDate) {
+        pubDate = new Date(post.frontmatter.pubDate);
+      } else if (post.frontmatter.date) {
+        pubDate = new Date(post.frontmatter.date);
+      }
+      
       try {
         const fileEntries = Object.entries(matches);
         const fileEntry = fileEntries.find(
@@ -64,11 +72,13 @@ export const GET: APIRoute = async (context) => {
           const [relativePath] = fileEntry;
           const absolutePath = join(__dirname, relativePath.replace("./", ""));
 
-          // Get file modification time for pubDate
-          try {
-            const stats = statSync(absolutePath);
-            pubDate = stats.mtime;
-          } catch {}
+          // Only use file modification time if no date in frontmatter
+          if (!post.frontmatter.pubDate && !post.frontmatter.date) {
+            try {
+              const stats = statSync(absolutePath);
+              pubDate = stats.mtime;
+            } catch {}
+          }
 
           const fileContent = readFileSync(absolutePath, "utf-8");
           const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;

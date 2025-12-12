@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/parsnip_thumbnail.png
 header: /gallery/parsnip_banner.jpg

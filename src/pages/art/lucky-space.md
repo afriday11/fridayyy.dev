@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-21
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/luckyspace/luckyspace_thumbnail.jpg
 header: /gallery/luckyspace/luckyspace_header.jpg

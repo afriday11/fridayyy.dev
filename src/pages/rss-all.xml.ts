@@ -65,10 +65,14 @@ export const GET: APIRoute = async (context) => {
 
     // Get publication date
     let pubDate = new Date();
-    if (section === "blog" && post.frontmatter.pubDate) {
+    
+    // First, try to get date from frontmatter (works for all sections)
+    if (post.frontmatter.pubDate) {
       pubDate = new Date(post.frontmatter.pubDate);
+    } else if (post.frontmatter.date) {
+      pubDate = new Date(post.frontmatter.date);
     } else {
-      // For art/dev, use file modification time
+      // Fall back to file modification time only if no date in frontmatter
       try {
         const fileEntries = Object.entries(matches);
         const fileEntry = fileEntries.find(

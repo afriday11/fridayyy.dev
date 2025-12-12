@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-03
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/react-dockable.jpg
 header: /gallery/react-dockable-splash.jpg

@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-27
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/kipets_thumb.jpg
 title: "Ki Pets"

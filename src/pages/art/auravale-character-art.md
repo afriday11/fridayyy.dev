@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-12
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/auravale_campfire_thumbnail.jpg
 header: /splash/auravale.jpg

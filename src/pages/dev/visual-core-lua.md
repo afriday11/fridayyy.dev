@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/coreflow_thumb2.png
 header: /gallery/coreflow_banner.jpg

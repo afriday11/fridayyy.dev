@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/pixelsocket_thumbnail.png
 title: "Pixel Socket"

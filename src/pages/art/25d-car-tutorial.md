@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-12
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/25dcar_thumb.jpg
 title: "2.5D Car Tutorial"

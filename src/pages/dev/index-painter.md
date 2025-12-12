@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/index_painter_thumb.jpg
 header: /gallery/indexpainter_screenshot.png

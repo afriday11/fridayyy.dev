@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-21
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/spunkandmoxie_thumbnail.jpg
 header: /gallery/spunkandmoxie_banner.jpg

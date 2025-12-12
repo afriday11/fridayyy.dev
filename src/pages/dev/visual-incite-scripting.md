@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-14
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/inciteflow_thumb.png
 header: /gallery/incite_scripting_screenshot.jpg

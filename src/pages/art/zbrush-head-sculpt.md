@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-12
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/zbust-sculpt-thumbnail.jpg
 title: "Zbrush Head Sculpt"

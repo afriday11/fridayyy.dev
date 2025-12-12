@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-12
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/oberhasli_thumbnail.jpg
 header: /gallery/oberhasli_screenshot.jpg

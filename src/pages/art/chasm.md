@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-21
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/chasm_thumbnail.jpg
 header: /gallery/chasm/samples_chasm_31.gif

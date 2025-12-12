@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-27
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/skid_mock_thumb.gif
 title: "Skid the Squirrel Mockup"

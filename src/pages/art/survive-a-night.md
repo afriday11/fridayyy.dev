@@ -1,4 +1,5 @@
 ---
+pubDate: 2025-06-12
 layout: ../../layouts/PostLayout.astro
 thumbnail: /gallery/vampire_thumbnail.jpg
 header: /splash/vampire_screen_3.jpg
