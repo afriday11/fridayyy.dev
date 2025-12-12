@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Disqus from "../react/components/Disqus";
+import Disqus from "../components/Disqus";
 
 const { title, image, tags, author, pubDate, description } =
   Astro.props.content;
@@ -12,7 +12,7 @@ const pubDateISO = new Date(pubDate).toISOString();
 
 <title>{title}</title>
 
-<Layout 
+<Layout
   maxWidth={1440}
   title={title}
   description={description}

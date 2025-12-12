@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 
-import avatarUrl from "../../assets/avatar.jpg";
+import avatarUrl from "../assets/avatar.jpg";
 
-import galleryIcon from "../../assets/icons/art.svg?raw";
-import devIcon from "../../assets/icons/dev.svg?raw";
-import blogIcon from "../../assets/icons/blog.svg?raw";
-import resumeIcon from "../../assets/icons/resume.svg?raw";
-import aboutIcon from "../../assets/icons/about.svg?raw";
-import WorkIcon from "../../assets/icons/work.svg?raw";
-import LocationIcon from "../../assets/icons/location.svg?raw";
-import BurgerIcon from "../../assets/icons/burger.svg?raw";
+import galleryIcon from "../assets/icons/art.svg?raw";
+import devIcon from "../assets/icons/dev.svg?raw";
+import blogIcon from "../assets/icons/blog.svg?raw";
+import resumeIcon from "../assets/icons/resume.svg?raw";
+import aboutIcon from "../assets/icons/about.svg?raw";
+import WorkIcon from "../assets/icons/work.svg?raw";
+import LocationIcon from "../assets/icons/location.svg?raw";
+import BurgerIcon from "../assets/icons/burger.svg?raw";
 
 import SocialLinks from "./SocialLinks";
 import styles from "./Navigation.module.scss";
@@ -47,7 +47,9 @@ export default function Navigation({ currentPath }: NavProps) {
 
   // Match the existing behavior (lock scroll when mobile nav is open).
   useEffect(() => {
-    document.documentElement.style.overflowY = isMobileNavOpen ? "hidden" : "auto";
+    document.documentElement.style.overflowY = isMobileNavOpen
+      ? "hidden"
+      : "auto";
     return () => {
       document.documentElement.style.overflowY = "auto";
     };
@@ -82,7 +84,9 @@ export default function Navigation({ currentPath }: NavProps) {
                 style={{ backgroundImage: `url(${avatarSrc})` }}
               />
               <span className={styles.name}>DAN FESSLER</span>
-              <span className={styles.subtitle}>Creative Director / Engineer</span>
+              <span className={styles.subtitle}>
+                Creative Director / Engineer
+              </span>
               <br />
               <div className={styles.workLocation}>
                 <div>
@@ -159,7 +163,11 @@ export default function Navigation({ currentPath }: NavProps) {
           >
             <Icon svg={BurgerIcon} />
           </button>
-          <a className={styles.navPageTitle} href="/" style={{ fontSize: "1.5rem", lineHeight: 1 }}>
+          <a
+            className={styles.navPageTitle}
+            href="/"
+            style={{ fontSize: "1.5rem", lineHeight: 1 }}
+          >
             DAN FESSLER
           </a>
           <div style={{ width: "2rem" }} />
@@ -177,7 +185,9 @@ export default function Navigation({ currentPath }: NavProps) {
               style={{ backgroundImage: `url(${avatarSrc})` }}
             />
             <span className={styles.name}>DAN FESSLER</span>
-            <span className={styles.subtitle}>Creative Director / Engineer</span>
+            <span className={styles.subtitle}>
+              Creative Director / Engineer
+            </span>
             <br />
             <div className={styles.workLocation}>
               <div>
@@ -246,5 +256,3 @@ export default function Navigation({ currentPath }: NavProps) {
     </>
   );
 }
-
-

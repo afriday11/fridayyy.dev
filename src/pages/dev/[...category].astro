@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Gallery from "../../react/components/Gallery";
+import Gallery from "../../components/Gallery";
 
 const { category } = Astro.params;
 const { posts } = Astro.props;
@@ -9,7 +9,9 @@ export function getStaticPaths() {
   const matches = import.meta.glob("./*.md", { eager: true });
   const posts = Object.values(matches);
   const filteredPosts = posts.filter((post: any) => !post.frontmatter.hidden);
-  const categories = filteredPosts.flatMap((post: any) => post.frontmatter.categories);
+  const categories = filteredPosts.flatMap(
+    (post: any) => post.frontmatter.categories
+  );
   const uniqueCategories = [...new Set(categories)];
 
   const dynamicPaths = uniqueCategories.map((category) => ({
@@ -25,7 +27,10 @@ export function getStaticPaths() {
 ---
 
 <Layout
-  title={"Dan Fessler | " + (category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Dev Portfolio` : "Dev Portfolio")}
+  title={"Dan Fessler | " +
+    (category
+      ? `${category.charAt(0).toUpperCase() + category.slice(1)} Dev Portfolio`
+      : "Dev Portfolio")}
 >
   <Gallery
     client:load
