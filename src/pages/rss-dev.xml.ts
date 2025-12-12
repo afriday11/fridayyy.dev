@@ -2,29 +2,24 @@ import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
 import { marked } from "marked";
 import sanitizeHtml from "sanitize-html";
-import { readFileSync } from "fs";
+import { readFileSync, statSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 export const GET: APIRoute = async (context) => {
-  const matches = import.meta.glob("./blog/*.{md,mdx}", { eager: true });
+  const matches = import.meta.glob("./dev/*.md", { eager: true });
   const posts = Object.values(matches).filter(
     (post: any) => !post.frontmatter.hidden
   );
 
-  // Sort by date (newest first)
+  // Sort by title (alphabetical) since there's no pubDate
   const sortedPosts = posts.sort((a: any, b: any) => {
-    return (
-      new Date(b.frontmatter.pubDate).getTime() -
-      new Date(a.frontmatter.pubDate).getTime()
-    );
+    return a.frontmatter.title.localeCompare(b.frontmatter.title);
   });
 
   // Get the directory of the current file (source directory, not dist)
-  // During build, we need to resolve relative to src/pages
   const __filename = fileURLToPath(import.meta.url);
   let __dirname = dirname(__filename);
-  // If we're in dist, go back to src
   if (__dirname.includes("/dist/")) {
     __dirname = __dirname.replace("/dist/", "/src/");
   }
@@ -32,12 +27,13 @@ export const GET: APIRoute = async (context) => {
   // Process posts with async content rendering
   const items = await Promise.all(
     sortedPosts.map(async (post: any) => {
-      const imageUrl = post.frontmatter.image?.url;
+      // Dev posts use thumbnail or header instead of image.url
+      const imageUrl =
+        post.frontmatter.header || post.frontmatter.thumbnail;
       let fullImageUrl: string | undefined;
       let imageType: string | undefined;
 
       if (imageUrl) {
-        // Ensure proper URL construction (handle both absolute and relative paths)
         const siteUrl = context.site
           ? String(context.site)
           : "https://danfessler.com";
@@ -47,18 +43,17 @@ export const GET: APIRoute = async (context) => {
           : `/${imageUrl}`;
         fullImageUrl = `${baseUrl}${cleanImageUrl}`;
 
-        // Determine image type from extension
         const ext = imageUrl.split(".").pop()?.toLowerCase();
         if (ext === "png") imageType = "image/png";
         else if (ext === "jpg" || ext === "jpeg") imageType = "image/jpeg";
         else if (ext === "gif") imageType = "image/gif";
-        else imageType = "image/jpeg"; // default
+        else imageType = "image/jpeg";
       }
 
       // Get the raw markdown content and convert to HTML
       let content = "";
+      let pubDate = new Date(); // Default to current date
       try {
-        // Find the file path from the matches object
         const fileEntries = Object.entries(matches);
         const fileEntry = fileEntries.find(
           ([path, p]: [string, any]) =>
@@ -67,22 +62,22 @@ export const GET: APIRoute = async (context) => {
 
         if (fileEntry) {
           const [relativePath] = fileEntry;
-          // Convert relative path to absolute path
           const absolutePath = join(__dirname, relativePath.replace("./", ""));
 
-          // Read the file content
-          const fileContent = readFileSync(absolutePath, "utf-8");
+          // Get file modification time for pubDate
+          try {
+            const stats = statSync(absolutePath);
+            pubDate = stats.mtime;
+          } catch {}
 
-          // Remove frontmatter (everything between --- markers)
+          const fileContent = readFileSync(absolutePath, "utf-8");
           const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
           const markdownContent = fileContent
             .replace(frontmatterRegex, "")
             .trim();
 
           if (markdownContent) {
-            // Convert markdown to HTML
             const html = await marked.parse(markdownContent);
-            // Sanitize HTML for RSS feed
             content = sanitizeHtml(html, {
               allowedTags: [
                 "p",
@@ -106,10 +101,23 @@ export const GET: APIRoute = async (context) => {
                 "img",
                 "figure",
                 "figcaption",
+                "iframe",
+                "video",
+                "source",
               ],
               allowedAttributes: {
                 a: ["href", "title"],
                 img: ["src", "alt", "title", "width", "height"],
+                iframe: [
+                  "src",
+                  "title",
+                  "frameborder",
+                  "allow",
+                  "allowfullscreen",
+                  "style",
+                ],
+                video: ["preload", "autoplay", "loop"],
+                source: ["src", "type"],
               },
               allowedSchemes: ["http", "https", "mailto"],
             });
@@ -122,11 +130,11 @@ export const GET: APIRoute = async (context) => {
       return {
         title: post.frontmatter.title,
         description: post.frontmatter.description || "",
-        pubDate: new Date(post.frontmatter.pubDate),
+        pubDate: pubDate,
         link:
           post.url ||
-          `/blog/${post.frontmatter.title.toLowerCase().replace(/\s+/g, "-")}/`,
-        author: post.frontmatter.author || "Dan Fessler",
+          `/dev/${post.frontmatter.title.toLowerCase().replace(/\s+/g, "-")}/`,
+        author: "Dan Fessler",
         content: content,
         ...(fullImageUrl &&
           imageType && {
@@ -137,11 +145,12 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: "Dan Fessler - Blog",
+    title: "Dan Fessler - Dev Portfolio",
     description:
-      "Artist by Day, Developer by Night - Blog posts about game development, art, and creative technology.",
+      "Development portfolio showcasing open-source projects, tools, interpreters, and technical work.",
     site: context.site ? String(context.site) : "https://danfessler.com",
     items: items,
     customData: `<language>en-us</language>`,
   });
 };
+

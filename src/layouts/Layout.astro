@@ -21,6 +21,9 @@ const fullImageUrl = image
   ? new URL(image, Astro.site || Astro.url).href
   : undefined;
 const fullUrl = (Astro.site || Astro.url).href;
+const baseUrl = Astro.site
+  ? String(Astro.site).replace(/\/$/, "")
+  : Astro.url.origin;
 ---
 
 <!doctype html>
@@ -36,6 +39,32 @@ const fullUrl = (Astro.site || Astro.url).href;
     <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- RSS Feed Auto-Discovery -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dan Fessler - All Posts"
+      href={`${baseUrl}/rss-all.xml`}
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dan Fessler - Blog"
+      href={`${baseUrl}/rss.xml`}
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dan Fessler - Art Portfolio"
+      href={`${baseUrl}/rss-art.xml`}
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dan Fessler - Dev Portfolio"
+      href={`${baseUrl}/rss-dev.xml`}
+    />
 
     <!-- Apple Touch Icon (for iOS homescreen) -->
     <link rel="apple-touch-icon" href="/favicon_180.png" />
