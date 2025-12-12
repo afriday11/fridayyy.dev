@@ -4,7 +4,7 @@ thumbnail: /gallery/ivaluesavings_thumb.jpg
 header: /gallery/ivaluesavings_banner.jpg
 title: "iValueSavings.com"
 description: "A full-stack savings newsletter with built-in referral marketing"
-categories: [full-stack, react]
+categories: [full-stack, react, websites]
 priority: 60
 ---
 

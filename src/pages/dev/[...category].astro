@@ -9,12 +9,11 @@ export function getStaticPaths() {
   const matches = import.meta.glob("./*.md", { eager: true });
   const posts = Object.values(matches);
   const filteredPosts = posts.filter((post: any) => !post.frontmatter.hidden);
-  const categories = filteredPosts.flatMap(
-    (post: any) => post.frontmatter.categories
-  );
-  const uniqueCategories = [...new Set(categories)];
+  
+  // Use the same categories list that's passed to Gallery component
+  const allCategories = ["websites", "tools", "open-source", "languages", "other"];
 
-  const dynamicPaths = uniqueCategories.map((category) => ({
+  const dynamicPaths = allCategories.map((category) => ({
     params: { category },
     props: { posts: filteredPosts },
   }));

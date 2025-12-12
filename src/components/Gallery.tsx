@@ -39,7 +39,9 @@ export default function Gallery({
   const subnavRef = useRef<HTMLDivElement | null>(null);
 
   const derivedCategories = useMemo(() => {
-    const fromPosts = unique(posts.flatMap((p) => p.frontmatter.categories ?? []));
+    const fromPosts = unique(
+      posts.flatMap((p) => p.frontmatter.categories ?? [])
+    );
     return categories && categories.length ? categories : fromPosts;
   }, [posts, categories]);
 
@@ -59,7 +61,9 @@ export default function Gallery({
   useEffect(() => {
     const subnav = subnavRef.current;
     if (!subnav) return;
-    const activeItem = subnav.querySelector<HTMLElement>("[data-active='true']");
+    const activeItem = subnav.querySelector<HTMLElement>(
+      "[data-active='true']"
+    );
     if (!activeItem) return;
 
     const subnavRect = subnav.getBoundingClientRect();
@@ -128,7 +132,9 @@ export default function Gallery({
         <div className={styles.subnavItems}>
           <a
             className={`${styles.subnavItem} ${
-              category === undefined ? `${styles.subnavItemActive} shadowfx` : ""
+              category === undefined
+                ? `${styles.subnavItemActive} shadowfx`
+                : ""
             }`}
             href={baseUrl}
             data-active={category === undefined ? "true" : "false"}
@@ -139,7 +145,9 @@ export default function Gallery({
             <a
               key={thisCategory}
               className={`${styles.subnavItem} ${
-                thisCategory === category ? `${styles.subnavItemActive} shadowfx` : ""
+                thisCategory === category
+                  ? `${styles.subnavItemActive} shadowfx`
+                  : ""
               }`}
               href={`${baseUrl}/${thisCategory}`}
               data-active={thisCategory === category ? "true" : "false"}
@@ -165,7 +173,9 @@ export default function Gallery({
               <div className={`${styles.card} shadowfx`} data-card>
                 <div
                   className={styles.cardBg}
-                  style={{ backgroundImage: `url(${post.frontmatter.thumbnail})` }}
+                  style={{
+                    backgroundImage: `url(${post.frontmatter.thumbnail})`,
+                  }}
                 />
                 <div className={styles.sheen} data-sheen />
                 <div
@@ -192,5 +202,3 @@ export default function Gallery({
     </>
   );
 }
-
-
