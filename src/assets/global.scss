@@ -202,11 +202,79 @@ strong {
 }
 
 @media print {
+  @page {
+    /* Reduce default browser print margins and keep output consistent. */
+    margin: 0.5in;
+  }
+
   :root {
     font-size: 10pt !important;
     --primary-color: #000000;
     --text-color: #000000;
-    --secondary-bg: #000000;
+    --secondary-bg: #ffffff;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    fill: #000000 !important;
+
+    /* The site uses flex layouts for the app shell; printing is more reliable in normal flow. */
+    display: block !important;
+    width: auto !important;
+    gap: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* The app shell reserves space for the left nav via a narrow `.content` width.
+     For print, expand the main content to the full printable area. */
+  .content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure headings don't stay white (they're forced to white in screen styles). */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000 !important;
+  }
+
+  a,
+  a:visited {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Strip dark-theme visual effects for print. */
+  *,
+  *::before,
+  *::after {
+    color: #000000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  .shadowfx,
+  .shadowfx::after {
+    box-shadow: none !important;
+  }
+
+  table,
+  th,
+  td,
+  pre,
+  code {
+    background: transparent !important;
   }
 }
 

@@ -49,7 +49,7 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
             className={styles.contactItem}
             id="email-link-resume"
             data-email-a="nad"
-            data-email-b="relssef"
+            data-email-b="relssefnad"
             data-email-c="moc"
           />
           <a href={`tel:${resumeData.phone}`} className={styles.contactItem}>
@@ -101,7 +101,10 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Experience</h2>
         {resumeData.experience.map((job) => (
-          <div className={styles.experienceItem} key={`${job.company}-${job.title}`}>
+          <div
+            className={styles.experienceItem}
+            key={`${job.company}-${job.title}`}
+          >
             <div className={`${styles.companyLogoContainer} shadowfx`}>
               <img src={job.logo} alt={`${job.company} logo`} />
             </div>
@@ -125,10 +128,19 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
                   <h4>Projects</h4>
                   <div className={styles.projectsGrid}>
                     {job.projects.map((project) => (
-                      <div className={`${styles.projectCard} shadowfx`} key={project.url}>
+                      <div
+                        className={`${styles.projectCard} shadowfx`}
+                        key={project.url}
+                      >
                         <h4 className={styles.projectTitle}>{project.name}</h4>
-                        <p className={styles.projectDescription}>{project.description}</p>
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        <p className={styles.projectDescription}>
+                          {project.description}
+                        </p>
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           View Project →
                         </a>
                       </div>
@@ -146,9 +158,14 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
           <h2 className={styles.sectionTitle}>Miscellaneous Projects</h2>
           <div className={styles.projectsGrid}>
             {resumeData.projects.map((project) => (
-              <div className={`${styles.projectCard} shadowfx`} key={project.url}>
+              <div
+                className={`${styles.projectCard} shadowfx`}
+                key={project.url}
+              >
                 <h4 className={styles.projectTitle}>{project.name}</h4>
-                <p className={styles.projectDescription}>{project.description}</p>
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
                 <a href={project.url} target="_blank" rel="noopener noreferrer">
                   View Project →
                 </a>
@@ -160,5 +177,3 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
     </>
   );
 }
-
-

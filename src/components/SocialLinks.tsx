@@ -4,7 +4,7 @@ import styles from "./SocialLinks.module.scss";
 const reversedEmailParts = {
   // Keep these reversed in the HTML; reconstructed client-side after hydration.
   a: "nad",
-  b: "relssef",
+  b: "relssefnad",
   c: "moc",
 } as const;
 
@@ -108,5 +108,3 @@ export default function SocialLinks() {
     </div>
   );
 }
-
-
