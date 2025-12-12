@@ -30,7 +30,7 @@ type ResumeData = {
 
 const { resumeData, variant = "art" } = Astro.props as {
   resumeData: ResumeData;
-  variant?: "art" | "dev" | "hybrid";
+  variant?: "art" | "dev";
 };
 ---
 
@@ -311,14 +311,41 @@ const { resumeData, variant = "art" } = Astro.props as {
   <h1 class="name">{resumeData.name}</h1>
   <h4 class="title">{resumeData.title}</h4>
   <div class="contact-info">
-    <a href="" class="contact-item" id="email-link-resume"></a>
+    <a
+      href="#"
+      class="contact-item"
+      id="email-link-resume"
+      data-email-a="nad"
+      data-email-b="relssef"
+      data-email-c="moc"
+    ></a>
     <script is:inline>
-      const email = "dan" + "@" + "fessler" + "." + "com";
-      const element = document.getElementById("email-link-resume");
-      if (element && element instanceof HTMLAnchorElement) {
-        element.href = "mailto:" + email;
-        element.textContent = email;
-      }
+      (function () {
+        function initResumeEmail() {
+          const element = document.getElementById("email-link-resume");
+          if (!element || !(element instanceof HTMLAnchorElement)) return;
+
+          const reverse = (str) => str.split("").reverse().join("");
+          const a = reverse(element.getAttribute("data-email-a") || "");
+          const b = reverse(element.getAttribute("data-email-b") || "");
+          const c = reverse(element.getAttribute("data-email-c") || "");
+          const email = a + "@" + b + "." + c;
+
+          element.href = "mailto:" + email;
+          element.textContent = email;
+        }
+
+        // View transitions can swap pages without a full reload
+        document.addEventListener("astro:page-load", initResumeEmail);
+        document.addEventListener("astro:after-swap", initResumeEmail);
+
+        // Initial load fallback
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initResumeEmail);
+        } else {
+          initResumeEmail();
+        }
+      })();
     </script>
     <a href={`tel:${resumeData.phone}`} class="contact-item">
       {resumeData.phone}
@@ -333,7 +360,7 @@ const { resumeData, variant = "art" } = Astro.props as {
 <nav class="variant-nav" aria-label="Resume version">
   <a class={`variant-link ${variant === "art" ? "active" : ""}`} href="/resume">Creative</a>
   <a class={`variant-link ${variant === "dev" ? "active" : ""}`} href="/resume/dev">Engineering</a>
-  <a class={`variant-link ${variant === "hybrid" ? "active" : ""}`} href="/resume/hybrid">Hybrid</a>
+  <!-- <a class={`variant-link ${variant === "hybrid" ? "active" : ""}`} href="/resume/hybrid">Hybrid</a> -->
 </nav>
 
 <section class="section">
