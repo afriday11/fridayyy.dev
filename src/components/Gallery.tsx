@@ -8,6 +8,7 @@ type Props = {
   baseUrl: string;
   persistText?: boolean;
   categories?: string[];
+  minCards?: number;
 };
 
 function unique<T>(items: T[]) {
@@ -35,6 +36,7 @@ export default function Gallery({
   baseUrl,
   persistText = false,
   categories,
+  minCards = 4,
 }: Props) {
   const subnavRef = useRef<HTMLDivElement | null>(null);
 
@@ -53,10 +55,18 @@ export default function Gallery({
 
   const sortedPosts = useMemo(() => {
     // match original: sort by priority descending
-    return [...filteredPosts].sort(
+    const sorted = [...filteredPosts].sort(
       (a, b) => (b.frontmatter.priority || 0) - (a.frontmatter.priority || 0)
     );
-  }, [filteredPosts]);
+
+    // Add blank placeholder cards if we have fewer than minCards
+    if (minCards > 0 && sorted.length < minCards) {
+      const blanksNeeded = minCards - sorted.length;
+      return [...sorted, ...Array(blanksNeeded).fill(null)];
+    }
+
+    return sorted;
+  }, [filteredPosts, minCards]);
 
   useEffect(() => {
     const subnav = subnavRef.current;
@@ -159,7 +169,18 @@ export default function Gallery({
       </div>
 
       <div className={styles.gallery}>
-        {sortedPosts.map((post) => {
+        {sortedPosts.map((post, index) => {
+          // Render blank placeholder card
+          if (post === null) {
+            return (
+              <div
+                key={`blank-${index}`}
+                className={styles.blankCard}
+                aria-hidden="true"
+              />
+            );
+          }
+
           const href = post.frontmatter.url || post.url;
           return (
             <a
