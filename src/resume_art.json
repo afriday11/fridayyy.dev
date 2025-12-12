@@ -13,10 +13,23 @@
   ],
   "experience": [
     {
+      "company": "Roblox",
+      "logo": "/roblox_logo.png",
+      "title": "Senior Software Engineer",
+      "dates": "Aug 2025 - present",
+      "description": "Senior Software Engineer on Roblox's Expression team, building avatar expression features that power player-facing Avatar experiences.",
+      "highlights": [
+        "Built and shipped expression features for Avatar experiences in collaboration with product, design, and partner engineering teams",
+        "Developed UI and systems that improve avatar expressiveness, performance, and reliability at scale",
+        "Contributed to team-wide engineering quality through design reviews, code reviews, and pragmatic iteration"
+      ],
+      "projects": []
+    },
+    {
       "company": "Incite Interactive",
       "logo": "/incite_logo_thumb.png",
       "title": "Co-founder / Chief Creative Officer",
-      "dates": "May 2023 - Present",
+      "dates": "May 2023 - 2025",
       "description": "Co-founded and operate an AI-first games studio on a mission to incite the best stories in games, Funded by a16z's SPEEDRUN. We're busy building the next generation Life Sim with living AI agents built on top of the world's first Agentic Game Engine, InciteWorlds.com.",
       "highlights": [
         "Raised pre-seed from a16z's SPEEDRUN, and other top tier investors",

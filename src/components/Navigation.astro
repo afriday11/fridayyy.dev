@@ -43,13 +43,13 @@ const currentPath = Astro.url.pathname;
             Art
           </li>
         </a>
-        <a href="/dev" class={currentPath.includes("/dev") ? "active" : ""}>
+        <a href="/dev" class={currentPath.startsWith("/dev") && !currentPath.startsWith("/resume") ? "active" : ""}>
           <li>
             <Fragment set:html={devIcon} />
             Dev
           </li>
         </a>
-        <a href="/resume" class={currentPath === "/resume" ? "active" : ""}>
+        <a href="/resume" class={currentPath.startsWith("/resume") ? "active" : ""}>
           <li>
             <Fragment set:html={resumeIcon} />
             Resume
@@ -126,13 +126,13 @@ const currentPath = Astro.url.pathname;
           Art
         </li>
       </a>
-      <a href="/dev" class={currentPath.includes("/dev") ? "active" : ""}>
+      <a href="/dev" class={currentPath.startsWith("/dev") && !currentPath.startsWith("/resume") ? "active" : ""}>
         <li>
           <Fragment set:html={devIcon} />
           Dev
         </li>
       </a>
-      <a href="/resume" class={currentPath === "/resume" ? "active" : ""}>
+      <a href="/resume" class={currentPath.startsWith("/resume") ? "active" : ""}>
         <li>
           <Fragment set:html={resumeIcon} />
           Resume

@@ -1,35 +1,44 @@
 {
   "name": "Dan Fessler",
-  "title": "Product & Design Executive",
+  "title": "Senior Software Engineer / Creative Director (Games)",
   "email": "dan@danfessler.com",
   "phone": "760.985.4865",
   "website": "danfessler.com",
-  "summary": "I\u2019m a product-focused executive with 20 years of experience building platforms, tools, and games across AI, UGC, and immersive technologies. I bring a unique blend of product strategy, design leadership, and hands-on technical execution. I've led cross-functional teams through the full product lifecycle\u2014from vision and prototyping to scaling and launch\u2014while remaining deeply engaged in both customer experience and system design.\n\nI specialize in turning complex, emerging technologies into empowering tools for creators and enterprises. Whether developing new interaction models, designing developer platforms, or leading org-wide creative departments, my focus is always on building usable, scalable, and innovative product ecosystems.",
+  "summary": "I’m a senior software engineer and creative leader with 20 years in games, spanning creative executive leadership, product-quality UI/UX, and hands-on frontend engineering.\nI build polished, user-centered tools and experiences—often at the intersection of creative workflows and scalable web systems—and I’m equally comfortable leading cross-discipline teams or shipping complex features end-to-end.\nMy edge is bridging the gap between technical and creative domains: translating vision into concrete systems, iterating quickly, and raising quality through craft, pragmatism, and collaboration.",
   "highlights": [
-    "20 years experience software development (primarily games)",
-    "10+ Years in creative executive leadership roles",
-    "Proficient in HTML/CSS, Javascript, Typescript, and React (10 years)",
-    "Full-stack experience with Node, Express, Socket.IO, Firebase, MongoDB, and PostgreSQL",
-    "Shipped Games, Tools, Web Services, and OSS"
+    "20 years industry experience in game development (creative + technical)",
+    "10+ years in creative executive leadership roles",
+    "Frontend engineering: HTML/CSS, JavaScript/TypeScript, React (10 years)",
+    "Full-stack experience: Node, Express, Socket.IO, Firebase, MongoDB, PostgreSQL",
+    "Shipped games, tools, web services, and open-source software"
   ],
   "experience": [
     {
+      "company": "Roblox",
+      "logo": "/roblox_logo.png",
+      "title": "Senior Software Engineer",
+      "dates": "Aug 2025 - present",
+      "description": "Senior Software Engineer on Roblox's Expression team, building avatar expression features that power player-facing Avatar experiences.",
+      "highlights": [
+        "Built and shipped expression features for Avatar experiences in collaboration with product, design, and partner engineering teams",
+        "Developed UI and systems that improve avatar expressiveness, performance, and reliability at scale",
+        "Contributed to team-wide engineering quality through design reviews, code reviews, and pragmatic iteration"
+      ],
+      "projects": []
+    },
+    {
       "company": "Incite Interactive",
       "logo": "/incite_logo_thumb.png",
-      "title": "Co-founder / Chief Creative Officer",
-      "dates": "2023 - present",
-      "description": "I co-founded Incite interactive with a mission to incite the best stories in games with AI, and launched the world's first Agentic UGC platform, Incite Worlds. Leveraging our technology, Incite is building the next generation life sim, called Auravale.",
+      "title": "Co-founder (Engineering + Creative Leadership)",
+      "dates": "2023 - 2025",
+      "description": "Co-founded Incite Interactive to build AI-first games and agentic UGC technology. We launched the world's first Agentic UGC platform (Incite Worlds) and began building the next-generation life sim, Auravale.\nI led across engineering, product, and creative—bridging design, systems, and execution while shipping user-facing web experiences and internal tools.",
       "highlights": [
-        "Led product strategy and execution across platform, tooling, and game development",
-        "Oversaw cross-functional teams spanning design, engineering, and product",
-        "Drove roadmap and UX for developer-facing UGC creation and simulation tools",
-        "Funded by A16z's Speedrun Accelerator",
-        "Develeoped and open-sourced a React UI library for dockable tabbed window management (React/Typescript)",
-        "Designed and developed a novel AI-native visual programming language for Incite Worlds (React)",
-        "Designed and developed Incite's corporate website (Svelte)",
-        "Design and development on InciteWorlds.com UGC platform (React/Remix)",
-        "Directed and developed the Character costmetics and animation pipeline for Auravale.io (Unity/C#)",
-        "Wrote custom shaders and materials for Auravale.io (HLSL/Shadergraph)"
+        "Funded by a16z's Speedrun Accelerator",
+        "Raised pre-seed and led cross-discipline teams across branding, marketing, design, and engineering",
+        "Developed and open-sourced a React UI library for dockable tabbed window management (React/TypeScript)",
+        "Designed and developed an AI-native visual programming language for Incite Worlds (React)",
+        "Built and shipped product experiences across InciteWorlds.com (React/Remix) and company web presence (Svelte)",
+        "Directed and developed character cosmetics + animation pipeline for Auravale (Unity/C#) and authored custom shaders/materials (HLSL/ShaderGraph)"
       ],
       "projects": [
         {
@@ -47,38 +56,40 @@
     {
       "company": "Manticore Games",
       "logo": "/manticore_games_logo.jpg",
-      "title": "Chief Visual Officer",
+      "title": "Chief Visual Officer (Founding Team)",
       "dates": "2017 - 2023",
-      "description": "I joined Manticore as employee #1 with a mission to build the next generation UGC platform, called Core. As Chief Visual Officer, I reported directly to the CEO overseeing all visual creative departments, directly managing a team of over 30 artists, designers, and contractors",
+      "description": "Joined Manticore as employee #1 to build the next-generation UGC platform, Core. As Chief Visual Officer, I reported to the CEO and oversaw UI/UX, Web, Tools, Marketing, Brand Partnerships, First Party experiences, and Character Cosmetics.\nAlongside leadership, I remained hands-on—shipping web experiences, interactive tooling, and technical systems that supported creators and production.",
       "highlights": [
-        "Led full production on strategic initiatives and internal product experiences",
-        "Managed over 30 cross-functional staff across UI/UX, Web, Tools, Marketing, and Art",
-        "Collaborated with engineering leadership on platform vision and implementation",
+        "Directly managed and scaled teams of 30+ across multiple creative departments",
         "Designed and developed Manticore's corporate website (React/SSG)",
         "Designed and developed a web-based interactive world map (Canvas2D/JS)",
         "Developed a visual programming language that compiles to Lua for Core (React/JS)",
-        "Wrote custom shaders and materials for the Core UGC platform, including a novel \"smart\" triplanar material system, and 3D 9-slice materials (HLSL/Blueprint)",
-        "Directed all creative visual departments including UI/UX, Web, Tools, Marketing, Brand Partnerships, First Party experiences, and Character Cosmetics"
+        "Authored custom shaders/materials including a \"smart\" triplanar system and 3D 9-slice materials (HLSL/Blueprint)"
       ],
       "projects": [
         {
           "name": "Core",
           "description": "The next generation UGC platform",
           "url": "https://coregames.com"
+        },
+        {
+          "name": "Art Directing the Metaverse",
+          "description": "How do you art direct the infinite? An article about art direction challenges in UGC platforms.",
+          "url": "https://magazine.artstation.com/2020/05/art-directing-the-multiverse/"
         }
       ]
     },
     {
       "company": "Zynga",
       "logo": "/zynga_logo.jpg",
-      "title": "Art Director",
+      "title": "Art Director (R&D + Production)",
       "dates": "2012 - 2016",
-      "description": "I was bought to Zynga with the acquisition of A Bit Lucky as Art Director on titles including Solstice Arena, Empires and Allies, Mountain Goat Mountain, and Farmville. Later I joined the R&D division which prototyped forward-thinking concepts including VR and experimental social games.",
+      "description": "Art Director on shipped titles including Solstice Arena, Empires and Allies, Mountain Goat Mountain, and Farmville. Later joined the R&D division prototyping forward-looking concepts including VR and experimental social games.",
       "highlights": [
-        "Wrote vehicle physics for Rocketleague-inspired VR Game (Unity/C#)",
-        "Designed and Prototyped the UI/UX for Picture This social game (Unity/C#)",
-        "Wrote Solsice Arena's Character asset pipeline tools (HTML/PHP)",
-        "Wrote Shaders and Materials for various titles including, Solstice Arena, Mountain Goat Mountain, Picture This, and VR Ball (HLSL/ShaderGraph)"
+        "Shipped and supported multiple live titles across mobile and social platforms",
+        "Wrote vehicle physics for a Rocket League-inspired VR prototype (Unity/C#)",
+        "Designed and prototyped UI/UX for experimental social game concepts (Unity/C#)",
+        "Built character asset pipeline tools (HTML/PHP) and authored shaders/materials (HLSL/ShaderGraph)"
       ],
       "projects": [
         {
@@ -101,14 +112,14 @@
     {
       "company": "A Bit Lucky",
       "logo": "/abitlucky_logo.png",
-      "title": "Lead Artist",
+      "title": "Lead Artist (Founding Team)",
       "dates": "2010 - 2012",
-      "description": "A Bit Lucky was founded in 2010 to make high quality social games on Facebook. I was hired as the founding member of the art department, but quickly grew my responsibilities to management and direction roles.",
+      "description": "Founding member of the art department at A Bit Lucky, helping define style, pipelines, and production quality for social games on Facebook. Bridged art + engineering by building tooling and UI to accelerate iteration and consistency.",
       "highlights": [
         "Developed animation tools for Lucky Train and Lucky Space (HTML/JS/PHP)",
         "Designed and developed store-front UI for Lucky Space (HTML/JS)",
-        "Wrote 3ds Max render scripts and Photoshop scripts for internal Art Pipelines",
-        "Streamlined the art pipeline to maintain consistent quality and fast turn-around",
+        "Wrote 3ds Max render scripts and Photoshop scripts for internal art pipelines",
+        "Streamlined pipelines to maintain consistent quality and fast turnaround",
         "Managed, directed, and tasked in-house and outsourced art teams"
       ],
       "projects": [
@@ -129,7 +140,7 @@
       "logo": "/glu_mobile_logo.jpg",
       "title": "Senior Artist",
       "dates": "2008 - 2009",
-      "description": "Senior Artist on Family Guy Uncensored and other mobile titles",
+      "description": "Senior Artist on Family Guy Uncensored and other mobile titles.",
       "highlights": [
         "Lead Artist on \"Family Guy: Uncensored\" for mobile and iPhone",
         "Specialized in animation for in-game sprites",
@@ -141,7 +152,7 @@
       "logo": "/gameloft_logo.jpg",
       "title": "Junior 2D Artist",
       "dates": "2007 - 2008",
-      "description": "Pixel artist on New York Nights and other mobile titles",
+      "description": "Pixel artist on New York Nights and other mobile titles.",
       "highlights": [
         "Specialized in tiled backgrounds/scenes for \"New York Nights 2\"",
         "Created polished game mock-ups to pitch prospective titles",
@@ -153,7 +164,7 @@
       "logo": "/blue_knight_avatar.jpg",
       "title": "Freelance Artist",
       "dates": "2005 - 2006",
-      "description": "Contract artwork for MGA/Mattel on various electronic toys",
+      "description": "Contract artwork for MGA/Mattel on various electronic toys.",
       "highlights": [
         "Created pixel art for various electronic toys and games",
         "Worked with major toy manufacturers including MGA and Mattel",
@@ -174,7 +185,7 @@
     },
     {
       "name": "Index Painter",
-      "description": "A pixel art editor written in React/Typescript which natively implements HD Index Painting and uses webgl for graphics accelerated drawing",
+      "description": "A pixel art editor written in React/TypeScript which natively implements HD Index Painting and uses WebGL for graphics accelerated drawing",
       "url": "https://index-painter-2.netlify.app/"
     },
     {

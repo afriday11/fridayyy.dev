@@ -14,10 +14,23 @@
   ],
   "experience": [
     {
+      "company": "Roblox",
+      "logo": "/roblox_logo.png",
+      "title": "Senior Software Engineer",
+      "dates": "Aug 2025 - present",
+      "description": "Senior Software Engineer on Roblox's Expression team, building avatar expression features that power player-facing Avatar experiences.",
+      "highlights": [
+        "Built and shipped expression features for Avatar experiences in collaboration with product, design, and partner engineering teams",
+        "Developed UI and systems that improve avatar expressiveness, performance, and reliability at scale",
+        "Contributed to team-wide engineering quality through design reviews, code reviews, and pragmatic iteration"
+      ],
+      "projects": []
+    },
+    {
       "company": "Incite Interactive",
       "logo": "/incite_logo_thumb.png",
       "title": "Co-founder",
-      "dates": "2023 - present",
+      "dates": "2023 - 2025",
       "description": "I co-founded Incite interactive with a mission to incite the best stories in games with AI, and launched the world's first Agentic UGC platform, Incite Worlds. Leveraging our technology, Incite is building the next generation life sim, called Auravale.",
       "highlights": [
         "Funded by A16z's Speedrun Accelerator",

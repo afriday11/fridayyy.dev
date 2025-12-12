@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ResumePage from "../../components/ResumePage.astro";
+import resumeData from "../../resume_hybrid.json";
+---
+
+<title>{resumeData.name} | Resume (Hybrid)</title>
+<Layout maxWidth={800}>
+  <ResumePage resumeData={resumeData} variant="hybrid" />
+</Layout>
