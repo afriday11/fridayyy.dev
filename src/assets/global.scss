@@ -155,17 +155,24 @@ code:not(pre code) {
   @extend .shadowfx;
   border-radius: 1rem;
   width: 100%;
-  aspect-ratio: 16/8;
+  // aspect-ratio: 16/8;
 
   .react-multi-carousel-track {
-    // height: 480px;
-    height: 100%;
+    height: 760px;
+
+    @media (max-width: 1200px) {
+      height: 460px;
+    }
+    @media (max-width: 900px) {
+      height: 360px;
+    }
+    @media (max-width: 600px) {
+      height: 260px;
+    }
   }
 }
 
 .carousel-dots {
-  // position: relative !important;
-
   .react-multi-carousel-dot > button {
     border: none;
     background-color: #ffffff64;

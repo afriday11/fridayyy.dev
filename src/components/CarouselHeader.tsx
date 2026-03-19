@@ -1,7 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const RMCarousel = (Carousel as any).default ? (Carousel as any).default : Carousel;
+const RMCarousel = (Carousel as any).default
+  ? (Carousel as any).default
+  : Carousel;
 
 export default function CarouselHeader() {
   return (
@@ -14,10 +16,10 @@ export default function CarouselHeader() {
       className="carousel-header"
       containerClass="container"
       dotListClass="carousel-dots"
-      draggable={false}
+      draggable={true}
       focusOnSelect={false}
       infinite
-      itemClass=""
+      itemClass="carousel-item"
       keyBoardControl={true}
       ssr={true}
       minimumTouchDrag={80}
@@ -26,24 +28,17 @@ export default function CarouselHeader() {
       renderButtonGroupOutside={false}
       renderDotsOutside={false}
       responsive={{
-        desktop: {
+        wide: {
+          breakpoint: {
+            max: 10000,
+            min: 3000,
+          },
+          items: 3,
+        },
+        narrow: {
           breakpoint: {
             max: 3000,
-            min: 1024,
-          },
-          items: 1,
-        },
-        mobile: {
-          breakpoint: {
-            max: 464,
             min: 0,
-          },
-          items: 1,
-        },
-        tablet: {
-          breakpoint: {
-            max: 1024,
-            min: 464,
           },
           items: 1,
         },
@@ -114,5 +109,3 @@ export default function CarouselHeader() {
     </RMCarousel>
   );
 }
-
-

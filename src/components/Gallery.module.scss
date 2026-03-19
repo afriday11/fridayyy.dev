@@ -1,6 +1,6 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max(20%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(15%, 350px), 1fr));
   width: 100%;
   box-sizing: border-box;
   gap: 1rem;
@@ -202,5 +202,3 @@
   visibility: hidden;
   pointer-events: none;
 }
-
-
