@@ -1,48 +1,51 @@
-# Astro Starter Kit: Basics
+# danfessler.com
 
-```sh
-npm create astro@latest -- --template basics
-```
+Source for [danfessler.com](https://danfessler.com)—a personal portfolio and blog built with [Astro](https://astro.build). The site combines a home page with featured work, a blog (Markdown + MDX), art and dev project galleries, and résumé views backed by JSON data.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Astro 5** — static pages, layouts, content routing
+- **React** — interactive pieces (carousel, navigation, résumé UI, Disqus, etc.)
+- **MDX** — blog posts where components are needed
+- **Sass** — `global.scss` plus CSS modules for components
+- **Integrations** — `@astrojs/mdx`, `@astrojs/react`, `@astrojs/rss`, `@astrojs/sitemap`
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/                 # static assets (favicons, images, etc.)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── assets/             # global styles, icons
+│   ├── components/         # React + SCSS modules
+│   ├── layouts/            # Layout.astro, BlogLayout, PostLayout
+│   ├── pages/
+│   │   ├── index.astro     # home
+│   │   ├── blog.astro      # blog index
+│   │   ├── blog/           # *.md, *.mdx posts
+│   │   ├── art/            # art write-ups + [...category].astro
+│   │   ├── dev/            # dev project pages + [...category].astro
+│   │   ├── resume*.astro   # résumé routes
+│   │   └── rss*.xml.ts     # RSS feeds (all, blog-only, art, dev)
+│   ├── resume_*.json       # résumé data (dev, art, hybrid, netflix tones)
+│   └── types/
+├── astro.config.mjs        # site URL, integrations
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Production `site` is `https://danfessler.com`; local dev uses `http://localhost:4321` (see `astro.config.mjs`).
 
-## 🧞 Commands
+## Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command           | Action                                      |
+| ----------------- | ------------------------------------------- |
+| `npm install`     | Install dependencies                        |
+| `npm run dev`     | Dev server (with `--host` for LAN access)   |
+| `npm run build`   | Production build to `./dist/`               |
+| `npm run preview` | Serve the production build locally          |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Content notes
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Blog**: add files under `src/pages/blog/` with frontmatter (`pubDate`, etc.). Use `hidden: true` to omit from listings.
+- **Art / dev**: pages live under `src/pages/art/` and `src/pages/dev/`; category routes are handled by `[...category].astro`.
+- **Résumé**: copy and tone variants are driven by `src/resume_*.json` and the pages under `src/pages/resume/`.
