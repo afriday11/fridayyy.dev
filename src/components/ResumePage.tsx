@@ -27,6 +27,7 @@ export type ResumeData = {
   highlights: string[];
   experience: ResumeJob[];
   projects?: ResumeProject[];
+  education?: string;
 };
 
 type Variant = "art" | "dev" | "hybrid" | "netflix";
@@ -48,9 +49,9 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
             href="#"
             className={styles.contactItem}
             id="email-link-resume"
-            data-email-a="nad"
-            data-email-b="relssefnad"
-            data-email-c="moc"
+            data-email-a="werdna"
+            data-email-b="yyyyadirf"
+            data-email-c="ved"
           />
           <a href={`tel:${resumeData.phone}`} className={styles.contactItem}>
             {resumeData.phone}
@@ -66,26 +67,8 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
         </div>
       </header>
 
-      <nav className={styles.variantNav} aria-label="Resume version">
-        <a
-          className={`${styles.variantLink} ${
-            variant === "art" ? styles.variantLinkActive : ""
-          }`}
-          href="/resume"
-        >
-          Creative
-        </a>
-        <a
-          className={`${styles.variantLink} ${
-            variant === "dev" ? styles.variantLinkActive : ""
-          }`}
-          href="/resume/dev"
-        >
-          Engineering
-        </a>
-      </nav>
 
-      <section className={styles.section}>
+<section className={styles.section}>
         <h2 className={styles.sectionTitle}>Executive Summary</h2>
         {resumeData.summary.split("\n").map((line, idx) => (
           <p key={idx}>{line}</p>
@@ -172,6 +155,13 @@ export default function ResumePage({ resumeData, variant = "art" }: Props) {
               </div>
             ))}
           </div>
+        </section>
+      ) : null}
+
+      {resumeData.education ? (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Education</h2>
+          <p>{resumeData.education}</p>
         </section>
       ) : null}
     </>

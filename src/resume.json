@@ -1,26 +1,108 @@
 {
   "name": "Andrew Friday",
-  "title": "YOUR TITLE HERE",
-  "email": "your@email.com",
+  "title": "Founder / Game Producer",
+  "email": "andrew@fridayyy.dev",
   "phone": "",
   "website": "fridayyy.dev",
-  "summary": "TODO: Add your professional summary here.",
+  "summary": "Founder/operator with 15+ years in games. I take messy zero-to-one problems and turn them into shipped products. Shipped 20+ games since 2010, managed titles generating $150M+ in revenue, built remote teams from 2 to 40, and raised $7M in venture funding including A16Z. I'm at my best when the situation is unclear and the stakes are high.",
   "highlights": [
-    "TODO: Add key highlights here",
-    "e.g. 5 years experience in X",
-    "e.g. Proficient in Y and Z"
+    "Shipped 20+ games since 2010",
+    "Managed titles generating $150M+ in revenue",
+    "Built remote teams from 2 to 40",
+    "Raised $7M in venture funding including A16Z",
+    "15+ years in the games industry"
   ],
   "experience": [
     {
-      "company": "Your Company",
+      "company": "Syzygy",
       "logo": "",
-      "title": "Your Title",
-      "dates": "Year - Present",
-      "description": "TODO: Describe what you did here.",
+      "title": "Founder",
+      "dates": "2023 – Present",
+      "description": "Independent Game Studio  •  San Francisco Bay Area\nBuilding original titles and selective game outsourcing projects. Currently developing an indie game for Steam and a mobile-first title for potential publishers.",
       "highlights": [
-        "TODO: Add bullet points for this role"
+        "Guild of Guardians (Executive Producer with Mineloader Studios): Took over a stalled project, redesigned the game, scaled global team to 40, and launched in 12 months with D1 retention >60% and >$24M in revenue to date.",
+        "Magic Eden: Designed and shipped an early ME token rewards system in 2023, generating millions in value to the ecosystem."
+      ],
+      "projects": []
+    },
+    {
+      "company": "Incite Interactive",
+      "logo": "",
+      "title": "Co-Founder & CEO",
+      "dates": "2023 – 2025",
+      "description": "Agentic Lifesim Game  •  San Francisco Bay Area\nEarly innovator at the intersection of life simulation, agents, and gaming.",
+      "highlights": [
+        "Raised seed round from A16Z Speedrun, Dave Baszucki (founder of Roblox), and 5+ game industry insiders.",
+        "Shipped Auravale.io, a playable agentic life sim demo that moved the agentic gaming space forward significantly.",
+        "Ran viral marketing campaigns reaching 5M+ organic impressions for AuraVale."
+      ],
+      "projects": [
+        {
+          "name": "Auravale",
+          "description": "A playable agentic life sim demo",
+          "url": "https://auravale.io"
+        }
+      ]
+    },
+    {
+      "company": "Knock Knock Games",
+      "logo": "",
+      "title": "Co-Founder & CEO",
+      "dates": "2018 – 2022",
+      "description": "Mobile & Web Gaming Studio  •  San Francisco Bay Area\nFounded a mobile gaming studio that shipped 10 games, accumulated 6M+ installs, later pivoted to web3 to release the first 3rd party game on the ImmutableX blockchain.",
+      "highlights": [
+        "Launched first game 2 months after founding; profitable within 4 months.",
+        "Vy Worlds grew to 14K community members and produced 9K+ user-created games.",
+        "Raised $6M+ from LVP, March Gaming, Raine, and Ludlow Ventures."
+      ],
+      "projects": []
+    },
+    {
+      "company": "Zynga",
+      "logo": "/zynga_logo.jpg",
+      "title": "Senior Product Manager",
+      "dates": "2016 – 2018",
+      "description": "San Francisco Bay Area\nLed product on the emerging platforms team, rapidly developing games for Facebook Messenger and iMessage.",
+      "highlights": [
+        "Shipped 6+ HTML5 titles generating 100M+ installs on Facebook Instant Games."
+      ],
+      "projects": []
+    },
+    {
+      "company": "Glu Mobile (acquired by EA)",
+      "logo": "/glu_mobile_logo.jpg",
+      "title": "Product Manager",
+      "dates": "2015 – 2016",
+      "description": "San Francisco Bay Area",
+      "highlights": [
+        "Product manager on Kim Kardashian: Hollywood, Eternity Warriors 4, and 全民突击 FPS game (co-published with Tencent).",
+        "Designed and shipped the subscriptions monetization feature for Kim Kardashian: Hollywood, leading to a 15% increase in revenue (more than $3M/year)."
+      ],
+      "projects": []
+    },
+    {
+      "company": "RevSquared",
+      "logo": "",
+      "title": "Co-Founder",
+      "dates": "2013 – 2015",
+      "description": "Beijing, China\nBuilt an educational gaming studio in the early days of the App Store.",
+      "highlights": [
+        "Meerkat Math: generated six figures of revenue for less than 3 months of dev time.",
+        "The Reading Train: 180K downloads and 1M+ books read with 55% day-30 retention; partnered with the US Teacher of the Year to write 100+ books for the platform."
+      ],
+      "projects": []
+    },
+    {
+      "company": "Happy Elements",
+      "logo": "",
+      "title": "Product Manager",
+      "dates": "2010 – 2013",
+      "description": "Beijing, China\nJoined one of the first Chinese mobile gaming studios as a Product Manager and game designer on Legend Four, focused on the Western market.",
+      "highlights": [
+        "Reached #44 on the US iTunes top chart in 2013 and was licensed to Kabam."
       ],
       "projects": []
     }
-  ]
+  ],
+  "education": "B.S. Economics, The Ohio State University  |  Minor in Music  |  Mandarin professional working proficiency"
 }
