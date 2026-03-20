@@ -7,18 +7,14 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 export const GET: APIRoute = async (context) => {
-  // Load posts from all three sections
+  // Load posts from all sections
   const blogMatches = import.meta.glob("./blog/*.{md,mdx}", { eager: true });
-  const artMatches = import.meta.glob("./art/*.md", { eager: true });
-  const devMatches = import.meta.glob("./dev/*.md", { eager: true });
+  const portfolioMatches = import.meta.glob("./portfolio/*.md", { eager: true });
 
   const blogPosts = Object.values(blogMatches).filter(
     (post: any) => !post.frontmatter.hidden
   );
-  const artPosts = Object.values(artMatches).filter(
-    (post: any) => !post.frontmatter.hidden
-  );
-  const devPosts = Object.values(devMatches).filter(
+  const portfolioPosts = Object.values(portfolioMatches).filter(
     (post: any) => !post.frontmatter.hidden
   );
 
@@ -33,7 +29,7 @@ export const GET: APIRoute = async (context) => {
   const processPost = async (
     post: any,
     matches: Record<string, any>,
-    section: "blog" | "art" | "dev"
+    section: "blog" | "portfolio"
   ) => {
     // Determine image URL based on section
     let imageUrl: string | undefined;
@@ -49,7 +45,7 @@ export const GET: APIRoute = async (context) => {
     if (imageUrl) {
       const siteUrl = context.site
         ? String(context.site)
-        : "https://danfessler.com";
+        : "https://fridayyy.dev";
       const baseUrl = siteUrl.replace(/\/$/, "");
       const cleanImageUrl = imageUrl.startsWith("/")
         ? imageUrl
@@ -65,7 +61,7 @@ export const GET: APIRoute = async (context) => {
 
     // Get publication date
     let pubDate = new Date();
-    
+
     // First, try to get date from frontmatter (works for all sections)
     if (post.frontmatter.pubDate) {
       pubDate = new Date(post.frontmatter.pubDate);
@@ -172,7 +168,7 @@ export const GET: APIRoute = async (context) => {
       description: post.frontmatter.description || "",
       pubDate: pubDate,
       link: link,
-      author: post.frontmatter.author || "Dan Fessler",
+      author: post.frontmatter.author || "Andrew Friday",
       content: content,
       ...(fullImageUrl &&
         imageType && {
@@ -184,8 +180,7 @@ export const GET: APIRoute = async (context) => {
   // Process all posts
   const allItems = await Promise.all([
     ...blogPosts.map((post) => processPost(post, blogMatches, "blog")),
-    ...artPosts.map((post) => processPost(post, artMatches, "art")),
-    ...devPosts.map((post) => processPost(post, devMatches, "dev")),
+    ...portfolioPosts.map((post) => processPost(post, portfolioMatches, "portfolio")),
   ]);
 
   // Sort all items by publication date (newest first)
@@ -194,12 +189,11 @@ export const GET: APIRoute = async (context) => {
   });
 
   return rss({
-    title: "Dan Fessler - All Posts",
+    title: "Andrew Friday - All Posts",
     description:
-      "All posts from Dan Fessler including blog posts, art portfolio, and development projects.",
-    site: context.site ? String(context.site) : "https://danfessler.com",
+      "All posts from Andrew Friday including blog posts and portfolio projects.",
+    site: context.site ? String(context.site) : "https://fridayyy.dev",
     items: sortedItems,
     customData: `<language>en-us</language>`,
   });
 };
-

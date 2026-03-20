@@ -40,7 +40,7 @@ export const GET: APIRoute = async (context) => {
         // Ensure proper URL construction (handle both absolute and relative paths)
         const siteUrl = context.site
           ? String(context.site)
-          : "https://danfessler.com";
+          : "https://fridayyy.dev";
         const baseUrl = siteUrl.replace(/\/$/, "");
         const cleanImageUrl = imageUrl.startsWith("/")
           ? imageUrl
@@ -126,7 +126,7 @@ export const GET: APIRoute = async (context) => {
         link:
           post.url ||
           `/blog/${post.frontmatter.title.toLowerCase().replace(/\s+/g, "-")}/`,
-        author: post.frontmatter.author || "Dan Fessler",
+        author: post.frontmatter.author || "Andrew Friday",
         content: content,
         ...(fullImageUrl &&
           imageType && {
@@ -137,10 +137,10 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: "Dan Fessler - Blog",
+    title: "Andrew Friday - Blog",
     description:
-      "Artist by Day, Developer by Night - Blog posts about game development, art, and creative technology.",
-    site: context.site ? String(context.site) : "https://danfessler.com",
+      "Blog posts by Andrew Friday.",
+    site: context.site ? String(context.site) : "https://fridayyy.dev",
     items: items,
     customData: `<language>en-us</language>`,
   });

@@ -24,10 +24,10 @@ export function getStaticPaths() {
 ---
 
 <Layout
-  title={"Dan Fessler | " +
+  title={"Andrew Friday | " +
     (category
-      ? `${category.charAt(0).toUpperCase() + category.slice(1)} Art Portfolio`
-      : "Art Portfolio")}
+      ? `${category.charAt(0).toUpperCase() + category.slice(1)} Portfolio`
+      : "Portfolio")}
 >
-  <Gallery client:load category={category} posts={posts} baseUrl="/art" />
+  <Gallery client:load category={category} posts={posts} baseUrl="/portfolio" />
 </Layout>

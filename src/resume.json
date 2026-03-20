@@ -1,0 +1,26 @@
+{
+  "name": "Andrew Friday",
+  "title": "YOUR TITLE HERE",
+  "email": "your@email.com",
+  "phone": "",
+  "website": "fridayyy.dev",
+  "summary": "TODO: Add your professional summary here.",
+  "highlights": [
+    "TODO: Add key highlights here",
+    "e.g. 5 years experience in X",
+    "e.g. Proficient in Y and Z"
+  ],
+  "experience": [
+    {
+      "company": "Your Company",
+      "logo": "",
+      "title": "Your Title",
+      "dates": "Year - Present",
+      "description": "TODO: Describe what you did here.",
+      "highlights": [
+        "TODO: Add bullet points for this role"
+      ],
+      "projects": []
+    }
+  ]
+}

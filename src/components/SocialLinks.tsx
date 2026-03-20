@@ -3,8 +3,9 @@ import styles from "./SocialLinks.module.scss";
 
 const reversedEmailParts = {
   // Keep these reversed in the HTML; reconstructed client-side after hydration.
-  a: "nad",
-  b: "relssefnad",
+  // TODO: Replace with your own email (reversed). e.g. "andrew" -> "werdna"
+  a: "werdna",
+  b: "yadirfy",
   c: "moc",
 } as const;
 
@@ -36,14 +37,16 @@ export default function SocialLinks() {
 
   return (
     <div className={styles.navSocial}>
-      <a href="https://twitter.com/danfessler" target="_blank" rel="noreferrer">
+      {/* TODO: Replace @YOUR_TWITTER_HANDLE with your actual Twitter/X handle */}
+      <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noreferrer">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <title>Twitter icon</title>
           <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path>
         </svg>
       </a>
+      {/* TODO: Replace /in/YOUR_LINKEDIN_HANDLE/ with your actual LinkedIn URL */}
       <a
-        href="https://www.linkedin.com/in/danfessler/"
+        href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE/"
         target="_blank"
         rel="noreferrer"
       >
@@ -55,36 +58,21 @@ export default function SocialLinks() {
           </g>
         </svg>
       </a>
-      {/* <a
-        href="https://www.artstation.com/danfessler/"
+      {/* TODO: Replace YOUR_ITCHIO_USERNAME with your actual itch.io username */}
+      <a
+        href="https://YOUR_ITCHIO_USERNAME.itch.io"
         target="_blank"
         rel="noreferrer"
       >
-        <svg version="1.1" viewBox="0 0 24 24">
-          <rect
-            height="24"
-            id="Artboard13"
-            width="24"
-            x="0"
-            y="0"
-            style={{ fill: "none" }}
-          ></rect>
-          <path d="M15.153,16.996l2.288,3.963c0,0 -4.952,0 -8.808,0c-2.758,0 -5.299,-1.499 -6.633,-3.913c0,-0.001 0,-0.001 0,-0.001l0.029,-0.049l13.124,0Zm-4.798,-13.955c0,0 0,0 0,0c2.781,0 5.357,1.463 6.782,3.852c1.172,1.965 2.593,4.349 3.764,6.312c1.418,2.378 1.467,5.33 0.128,7.753c0,0.001 0,0.001 0,0.001l-0.33,0l-10.344,-17.918Zm3.168,11.133l-9.811,0l4.985,-8.359l4.826,8.359Z"></path>
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>itch.io icon</title>
+          <path d="M0 0v4.141C3.162 6.055 6.628 7 12 7s8.838-.945 12-2.859V0zm12 3.574c-3.12 0-5.653-.635-5.653-1.42 0-.783 2.533-1.418 5.653-1.418 3.12 0 5.652.635 5.652 1.419 0 .784-2.532 1.42-5.652 1.42zM12 7c-5.37 0-8.836-.945-12-2.859V19.5C0 21.984 5.373 24 12 24s12-2.016 12-4.5V4.141C20.838 6.055 17.372 7 12 7zm0 13.5c-4.38 0-7.932-1.344-7.932-3S7.62 14.5 12 14.5s7.932 1.344 7.932 3S16.38 20.5 12 20.5z" />
         </svg>
-      </a> */}
-      <a href="/rss-all.xml" title="RSS Feed">
+      </a>
+      <a href="/rss.xml" title="RSS Feed">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <title>RSS Feed icon</title>
           <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.295 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"></path>
-        </svg>
-      </a>
-      <a
-        href="https://www.github.com/danfessler/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <svg x="0" y="0" viewBox="0 0 1024 1024">
-          <path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"></path>
         </svg>
       </a>
       <a

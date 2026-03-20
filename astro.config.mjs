@@ -8,6 +8,6 @@ const isDev = process.env.NODE_ENV !== "production";
 
 // https://astro.build/config
 export default defineConfig({
-  site: isDev ? "http://localhost:4321" : "https://danfessler.com",
+  site: isDev ? "http://localhost:4321" : "https://fridayyy.dev",
   integrations: [react(), mdx(), sitemap()],
 });

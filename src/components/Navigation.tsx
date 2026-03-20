@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from "react";
 import avatarUrl from "../assets/avatar.jpg";
 
 import galleryIcon from "../assets/icons/art.svg?raw";
-import devIcon from "../assets/icons/dev.svg?raw";
 import blogIcon from "../assets/icons/blog.svg?raw";
 import resumeIcon from "../assets/icons/resume.svg?raw";
 import aboutIcon from "../assets/icons/about.svg?raw";
@@ -24,11 +23,9 @@ function Icon({ svg }: { svg: string }) {
 
 function isActive(currentPath: string, href: string) {
   if (href === "/") return currentPath === "/";
-  if (href === "/art") return currentPath.includes("/art");
+  if (href === "/portfolio") return currentPath.includes("/portfolio");
   if (href === "/blog") return currentPath.includes("/blog");
   if (href === "/resume") return currentPath.startsWith("/resume");
-  if (href === "/dev")
-    return currentPath.startsWith("/dev") && !currentPath.startsWith("/resume");
   return false;
 }
 
@@ -83,19 +80,19 @@ export default function Navigation({ currentPath }: NavProps) {
                 className={styles.avatar}
                 style={{ backgroundImage: `url(${avatarSrc})` }}
               />
-              <span className={styles.name}>DAN FESSLER</span>
+              <span className={styles.name}>ANDREW FRIDAY</span>
               <span className={styles.subtitle}>
-                Creative Director / Engineer
+                YOUR TITLE HERE
               </span>
               <br />
               <div className={styles.workLocation}>
                 <div>
                   <Icon svg={WorkIcon} />
-                  Incite Interactive
+                  YOUR COMPANY
                 </div>
                 <div>
                   <Icon svg={LocationIcon} />
-                  Pacifica, CA
+                  YOUR LOCATION
                 </div>
               </div>
             </div>
@@ -108,21 +105,12 @@ export default function Navigation({ currentPath }: NavProps) {
                 </li>
               </a>
               <a
-                href="/art"
-                className={isActive(path, "/art") ? styles.active : ""}
+                href="/portfolio"
+                className={isActive(path, "/portfolio") ? styles.active : ""}
               >
                 <li>
                   <Icon svg={galleryIcon} />
-                  Art
-                </li>
-              </a>
-              <a
-                href="/dev"
-                className={isActive(path, "/dev") ? styles.active : ""}
-              >
-                <li>
-                  <Icon svg={devIcon} />
-                  Dev
+                  Portfolio
                 </li>
               </a>
               <a
@@ -147,7 +135,7 @@ export default function Navigation({ currentPath }: NavProps) {
 
             <div style={{ flexGrow: 1 }} />
             <SocialLinks />
-            <div className={styles.navFooter}>© {year} Dan Fessler</div>
+            <div className={styles.navFooter}>© {year} Andrew Friday</div>
           </div>
         </div>
       </div>
@@ -168,7 +156,7 @@ export default function Navigation({ currentPath }: NavProps) {
             href="/"
             style={{ fontSize: "1.5rem", lineHeight: 1 }}
           >
-            DAN FESSLER
+            ANDREW FRIDAY
           </a>
           <div style={{ width: "2rem" }} />
         </div>
@@ -184,19 +172,19 @@ export default function Navigation({ currentPath }: NavProps) {
               className={styles.avatar}
               style={{ backgroundImage: `url(${avatarSrc})` }}
             />
-            <span className={styles.name}>DAN FESSLER</span>
+            <span className={styles.name}>ANDREW FRIDAY</span>
             <span className={styles.subtitle}>
-              Creative Director / Engineer
+              YOUR TITLE HERE
             </span>
             <br />
             <div className={styles.workLocation}>
               <div>
                 <Icon svg={WorkIcon} />
-                Incite Interactive
+                YOUR COMPANY
               </div>
               <div>
                 <Icon svg={LocationIcon} />
-                Pacifica, CA
+                YOUR LOCATION
               </div>
             </div>
           </div>
@@ -211,21 +199,12 @@ export default function Navigation({ currentPath }: NavProps) {
               </li>
             </a>
             <a
-              href="/art"
-              className={isActive(path, "/art") ? styles.active : ""}
+              href="/portfolio"
+              className={isActive(path, "/portfolio") ? styles.active : ""}
             >
               <li>
                 <Icon svg={galleryIcon} />
-                Art
-              </li>
-            </a>
-            <a
-              href="/dev"
-              className={isActive(path, "/dev") ? styles.active : ""}
-            >
-              <li>
-                <Icon svg={devIcon} />
-                Dev
+                Portfolio
               </li>
             </a>
             <a
@@ -250,7 +229,7 @@ export default function Navigation({ currentPath }: NavProps) {
 
           <div style={{ flexGrow: 1 }} />
           <SocialLinks />
-          <div className={styles.navFooter}>© {year} Dan Fessler</div>
+          <div className={styles.navFooter}>© {year} Andrew Friday</div>
         </div>
       </div>
     </>

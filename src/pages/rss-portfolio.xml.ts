@@ -7,14 +7,16 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 export const GET: APIRoute = async (context) => {
-  const matches = import.meta.glob("./art/*.md", { eager: true });
+  const matches = import.meta.glob("./portfolio/*.md", { eager: true });
   const posts = Object.values(matches).filter(
     (post: any) => !post.frontmatter.hidden
   );
 
-  // Sort by title (alphabetical) since there's no pubDate
+  // Sort by date (newest first)
   const sortedPosts = posts.sort((a: any, b: any) => {
-    return a.frontmatter.title.localeCompare(b.frontmatter.title);
+    const dateA = a.frontmatter.pubDate ? new Date(a.frontmatter.pubDate).getTime() : 0;
+    const dateB = b.frontmatter.pubDate ? new Date(b.frontmatter.pubDate).getTime() : 0;
+    return dateB - dateA;
   });
 
   // Get the directory of the current file (source directory, not dist)
@@ -27,16 +29,14 @@ export const GET: APIRoute = async (context) => {
   // Process posts with async content rendering
   const items = await Promise.all(
     sortedPosts.map(async (post: any) => {
-      // Art posts use thumbnail or header instead of image.url
-      const imageUrl =
-        post.frontmatter.header || post.frontmatter.thumbnail;
+      const imageUrl = post.frontmatter.header || post.frontmatter.thumbnail;
       let fullImageUrl: string | undefined;
       let imageType: string | undefined;
 
       if (imageUrl) {
         const siteUrl = context.site
           ? String(context.site)
-          : "https://danfessler.com";
+          : "https://fridayyy.dev";
         const baseUrl = siteUrl.replace(/\/$/, "");
         const cleanImageUrl = imageUrl.startsWith("/")
           ? imageUrl
@@ -50,17 +50,14 @@ export const GET: APIRoute = async (context) => {
         else imageType = "image/jpeg";
       }
 
-      // Get the raw markdown content and convert to HTML
-      let content = "";
-      let pubDate = new Date(); // Default to current date
-      
-      // First, try to get date from frontmatter
+      let pubDate = new Date();
       if (post.frontmatter.pubDate) {
         pubDate = new Date(post.frontmatter.pubDate);
       } else if (post.frontmatter.date) {
         pubDate = new Date(post.frontmatter.date);
       }
-      
+
+      let content = "";
       try {
         const fileEntries = Object.entries(matches);
         const fileEntry = fileEntries.find(
@@ -72,7 +69,6 @@ export const GET: APIRoute = async (context) => {
           const [relativePath] = fileEntry;
           const absolutePath = join(__dirname, relativePath.replace("./", ""));
 
-          // Only use file modification time if no date in frontmatter
           if (!post.frontmatter.pubDate && !post.frontmatter.date) {
             try {
               const stats = statSync(absolutePath);
@@ -90,42 +86,15 @@ export const GET: APIRoute = async (context) => {
             const html = await marked.parse(markdownContent);
             content = sanitizeHtml(html, {
               allowedTags: [
-                "p",
-                "br",
-                "strong",
-                "em",
-                "u",
-                "h1",
-                "h2",
-                "h3",
-                "h4",
-                "h5",
-                "h6",
-                "ul",
-                "ol",
-                "li",
-                "blockquote",
-                "code",
-                "pre",
-                "a",
-                "img",
-                "figure",
-                "figcaption",
-                "iframe",
-                "video",
-                "source",
+                "p", "br", "strong", "em", "u",
+                "h1", "h2", "h3", "h4", "h5", "h6",
+                "ul", "ol", "li", "blockquote", "code", "pre",
+                "a", "img", "figure", "figcaption", "iframe", "video", "source",
               ],
               allowedAttributes: {
                 a: ["href", "title"],
                 img: ["src", "alt", "title", "width", "height"],
-                iframe: [
-                  "src",
-                  "title",
-                  "frameborder",
-                  "allow",
-                  "allowfullscreen",
-                  "style",
-                ],
+                iframe: ["src", "title", "frameborder", "allow", "allowfullscreen", "style"],
                 video: ["preload", "autoplay", "loop"],
                 source: ["src", "type"],
               },
@@ -143,8 +112,8 @@ export const GET: APIRoute = async (context) => {
         pubDate: pubDate,
         link:
           post.url ||
-          `/art/${post.frontmatter.title.toLowerCase().replace(/\s+/g, "-")}/`,
-        author: "Dan Fessler",
+          `/portfolio/${post.frontmatter.title.toLowerCase().replace(/\s+/g, "-")}/`,
+        author: "Andrew Friday",
         content: content,
         ...(fullImageUrl &&
           imageType && {
@@ -155,12 +124,10 @@ export const GET: APIRoute = async (context) => {
   );
 
   return rss({
-    title: "Dan Fessler - Art Portfolio",
-    description:
-      "Art portfolio showcasing game art, character design, environment art, and creative projects.",
-    site: context.site ? String(context.site) : "https://danfessler.com",
+    title: "Andrew Friday - Portfolio",
+    description: "Portfolio projects by Andrew Friday.",
+    site: context.site ? String(context.site) : "https://fridayyy.dev",
     items: items,
     customData: `<language>en-us</language>`,
   });
 };
-
